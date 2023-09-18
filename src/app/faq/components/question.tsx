@@ -4,6 +4,9 @@ import faqData from "@/data/faq.json";
 import { useState } from "react";
 import Image from "next/image";
 
+import plus from "@/../public/images/plus.svg";
+import minus from "@/../public/images/minus.svg";
+
 export default function Question() {
   const [handle1, setHandle1] = useState(0);
   const [handle2, setHandle2] = useState(0);
@@ -28,7 +31,7 @@ export default function Question() {
               {faqData.faq[0].question}
             </text>
             <div className="w-[1.25vw] h-auto aspect-square relative">
-              <Image alt="Plus" src="/public/images/minus.svg" fill={true} />
+              <Image alt="Plus" src={minus} fill={true} />
             </div>
           </button>
           <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
@@ -48,7 +51,7 @@ export default function Question() {
             {faqData.faq[0].question}
           </text>
           <div className="w-[1.25vw] h-auto aspect-square relative">
-            <Image alt="Plus" src="/public/images/plus.svg" fill={true} />
+            <Image alt="Plus" src={plus} fill={true} />
           </div>
         </button>
       )}
@@ -65,7 +68,7 @@ export default function Question() {
               {faqData.faq[1].question}
             </text>
             <div className="w-[1.25vw] h-auto aspect-square relative">
-              <Image alt="Plus" src="/public/images/minus.svg" fill={true} />
+              <Image alt="Plus" src={minus} fill={true} />
             </div>
           </button>
           <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
@@ -85,7 +88,7 @@ export default function Question() {
             {faqData.faq[1].question}
           </text>
           <div className="w-[1.25vw] h-auto aspect-square relative">
-            <Image alt="Plus" src="/public/images/plus.svg" fill={true} />
+            <Image alt="Plus" src={plus} fill={true} />
           </div>
         </button>
       )}
@@ -102,7 +105,7 @@ export default function Question() {
               {faqData.faq[2].question}
             </text>
             <div className="w-[1.25vw] h-auto aspect-square relative">
-              <Image alt="Plus" src="/public/images/minus.svg" fill={true} />
+              <Image alt="Plus" src={minus} fill={true} />
             </div>
           </button>
           <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
@@ -122,7 +125,7 @@ export default function Question() {
             {faqData.faq[2].question}
           </text>
           <div className="w-[1.25vw] h-auto aspect-square relative">
-            <Image alt="Plus" src="/public/images/plus.svg" fill={true} />
+            <Image alt="Plus" src={plus} fill={true} />
           </div>
         </button>
       )}
@@ -139,7 +142,7 @@ export default function Question() {
               {faqData.faq[3].question}
             </text>
             <div className="w-[1.25vw] h-auto aspect-square relative">
-              <Image alt="Plus" src="/public/images/minus.svg" fill={true} />
+              <Image alt="Plus" src={minus} fill={true} />
             </div>
           </button>
           <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
@@ -159,7 +162,7 @@ export default function Question() {
             {faqData.faq[3].question}
           </text>
           <div className="w-[1.25vw] h-auto aspect-square relative">
-            <Image alt="Plus" src="/public/images/plus.svg" fill={true} />
+            <Image alt="Plus" src={plus} fill={true} />
           </div>
         </button>
       )}
@@ -176,7 +179,7 @@ export default function Question() {
               {faqData.faq[4].question}
             </text>
             <div className="w-[1.25vw] h-auto aspect-square relative">
-              <Image alt="Plus" src="/public/images/minus.svg" fill={true} />
+              <Image alt="Plus" src={minus} fill={true} />
             </div>
           </button>
           <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
@@ -196,7 +199,7 @@ export default function Question() {
             {faqData.faq[4].question}
           </text>
           <div className="w-[1.25vw] h-auto aspect-square relative">
-            <Image alt="Plus" src="/public/images/plus.svg" fill={true} />
+            <Image alt="Plus" src={plus} fill={true} />
           </div>
         </button>
       )}

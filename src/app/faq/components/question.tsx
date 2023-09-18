@@ -16,9 +16,6 @@ export default function Question() {
 
   return (
     <div>
-      {/* {faqData.faq.map((faq, idx) => (
-        <div key={idx}></div>
-      ))} */}
       {handle1 === 1 ? (
         <div className="mb-[20px]">
           <button

@@ -23,13 +23,17 @@ export default function Detail({
       <div className="w-[30vw] flex flex-col">
         <div className="flex flex-row">
           <button
-            className="w-[15vw] h-auto aspect-[287/69] flex items-center justify-center bg-[#2E3362] rounded-tl-[15px]"
+            className={`w-[15vw] h-auto aspect-[287/69] flex items-center justify-center rounded-tl-[15px] ${
+              flow === 0 ? "bg-[#2E3362]" : "bg-[#98A8D0]"
+            }`}
             onClick={() => setFlow(0)}
           >
             <h1 className="text-[18px] text-[#FFF] font-normal">Bisnis</h1>
           </button>
           <button
-            className="w-[15vw] h-auto aspect-[287/69] flex items-center justify-center bg-[#98A8D0]"
+            className={`w-[15vw] h-auto aspect-[287/69] flex items-center justify-center ${
+              flow === 1 ? "bg-[#2E3362]" : "bg-[#98A8D0]"
+            }`}
             onClick={() => setFlow(1)}
           >
             <h1 className="text-[18px] text-[#FFF] font-normal">Pribadi</h1>

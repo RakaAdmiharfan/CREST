@@ -3,24 +3,31 @@
 import Image from "next/image";
 import Search from "./components/search";
 import Detail from "./components/detail";
+import Maps from "./components/maps";
 import { useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import React from "react";
 import { format } from "date-fns";
 
 import filter from "@/../public/images/filter.svg";
-import map from "@/../public/images/map.svg";
 
 export default function Marketplace() {
   const [searchValue, setSearchValue] = useState("");
   const [buyDate, setBuyDate] = useState(null);
   const [sellDate, setSellDate] = useState(null);
+  const [bisnisDesc, setBisnisDesc] = useState("");
+  const [pribadiDesc, setPribadiDesc] = useState("");
 
   const formattedBuyDate = buyDate ? format(buyDate, "dd/MM/yyyy") : "";
   const formattedSellDate = sellDate ? format(sellDate, "dd/MM/yyyy") : "";
 
   const handleSearch = (value: string) => {
     setSearchValue(value);
+  };
+
+  const handleMaps = (bisnis, pribadi) => {
+    setBisnisDesc(bisnis);
+    setPribadiDesc(pribadi);
   };
 
   return (
@@ -35,8 +42,8 @@ export default function Marketplace() {
           </button>
         </div>
 
-        <div className="w-full h-auto aspect-[1436/866] relative rounded-[15px] mb-[100px]">
-          <Image alt="Search" src={map} fill={true} />
+        <div>
+          <Maps onClick={handleMaps} />
         </div>
 
         <Detail
@@ -44,6 +51,8 @@ export default function Marketplace() {
           onChangeBuyDate={(date) => setBuyDate(date)}
           selectedSellDate={sellDate}
           onChangeSellDate={(date) => setSellDate(date)}
+          deskripsiBisnis={bisnisDesc}
+          deskripsiPribadi={pribadiDesc}
         />
       </div>
     </main>

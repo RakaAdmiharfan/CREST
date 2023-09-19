@@ -13,6 +13,8 @@ export default function Detail({
   selectedSellDate,
   onChangeBuyDate,
   onChangeSellDate,
+  deskripsiBisnis,
+  deskripsiPribadi,
 }) {
   const [flow, setFlow] = useState(0);
 
@@ -37,9 +39,7 @@ export default function Detail({
         <div className="px-[1.823vw] pt-[40px]">
           <h2>DESCRIPTION</h2>
           <p className="mt-[10px] mb-[40px]">
-            {flow === 0
-              ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiaminterdum non risus sed finibus"
-              : "ini pribadi"}
+            {flow === 0 ? deskripsiBisnis : deskripsiPribadi}
           </p>
 
           <h2 className="mb-[5px]">Buy Date</h2>

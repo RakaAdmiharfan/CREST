@@ -1,0 +1,16 @@
+{
+    "maps": [
+        {
+            "lat_position": -6.914744,
+            "lng_position": 107.609810,
+            "bisnis": "ini bisnis",
+            "pribadi": "ini pribadi"
+        },
+        {
+            "lat_position": -6.9,
+            "lng_position": 107,
+            "bisnis": "ini bisn",
+            "pribadi": "ini prib"
+        }
+    ]
+}

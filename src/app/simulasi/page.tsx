@@ -7,6 +7,7 @@ import { useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import React from "react";
 import { format } from "date-fns";
+import Link from "next/link";
 
 import filter from "@/../public/images/filter.svg";
 import arrow from "@/../public/images/arrowdown.svg";
@@ -95,9 +96,12 @@ export default function Marketplace() {
                 <h1 className="text-white text-[21px] font-medium">
                   User Report
                 </h1>
-                <button className="w-[1.25vw] h-auto aspect-square relative z-10 ">
+                <Link
+                  className="w-[1.25vw] h-auto aspect-square relative z-10 "
+                  href="/"
+                >
                   <Image alt="x" src={x} fill={true} />
-                </button>
+                </Link>
               </div>
 
               <div className="flex flex-row w-full h-full">

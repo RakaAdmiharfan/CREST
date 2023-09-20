@@ -43,10 +43,10 @@ const Button = ({
       case "outline-white":
         return "bg-transparent text-white-500 border border-white-500 hover:shadow-md";
       case "outline-red":
-        return "bg-transparent text-red-500 border border-red-500 hover:shadow-md";
+        return "bg-transparent text-red border border-red hover:shadow-md";
 
       default:
-        return "bg-darkblue-500 hover:shadow-md text-white active:bg-presseddarkblue-500 active:shadow-inner";
+        return "bg-darkblue hover:shadow-md text-white active:bg-presseddarkblue active:shadow-inner";
     }
   };
   return (
@@ -54,9 +54,8 @@ const Button = ({
       {...props}
       type={type}
       className={`
- 
         ${getVariant()}  transition duration-500  ${
-        "py-10 px-30"
+        "py-[10px] px-[30px]"
       }  ${ "rounded-lg"} active:scale-95 ${className} `}
     >
       {children}

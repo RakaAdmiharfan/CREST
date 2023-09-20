@@ -25,15 +25,15 @@ const Button = ({
   const getVariant = () => {
     switch (variant) {
       case "darkblue":
-        return "bg-darkblue-500 hover:shadow-md text-white active:bg-presseddarkblue-500 active:shadow-inner";
+        return "bg-darkblue hover:shadow-md text-white active:bg-presseddarkblue-500 active:shadow-inner";
       case "teal":
-        return "bg-teal-500 hover:shadow-md text-white active:bg-pressedteal-500 active:shadow-inner";
+        return "bg-teal hover:shadow-md text-white active:bg-pressedteal-500 active:shadow-inner";
       case "lblue":
-        return "bg-lblue-500 hover:shadow-md text-white active:bg-pressedlblue-500 active:shadow-inner";
+        return "bg-lblue hover:shadow-md text-white active:bg-pressedlblue-500 active:shadow-inner";
       case "white":
-        return "bg-white-500 hover:shadow-md text-lblue active:shadow-inner";
+        return "bg-white hover:shadow-md text-lblue active:shadow-inner";
       case "red":
-        return "bg-red-500 hover:shadow-md text-white active:bg-pressedred-500 active:shadow-inner";
+        return "bg-red hover:shadow-md text-white active:bg-pressedred-500 active:shadow-inner";
       case "outline-darkblue":
         return "bg-transparent text-darkblue-500 border border-darkblue-500 hover:shadow-md";
       case "outline-teal":

@@ -5,8 +5,8 @@ import house from "@/../public/images/faq.svg";
 
 export default function Faq() {
   return (
-    <main className="bg-[#EFF2FA] h-[124vh] relative">
-      <div className="flex flex-row pt-[170px] mx-[59px] space justify-between relative">
+    <main className="bg-[#EFF2FA] relative">
+      <div className="flex flex-row pb-[60px] pt-[170px] mx-[59px] space justify-between relative">
         <div className="w-[46vw] h-auto aspect-square relative">
           <Image alt="House" src={house} fill={true} />
         </div>

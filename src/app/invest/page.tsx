@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import "./page.css";
 import Link from "next/link";
 
 import kios from "@/../public/images/kios.svg";
@@ -12,13 +11,13 @@ import gedung from "@/../public/images/gedungInvest.svg";
 export default function Home() {
   return (
     <main>
-      <div className="bg-slate-100 h-[100vh]">
-        <div className="w-[100vw] h-auto aspect-[1920/476] flex flex-col justify-center items-center z-10">
+      <div className="bg-slate-100 pt-[100px] pb-[60px] ">
+        <div className="w-[full] h-auto aspect-[1920/476] flex flex-col justify-center items-center z-10">
           <div className="absolute w-full h-full">
             <Image src={gedung} fill={true} alt={"Invest Background"}></Image>
           </div>
           <div className="flex flex-col items-center">
-            <h1 className="z-10 text-[96px] font-bold shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] text-white">
+            <h1 className="z-10 shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] text-white">
               Invest
             </h1>
             <h5 className="z-10 text-[24px] text-poppins text-white shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] text-justify">

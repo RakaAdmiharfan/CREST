@@ -90,7 +90,7 @@ export default function Home() {
   // };
 
   return (
-    <main className="mt-[10px] bg-white">
+    <main className=" bg-white">
       <div className="invest-easier h-[801.5px] overflow-hidden bg-no-repeat">
         <div className="Tulisan Utama ml-[120px] mt-[156px] font-morserat">
           <h1 className=""> Invest Easier</h1>

@@ -23,6 +23,11 @@ export default function RootLayout({
           <Navbar />
         </div>
         {children}
+        <div>
+          <footer className="top-[100px]">
+            <img src="/Footer/footer.svg" />
+          </footer>
+        </div>
       </body>
     </html>
   );

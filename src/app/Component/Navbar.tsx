@@ -26,16 +26,16 @@ const Navbar = () => {
         <div className="flex">
           <ul className="hidden sm:flex mr-[126px] gap-[38px]">
             <li className="p-4">
-              <Link href="/about">About</Link>
+              <Link href="/about">Invest</Link>
             </li>
             <li className="p-4">
-              <Link href="/branch-office">Branch Office</Link>
+              <Link href="/branch-office">About</Link>
             </li>
             <li className="p-4">
-              <Link href="/blog">Blogs</Link>
+              <Link href="/blog">Help</Link>
             </li>
             <li className="p-4">
-              <Link href="/contact-us">Contact Us</Link>
+              <Link href="/contact-us">Contact</Link>
             </li>
           </ul>
 
@@ -67,16 +67,16 @@ const Navbar = () => {
         >
           <ul>
             <li onClick={handleNav} className="p-4">
-              <Link href="/about">About</Link>
+              <Link href="/about">Invest</Link>
             </li>
             <li onClick={handleNav} className="p-4">
-              <Link href="/branch-office">Branch Office</Link>
+              <Link href="/branch-office">About</Link>
             </li>
             <li onClick={handleNav} className="p-4">
-              <Link href="/blog">Blogs</Link>
+              <Link href="/blog">Help</Link>
             </li>
             <li onClick={handleNav} className="p-4">
-              <Link href="/contact-us">Contact Us</Link>
+              <Link href="/contact-us">Contact</Link>
             </li>
           </ul>
         </div>

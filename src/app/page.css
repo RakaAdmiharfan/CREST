@@ -6,3 +6,7 @@
 .invest-easier {
   background-image: url(/Home/homeBG.svg);
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

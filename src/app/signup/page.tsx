@@ -5,18 +5,18 @@ import Link from "next/link";
 import house from "@/../public/images/rumahlogin.svg";
 import google from "@/../public/images/google.svg";
 
-export default function Faq() {
+export default function signup() {
   return (
-    <div className="bg-white relative h-[100vh] w-[100vw] overflow-hidden">
+    <div className="bg-white relative h-[122vh] pt-[100px] w-[100vw] overflow-hidden">
       <div className="flex flex-row w-full h-full">
         <div className="w-[50vw] h-full relative flex items-center justify-center">
           <div className="w-[39.6vw] h-auto aspect-[760/696]">
-            <h1 className="font-medium text-[27px] mb-[25px] text-poppins">
+            <h4 className="font-medium text-[27px] mb-[25px] text-poppins">
               Welcome!
-            </h1>
-            <p className="font-medium text-[14px] mb-[60px] text-poppins">
+            </h4>
+            <h6 className="font-medium text-[14px] mb-[60px] text-poppins text-[#000000]">
               Sign up for an account by filling the required information
-            </p>
+            </h6>
             <RegisterForm />
             <div className="w-full mt-[35px] flex justify-between items-center">
               <div className="w-[14.58vw] h-[1px] bg-[#808080]"></div>

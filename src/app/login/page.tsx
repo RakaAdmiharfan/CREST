@@ -14,31 +14,35 @@ export default function Faq() {
             <Image alt="House" src={house} fill={true} />
           </div>
           <div className="z-10 flex justify-center flex-col items-center">
-            <h1 className="text-[40px] text-white font-semibold mb-[30px]">
+            <h1 className="text-[40px] text-white font-semibold mb-[30px] text-poppins">
               New here?
             </h1>
-            <h1 className="w-[28.85vw] text-[24px] text-white font-medium mb-[40px] text-center">
+            <h1 className="w-[28.85vw] text-[24px] text-white font-medium mb-[40px] text-center text-poppins">
               Sign Up to enjoy our signature AI prediction technology
             </h1>
             <Link
               className="bg-[#2E3362] w-[6.77vw] h-auto aspect-[130/47] rounded-[15px] flex items-center justify-center"
               href="/signup"
             >
-              <p className="text-white font-bold text-[12px]">Sign Up</p>
+              <p className="text-white font-bold text-[12px] text-poppins">
+                Sign Up
+              </p>
             </Link>
           </div>
         </div>
 
         <div className="w-[50vw] h-full relative flex items-center justify-center">
           <div className="w-[39.6vw] h-auto aspect-[760/696]">
-            <h1 className="font-medium text-[27px] mb-[25px]">Welcome back!</h1>
-            <p className="font-medium text-[14px] mb-[60px]">
+            <h1 className="font-medium text-[27px] mb-[25px] text-poppins">
+              Welcome back!
+            </h1>
+            <p className="font-medium text-[14px] mb-[60px] text-poppins">
               Log onto your account by filling your account information
             </p>
             <LoginForm />
             <div className="w-full mt-[35px] flex justify-between items-center">
               <div className="w-[14.58vw] h-[1px] bg-[#808080]"></div>
-              <p className="font-medium text-[16px]">or</p>
+              <p className="font-medium text-[16px] text-poppins">or</p>
               <div className="w-[14.58vw] h-[1px] bg-[#808080]"></div>
             </div>
             <div className="w-full mt-[35px] flex justify-center">
@@ -46,7 +50,7 @@ export default function Faq() {
                 <div className="w-[1.25vw] h-auto aspect-square relative mr-[0.83vw]">
                   <Image alt="Google" src={google} fill={true} />
                 </div>
-                <p className="text-[#2E3362] font-bold text-[12px]">
+                <p className="text-[#2E3362] font-bold text-[12px] text-poppins">
                   Sign in with Google
                 </p>
               </button>

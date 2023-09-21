@@ -28,7 +28,9 @@ export default function Detail({
             }`}
             onClick={() => setFlow(0)}
           >
-            <h1 className="text-[18px] text-[#FFF] font-normal">Bisnis</h1>
+            <h1 className="text-[18px] text-[#FFF] font-normal text-poppins">
+              Bisnis
+            </h1>
           </button>
           <button
             className={`w-[15vw] h-auto aspect-[287/69] flex items-center justify-center ${
@@ -36,17 +38,19 @@ export default function Detail({
             }`}
             onClick={() => setFlow(1)}
           >
-            <h1 className="text-[18px] text-[#FFF] font-normal">Pribadi</h1>
+            <h1 className="text-[18px] text-[#FFF] font-normal text-poppins">
+              Pribadi
+            </h1>
           </button>
         </div>
 
         <div className="px-[1.823vw] pt-[40px]">
-          <h2>DESCRIPTION</h2>
+          <h2 className="text-poppins">DESCRIPTION</h2>
           <p className="mt-[10px] mb-[40px]">
             {flow === 0 ? deskripsiBisnis : deskripsiPribadi}
           </p>
 
-          <h2 className="mb-[5px]">Buy Date</h2>
+          <h2 className="mb-[5px] text-poppins">Buy Date</h2>
           <div className="mb-[30px] flex flex-row">
             <DatePicker
               selectedDate={selectedBuyDate}
@@ -57,7 +61,7 @@ export default function Detail({
             </div>
           </div>
 
-          <h2 className="mb-[5px]">Sell Date</h2>
+          <h2 className="mb-[5px] text-poppins">Sell Date</h2>
           <div className="mb-[60px] flex flex-row">
             <DatePicker
               selectedDate={selectedSellDate}
@@ -70,7 +74,7 @@ export default function Detail({
 
           <div className="flex justify-center">
             <button className="w-[10.2vw] h-auto aspect-[196/61] rounded-[15px] border-[1px] border-black flex items-center justify-center">
-              <h2 className="text-[#6C88CD] font-bold text-[18px]">
+              <h2 className="text-[#6C88CD] font-bold text-[18px] text-poppins">
                 Calculate
               </h2>
             </button>

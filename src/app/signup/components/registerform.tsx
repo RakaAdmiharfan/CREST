@@ -26,7 +26,7 @@ export default function LoginForm() {
         }}
       >
         <Form>
-          <div className="mb-[20px]">
+          <div className="mb-[20px] text-poppins">
             <h2 className="font-medium text-[14px] mb-[20px]">Email</h2>
             <Field
               className="form-control w-[39.6vw] h-auto aspect-[760/48] rounded-[15px] bg-[#E6EAF4] pl-[1.25vw] text-[13px]"
@@ -37,7 +37,7 @@ export default function LoginForm() {
             />
           </div>
 
-          <div className="mb-[35px]">
+          <div className="mb-[35px] text-poppins">
             <h2 className="font-medium text-[14px] mb-[20px]">Password</h2>
             <Field
               className="form-control w-[39.6vw] h-auto aspect-[760/48] rounded-[15px] bg-[#E6EAF4] pl-[1.25vw] text-[13px]"
@@ -49,7 +49,7 @@ export default function LoginForm() {
             />
           </div>
 
-          <div className="mb-[35px]">
+          <div className="mb-[35px] text-poppins">
             <h2 className="font-medium text-[14px] mb-[20px]">
               Confirm Password
             </h2>
@@ -68,7 +68,9 @@ export default function LoginForm() {
               type="submit"
               className="btn btn-primary w-[5.93vw] h-auto aspect-[114/47] text-[#2E3362] border-[#2E3362] border-[3px] rounded-[15px] flex items-center justify-center"
             >
-              <p className="text-[#2E3362] font-bold text-[12px]">Sign Up</p>
+              <p className="text-[#2E3362] font-bold text-[12px] text-poppins">
+                Sign Up
+              </p>
             </button>
           </div>
         </Form>

@@ -26,7 +26,7 @@ export default function Search(props: SearchProps) {
   };
 
   return (
-    <div className="relative w-[68vw] text-gray-600 flex flex-row aspect-[1345/60] bg-white rounded-[10px] shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]">
+    <div className="relative w-[68vw] text-gray-600 flex flex-row aspect-[1345/60] bg-white rounded-[10px] shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] text-poppins">
       <button className="w-[1.3vw] h-auto aspect-square relative mx-[1vw] z-10 ">
         <Image alt="Search" src={search} fill={true} />
       </button>

@@ -27,7 +27,12 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+  
+  .text-poppins{
+    font-family: var(--font-poppins);
+  }
 }
+
 
 body {
   color: rgb(var(--foreground-rgb));

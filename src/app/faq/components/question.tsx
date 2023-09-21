@@ -24,7 +24,7 @@ export default function Question() {
               setHandle1(0);
             }}
           >
-            <text className="text-[#FFF] text-[14px] font-bold">
+            <text className="text-[#FFF] text-[14px] font-bold text-poppins">
               {faqData.faq[0].question}
             </text>
             <div className="w-[1.25vw] h-auto aspect-square relative">
@@ -32,7 +32,7 @@ export default function Question() {
             </div>
           </button>
           <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
-            <text className="text-[#FFF] text-[16px] font-normal">
+            <text className="text-[#FFF] text-[16px] font-normal text-poppins">
               {faqData.faq[0].answer}
             </text>
           </div>
@@ -44,7 +44,7 @@ export default function Question() {
             setHandle1(1);
           }}
         >
-          <text className="text-[#FFF] text-[14px] font-bold">
+          <text className="text-[#FFF] text-[14px] font-bold text-poppins">
             {faqData.faq[0].question}
           </text>
           <div className="w-[1.25vw] h-auto aspect-square relative">
@@ -61,7 +61,7 @@ export default function Question() {
               setHandle2(0);
             }}
           >
-            <text className="text-[#FFF] text-[14px] font-bold">
+            <text className="text-[#FFF] text-[14px] font-bold text-poppins">
               {faqData.faq[1].question}
             </text>
             <div className="w-[1.25vw] h-auto aspect-square relative">
@@ -69,7 +69,7 @@ export default function Question() {
             </div>
           </button>
           <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
-            <text className="text-[#FFF] text-[16px] font-normal">
+            <text className="text-[#FFF] text-[16px] font-normal text-poppins">
               {faqData.faq[1].answer}
             </text>
           </div>
@@ -81,7 +81,7 @@ export default function Question() {
             setHandle2(1);
           }}
         >
-          <text className="text-[#FFF] text-[14px] font-bold">
+          <text className="text-[#FFF] text-[14px] font-bold text-poppins">
             {faqData.faq[1].question}
           </text>
           <div className="w-[1.25vw] h-auto aspect-square relative">
@@ -98,7 +98,7 @@ export default function Question() {
               setHandle3(0);
             }}
           >
-            <text className="text-[#FFF] text-[14px] font-bold">
+            <text className="text-[#FFF] text-[14px] font-bold text-poppins">
               {faqData.faq[2].question}
             </text>
             <div className="w-[1.25vw] h-auto aspect-square relative">
@@ -106,7 +106,7 @@ export default function Question() {
             </div>
           </button>
           <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
-            <text className="text-[#FFF] text-[16px] font-normal">
+            <text className="text-[#FFF] text-[16px] font-normal text-poppins">
               {faqData.faq[2].answer}
             </text>
           </div>
@@ -118,7 +118,7 @@ export default function Question() {
             setHandle3(1);
           }}
         >
-          <text className="text-[#FFF] text-[14px] font-bold">
+          <text className="text-[#FFF] text-[14px] font-bold text-poppins">
             {faqData.faq[2].question}
           </text>
           <div className="w-[1.25vw] h-auto aspect-square relative">
@@ -135,7 +135,7 @@ export default function Question() {
               setHandle4(0);
             }}
           >
-            <text className="text-[#FFF] text-[14px] font-bold">
+            <text className="text-[#FFF] text-[14px] font-bold text-poppins">
               {faqData.faq[3].question}
             </text>
             <div className="w-[1.25vw] h-auto aspect-square relative">
@@ -143,7 +143,7 @@ export default function Question() {
             </div>
           </button>
           <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
-            <text className="text-[#FFF] text-[16px] font-normal">
+            <text className="text-[#FFF] text-[16px] font-normal text-poppins">
               {faqData.faq[3].answer}
             </text>
           </div>
@@ -155,7 +155,7 @@ export default function Question() {
             setHandle4(1);
           }}
         >
-          <text className="text-[#FFF] text-[14px] font-bold">
+          <text className="text-[#FFF] text-[14px] font-bold text-poppins">
             {faqData.faq[3].question}
           </text>
           <div className="w-[1.25vw] h-auto aspect-square relative">
@@ -172,7 +172,7 @@ export default function Question() {
               setHandle5(0);
             }}
           >
-            <text className="text-[#FFF] text-[14px] font-bold">
+            <text className="text-[#FFF] text-[14px] font-bold text-poppins">
               {faqData.faq[4].question}
             </text>
             <div className="w-[1.25vw] h-auto aspect-square relative">
@@ -180,7 +180,7 @@ export default function Question() {
             </div>
           </button>
           <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
-            <text className="text-[#FFF] text-[16px] font-normal">
+            <text className="text-[#FFF] text-[16px] font-normal text-poppins">
               {faqData.faq[4].answer}
             </text>
           </div>
@@ -192,7 +192,7 @@ export default function Question() {
             setHandle5(1);
           }}
         >
-          <text className="text-[#FFF] text-[14px] font-bold">
+          <text className="text-[#FFF] text-[14px] font-bold text-poppins">
             {faqData.faq[4].question}
           </text>
           <div className="w-[1.25vw] h-auto aspect-square relative">

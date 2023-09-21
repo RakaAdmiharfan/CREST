@@ -11,7 +11,7 @@ export default function Home() {
           <h5 className="w-[693px]">
             Use our cutting-edge technology to learn and unlock endless
             possibilities through real estate. Find out real estate investments
-            tailored solely for your needs."
+            tailored solely for your needs.
           </h5>
         </div>
         <div className="Tombol">

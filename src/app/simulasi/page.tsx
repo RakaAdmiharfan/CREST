@@ -38,7 +38,7 @@ export default function Marketplace() {
   return (
     <main>
       {!isEnd ? (
-        <div className="relative bg-[#FFFFFF] h-[200vh] overflow-hidden">
+        <div className="relative bg-[#FFFFFF] h-[200vh] overflow-hidden text-poppins">
           <div className="px-[12.6vw] mt-[60px]">
             <div className="flex justify-between flex-row mb-[30px]">
               <Search onSearch={handleSearch} />
@@ -140,7 +140,7 @@ export default function Marketplace() {
           </div>
         </div>
       ) : (
-        <div className="relative bg-[#CED3DE] h-[200vh] overflow-hidden">
+        <div className="relative bg-[#CED3DE] h-[200vh] overflow-hidden text-poppins">
           <div className="px-[8.33vw] mt-[60px]">
             <div className="w-full h-auto aspect-[1520/854] bg-white rounded-[20px] flex flex-col overflow-hidden">
               <div className="w-full h-auto aspect-[1520/74] bg-[#2E3362] flex items-center px-[2vw] justify-between">

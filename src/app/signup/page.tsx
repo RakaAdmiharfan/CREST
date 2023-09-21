@@ -1,5 +1,5 @@
 import Image from "next/image";
-import LoginForm from "./components/loginform";
+import RegisterForm from "./components/registerform";
 import Link from "next/link";
 
 import house from "@/../public/images/rumahlogin.svg";
@@ -10,32 +10,12 @@ export default function Faq() {
     <div className="bg-white relative h-[100vh] w-[100vw] overflow-hidden">
       <div className="flex flex-row w-full h-full">
         <div className="w-[50vw] h-full relative flex items-center justify-center">
-          <div className="w-[50vw] h-full absolute">
-            <Image alt="House" src={house} fill={true} />
-          </div>
-          <div className="z-10 flex justify-center flex-col items-center">
-            <h1 className="text-[40px] text-white font-semibold mb-[30px]">
-              New here?
-            </h1>
-            <h1 className="w-[28.85vw] text-[24px] text-white font-medium mb-[40px] text-center">
-              Sign Up to enjoy our signature AI prediction technology
-            </h1>
-            <Link
-              className="bg-[#2E3362] w-[6.77vw] h-auto aspect-[130/47] rounded-[15px] flex items-center justify-center"
-              href="/signup"
-            >
-              <p className="text-white font-bold text-[12px]">Sign Up</p>
-            </Link>
-          </div>
-        </div>
-
-        <div className="w-[50vw] h-full relative flex items-center justify-center">
           <div className="w-[39.6vw] h-auto aspect-[760/696]">
-            <h1 className="font-medium text-[27px] mb-[25px]">Welcome back!</h1>
+            <h1 className="font-medium text-[27px] mb-[25px]">Welcome!</h1>
             <p className="font-medium text-[14px] mb-[60px]">
-              Log onto your account by filling your account information
+              Sign up for an account by filling the required information
             </p>
-            <LoginForm />
+            <RegisterForm />
             <div className="w-full mt-[35px] flex justify-between items-center">
               <div className="w-[14.58vw] h-[1px] bg-[#808080]"></div>
               <p className="font-medium text-[16px]">or</p>
@@ -47,10 +27,30 @@ export default function Faq() {
                   <Image alt="Google" src={google} fill={true} />
                 </div>
                 <p className="text-[#2E3362] font-bold text-[12px]">
-                  Sign in with Google
+                  Sign Up with Google
                 </p>
               </button>
             </div>
+          </div>
+        </div>
+
+        <div className="w-[50vw] h-full relative flex items-center justify-center">
+          <div className="w-[50vw] h-full absolute">
+            <Image alt="House" src={house} fill={true} />
+          </div>
+          <div className="z-10 flex justify-center flex-col items-center">
+            <h1 className="text-[40px] text-white font-semibold mb-[30px]">
+              Have an Account?
+            </h1>
+            <h1 className="w-[28.85vw] text-[24px] text-white font-medium mb-[40px] text-center">
+              Log back into your account by clicking the button below
+            </h1>
+            <Link
+              className="bg-[#2E3362] w-[6.77vw] h-auto aspect-[130/47] rounded-[15px] flex items-center justify-center"
+              href="/login"
+            >
+              <p className="text-white font-bold text-[12px]">Log In</p>
+            </Link>
           </div>
         </div>
       </div>

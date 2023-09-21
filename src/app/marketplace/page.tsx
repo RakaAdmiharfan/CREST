@@ -31,7 +31,7 @@ export default function Marketplace() {
   };
 
   return (
-    <main className="bg-[#EFF2FA] relative h-[200vh] overflow-hidden">
+    <main className="bg-[#EFF2FA] relative overflow-hidden pt-[110px] pb-[60px]">
       <div className="px-[12.6vw] mt-[60px]">
         <div className="flex justify-between flex-row mb-[30px]">
           <Search onSearch={handleSearch} />

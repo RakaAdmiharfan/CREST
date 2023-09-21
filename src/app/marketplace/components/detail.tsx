@@ -28,9 +28,9 @@ export default function Detail({
             }`}
             onClick={() => setFlow(0)}
           >
-            <h1 className="text-[18px] text-[#FFF] font-normal text-poppins">
+            <text className="text-[18px] text-[#FFF] font-normal text-poppins">
               Bisnis
-            </h1>
+            </text>
           </button>
           <button
             className={`w-[15vw] h-auto aspect-[287/69] flex items-center justify-center ${
@@ -38,19 +38,19 @@ export default function Detail({
             }`}
             onClick={() => setFlow(1)}
           >
-            <h1 className="text-[18px] text-[#FFF] font-normal text-poppins">
+            <text className="text-[18px] text-[#FFF] font-normal text-poppins">
               Pribadi
-            </h1>
+            </text>
           </button>
         </div>
 
-        <div className="px-[1.823vw] pt-[40px]">
-          <h2 className="text-poppins">DESCRIPTION</h2>
-          <p className="mt-[10px] mb-[40px]">
+        <div className="px-[1.823vw] pt-[40px] flex flex-col">
+          <text className="text-poppins text-[16px]">DESCRIPTION</text>
+          <text className="mt-[10px] mb-[40px] text-[16px] text-poppins">
             {flow === 0 ? deskripsiBisnis : deskripsiPribadi}
-          </p>
+          </text>
 
-          <h2 className="mb-[5px] text-poppins">Buy Date</h2>
+          <text className="mb-[5px] text-poppins text-[16px]">Buy Date</text>
           <div className="mb-[30px] flex flex-row">
             <DatePicker
               selectedDate={selectedBuyDate}
@@ -61,7 +61,7 @@ export default function Detail({
             </div>
           </div>
 
-          <h2 className="mb-[5px] text-poppins">Sell Date</h2>
+          <text className="mb-[5px] text-poppins text-[16px]">Sell Date</text>
           <div className="mb-[60px] flex flex-row">
             <DatePicker
               selectedDate={selectedSellDate}
@@ -74,9 +74,9 @@ export default function Detail({
 
           <div className="flex justify-center">
             <button className="w-[10.2vw] h-auto aspect-[196/61] rounded-[15px] border-[1px] border-black flex items-center justify-center">
-              <h2 className="text-[#6C88CD] font-bold text-[18px] text-poppins">
+              <text className="text-[#6C88CD] font-bold text-[18px] text-poppins">
                 Calculate
-              </h2>
+              </text>
             </button>
           </div>
         </div>

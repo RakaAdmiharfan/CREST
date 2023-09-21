@@ -1,14 +1,56 @@
 {
     "maps": [
         {
+            "nama": "Gedung",
+            "deskripsi": "Ruko",
+            "harga": "$20.000",
             "lat_position": -6.914744,
             "lng_position": 107.609810,
             "bisnis": "ini bisnis",
             "pribadi": "ini pribadi"
         },
         {
+            "nama": "Gedung",
+            "deskripsi": "Alfamart",
+            "harga": "$5.000",
             "lat_position": -6.9,
             "lng_position": 107,
+            "bisnis": "ini bisn",
+            "pribadi": "ini prib"
+        },
+        {
+            "nama": "Rumah",
+            "deskripsi": "Rumah Tua",
+            "harga": "$1",
+            "lat_position": -6.913,
+            "lng_position": 107.62,
+            "bisnis": "ini bisn",
+            "pribadi": "ini prib"
+        },
+        {
+            "nama": "Rumah",
+            "deskripsi": "Rumah Minimalis",
+            "harga": "$0.1",
+            "lat_position": -6.94,
+            "lng_position": 107.65,
+            "bisnis": "ini bisn",
+            "pribadi": "ini prib"
+        },
+        {
+            "nama": "Gedung",
+            "deskripsi": "Ruko",
+            "harga": "$20.000",
+            "lat_position": -6.914744,
+            "lng_position": 107.609810,
+            "bisnis": "ini bisnis",
+            "pribadi": "ini pribadi"
+        },
+        {
+            "nama": "Rumah",
+            "deskripsi": "Rumah Minimalis",
+            "harga": "$0.1",
+            "lat_position": -6.94,
+            "lng_position": 107.65,
             "bisnis": "ini bisn",
             "pribadi": "ini prib"
         }

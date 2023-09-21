@@ -10,16 +10,21 @@ import { format } from "date-fns";
 import Link from "next/link";
 
 import filter from "@/../public/images/filter.svg";
-import arrow from "@/../public/images/arrowdown.svg";
-import arrowblack from "@/../public/images/arrowdownblack.svg";
+import arrowdownwhite from "@/../public/images/arrowdown.svg";
+import arrowupwhite from "@/../public/images/arrowupwhite.svg";
+import arrowdownblack from "@/../public/images/arrowdownblack.svg";
+import arrowupblack from "@/../public/images/arrowupblack.svg";
 import x from "@/../public/images/x.svg";
 import rumah from "@/../public/images/rumah2.svg";
+
+import houseData from "@/data/maps.json";
 
 export default function Marketplace() {
   const [searchValue, setSearchValue] = useState("");
   const [bisnisDesc, setBisnisDesc] = useState("");
   const [pribadiDesc, setPribadiDesc] = useState("");
   const [isEnd, setIsEnd] = useState(false);
+  const [showAssets, setShowAssets] = useState(false);
 
   const handleSearch = (value: string) => {
     setSearchValue(value);
@@ -45,40 +50,86 @@ export default function Marketplace() {
             </div>
 
             <div className="w-full h-auto aspect-[1436/796] flex flex-row rounded-[20px] overflow-hidden">
-              <div className="w-[20vw] h-full bg-[#30366C] flex flex-col">
-                <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
+              <div
+                className={`w-[20vw] h-full ${
+                  showAssets ? "bg-[#464C87]" : "bg-[#30366C]"
+                } flex flex-col`}
+              >
+                <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
                   <h1 className="text-[#FFFFFF] font-medium">Year</h1>
                   <h1 className="text-[#FFFFFF] font-medium">2023</h1>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
-                <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
+                <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
                   <h1 className="text-[#FFFFFF] font-medium">Net Worth</h1>
                   <h1 className="text-[#FFFFFF] font-medium">$10.000</h1>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
-                <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
+                <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
                   <h1 className="text-[#FFFFFF] font-medium">Balance</h1>
                   <h1 className="text-[#FFFFFF] font-medium">$10.000</h1>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
-                <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
+                <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
                   <h1 className="text-[#FFFFFF] font-medium">Earnings</h1>
                   <h1 className="text-[#FFFFFF] font-medium">$10.000</h1>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
-                <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
+                <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
                   <h1 className="text-[#FFFFFF] font-medium">Assets</h1>
-                  <button className="w-[1.46vw] h-auto aspect-square relative z-10 ">
-                    <Image alt="Arrow" src={arrow} fill={true} />
-                  </button>
+                  {showAssets ? (
+                    <button
+                      className="w-[1.46vw] h-auto aspect-square relative z-10 "
+                      onClick={() => setShowAssets(false)}
+                    >
+                      <Image alt="Arrow Up" src={arrowupwhite} fill={true} />
+                    </button>
+                  ) : (
+                    <button
+                      className="w-[1.46vw] h-auto aspect-square relative z-10 "
+                      onClick={() => setShowAssets(true)}
+                    >
+                      <Image
+                        alt="Arrow Down"
+                        src={arrowdownwhite}
+                        fill={true}
+                      />
+                    </button>
+                  )}
                 </div>
+                {showAssets ? (
+                  <div className="overflow-auto w-full h-auto aspect-[384/301] no-scrollbar">
+                    {houseData.maps.map((data, index) => (
+                      <div key={index} className="w-full">
+                        <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
+                          <div className="flex flex-col">
+                            <h1 className="text-[#FFFFFF] text-[13px] font-medium">
+                              {data.nama}
+                            </h1>
+                            <h1 className="text-[#CFF1EF] text-[12px] font-medium">
+                              {data.deskripsi}
+                            </h1>
+                          </div>
+                          <h1 className="text-[#FFFFFF] font-medium">
+                            {data.harga}
+                          </h1>
+                        </div>
+                        <div className="flex items-center justify-center">
+                          <div className=" bg-[#808080] w-[14.58vw] h-[1px]"></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
               </div>
 
               <div className="flex h-auto w-[54.28vw] aspect-[1052/796] flex-col relative">
                 <Maps onClick={handleMaps} />
                 <button
                   className="w-[10.4vw] h-auto aspect-[200/47] absolute bg-[#EB5B5B] z-20 bottom-[20px] ml-[1.67vw] rounded-[15px] flex items-center justify-center"
-                  onClick={() => setIsEnd(true)}
+                  onClick={() => {
+                    setIsEnd(true), setShowAssets(false);
+                  }}
                 >
                   <h2 className="text-[12px] text-white font-bold">
                     End Simulation
@@ -126,12 +177,59 @@ export default function Marketplace() {
                     <h1 className="text-[#1E2351] font-medium">$2000</h1>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
-                  <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
+                  <div
+                    className={`w-full ${
+                      showAssets ? "bg-[#F8F8F8]" : "bg-white"
+                    } h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]`}
+                  >
                     <h1 className="text-[#1E2351] font-medium">Assets</h1>
-                    <button className="w-[1.46vw] h-auto aspect-square relative z-10">
-                      <Image alt="Arrow" src={arrowblack} fill={true} />
-                    </button>
+                    {/* <button className="w-[1.46vw] h-auto aspect-square relative z-10">
+                      <Image alt="Arrow" src={arrowdownblack} fill={true} />
+                    </button> */}
+                    {showAssets ? (
+                      <button
+                        className="w-[1.46vw] h-auto aspect-square relative z-10 "
+                        onClick={() => setShowAssets(false)}
+                      >
+                        <Image alt="Arrow Up" src={arrowupblack} fill={true} />
+                      </button>
+                    ) : (
+                      <button
+                        className="w-[1.46vw] h-auto aspect-square relative z-10 "
+                        onClick={() => setShowAssets(true)}
+                      >
+                        <Image
+                          alt="Arrow Down"
+                          src={arrowdownblack}
+                          fill={true}
+                        />
+                      </button>
+                    )}
                   </div>
+                  {showAssets ? (
+                    <div className="overflow-auto w-full h-auto aspect-[384/301] no-scrollbar">
+                      {houseData.maps.map((data, index) => (
+                        <div key={index} className="w-full">
+                          <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
+                            <div className="flex flex-col">
+                              <h1 className="text-[#1E2351] text-[13px] font-medium">
+                                {data.nama}
+                              </h1>
+                              <h1 className="text-[#CFF1EF] text-[12px] font-medium">
+                                {data.deskripsi}
+                              </h1>
+                            </div>
+                            <h1 className="text-[#1E2351] font-medium">
+                              {data.harga}
+                            </h1>
+                          </div>
+                          <div className="flex items-center justify-center">
+                            <div className=" bg-[#808080] w-[14.58vw] h-[1px]"></div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
                 </div>
 
                 <div className="w-[1px] h-full bg-[#808080]"></div>

@@ -18,8 +18,8 @@ const Navbar = () => {
 
   console.log(nav);
   return (
-    <div className="w-[100vw] h-auto aspect-[1920/80] z-50 absolute flex justify-between">
-      <div className="bg-[#2E3362] w-full h-auto aspect-[1920/80] flex justify-between items-center p-4 fixed">
+    <div className="w-full h-auto aspect-[1920/80] z-50 absolute flex justify-between">
+      <div className="bg-[#2E3362] w-[100vw] h-auto aspect-[1920/80] flex justify-between items-center p-4 fixed">
         <Link
           href="/"
           className="ml-[5.2vw] w-[9.53vw] h-auto aspect-[183/80] relative"
@@ -28,7 +28,7 @@ const Navbar = () => {
         </Link>
 
         <div className="flex flex-row">
-          <ul className="hidden sm:flex mr-[3.5vw] gap-[6.5vw]">
+          <ul className="hidden sm:flex mr-[2vw] gap-[3vw]">
             <li className="p-4">
               <Link href="/invest" className="text-poppins">
                 Invest

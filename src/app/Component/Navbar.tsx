@@ -45,7 +45,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="p-4">
-              <Link href="/contact-us" className="text-poppins">
+              <Link href="/contact" className="text-poppins">
                 Contact
               </Link>
             </li>
@@ -94,7 +94,7 @@ const Navbar = () => {
               <Link href="/faq">Help</Link>
             </li>
             <li onClick={handleNav} className="p-4">
-              <Link href="/contact-us">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>

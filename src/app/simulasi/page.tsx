@@ -71,7 +71,7 @@ export default function Marketplace() {
   return (
     <main>
       {flow === 0 ? (
-        <div className="relative bg-[#FFFFFF] pt-[110px] pb-[60px] overflow-hidden text-poppins">
+        <div className="relative bg-[#FFFFFF] pt-[90px] pb-[60px] overflow-hidden text-poppins">
           <div className="px-[12.6vw] mt-[60px]">
             <div className="flex justify-between flex-row mb-[30px]">
               <Search onSearch={handleSearch} />

@@ -2,8 +2,11 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import "./Navbar.css";
+
+import logo from "@/../public/Home/Logo.png";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -15,27 +18,36 @@ const Navbar = () => {
 
   console.log(nav);
   return (
-    <div className="h-[100px] z-50 absolute">
-      <div className="bg-[#2E3362] w-full flex justify-between items-center p-4 fixed">
-        <div className="ml-[100px]">
-          <Link href="/">
-            <img src="/Home/Logo.png" alt="Logo" />
-          </Link>
-        </div>
+    <div className="w-[100vw] h-auto aspect-[1920/80] z-50 absolute flex justify-between">
+      <div className="bg-[#2E3362] w-full h-auto aspect-[1920/80] flex justify-between items-center p-4 fixed">
+        <Link
+          href="/"
+          className="ml-[5.2vw] w-[9.53vw] h-auto aspect-[183/80] relative"
+        >
+          <Image alt="Logo" src={logo} fill={true} />
+        </Link>
 
-        <div className="flex">
-          <ul className="hidden sm:flex mr-[126px] gap-[38px]">
+        <div className="flex flex-row">
+          <ul className="hidden sm:flex mr-[3.5vw] gap-[6.5vw]">
             <li className="p-4">
-              <Link href="/invest">Invest</Link>
+              <Link href="/invest" className="text-poppins">
+                Invest
+              </Link>
             </li>
             <li className="p-4">
-              <Link href="/about">About</Link>
+              <Link href="/about" className="text-poppins">
+                About
+              </Link>
             </li>
             <li className="p-4">
-              <Link href="/faq">Help</Link>
+              <Link href="/faq" className="text-poppins">
+                Help
+              </Link>
             </li>
             <li className="p-4">
-              <Link href="/contact-us">Contact</Link>
+              <Link href="/contact-us" className="text-poppins">
+                Contact
+              </Link>
             </li>
           </ul>
 
@@ -43,7 +55,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/login"
-                className="button border-[#6C88CD] border-[3px] text-[#6C88CD] font-poppins font-semibold text-lg py-[10px] px-[30px] rounded-[15px]"
+                className="button border-[#6C88CD] border-[3px] text-[#6C88CD] font-poppins font-semibold text-[14px] py-[10px] px-[30px] rounded-[15px] text-poppins"
               >
                 Log In
               </Link>
@@ -51,7 +63,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="signup"
-                className="button text-[#A5CCD1] border-[#A5CCD1] border-[3px] py-[10px] px-[30px] font-poppins font-semibold text-lg rounded-[15px]"
+                className="button text-[#A5CCD1] border-[#A5CCD1] border-[3px] py-[10px] px-[30px] font-poppins font-semibold text-[14px] rounded-[15px] text-poppins"
               >
                 Sign Up
               </Link>

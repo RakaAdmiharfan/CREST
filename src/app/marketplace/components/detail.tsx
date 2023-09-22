@@ -15,6 +15,7 @@ export default function Detail({
   onChangeSellDate,
   deskripsiBisnis,
   deskripsiPribadi,
+  harga,
 }) {
   const [flow, setFlow] = useState(0);
 
@@ -45,10 +46,44 @@ export default function Detail({
         </div>
 
         <div className="px-[1.823vw] pt-[40px] flex flex-col">
-          <text className="text-poppins text-[16px]">DESCRIPTION</text>
-          <text className="mt-[10px] mb-[40px] text-[16px] text-poppins">
-            {flow === 0 ? deskripsiBisnis : deskripsiPribadi}
-          </text>
+          {flow === 2 ? (
+            <div className="flex flex-col">
+              <text className="text-poppins text-[20px] font-medium">
+                AI Estimation
+              </text>
+              <div className="flex flex-row justify-between w-[26.354vw]">
+                <text className="flex mt-[10px] text-[16px] text-poppins">
+                  Base Price
+                </text>
+                <text className="flex mt-[10px] text-[16px] text-poppins">
+                  {harga}
+                </text>
+              </div>
+              <div className="flex flex-row justify-between w-[26.354vw]">
+                <text className="flex mt-[10px] text-[16px] text-poppins">
+                  Estimated Price
+                </text>
+                <text className="flex mt-[10px] text-[16px] text-poppins">
+                  $10.000
+                </text>
+              </div>
+              <div className="flex flex-row justify-between w-[26.354vw]">
+                <text className="flex mt-[10px] mb-[40px] text-[16px] text-poppins">
+                  Years
+                </text>
+                <text className="flex mt-[10px] mb-[40px] text-[16px] text-poppins">
+                  10
+                </text>
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-col">
+              <text className="text-poppins text-[16px]">DESCRIPTION</text>
+              <text className="mt-[10px] mb-[40px] text-[16px] text-poppins">
+                {flow === 0 ? deskripsiBisnis : deskripsiPribadi}
+              </text>
+            </div>
+          )}
 
           <text className="mb-[5px] text-poppins text-[16px]">Buy Date</text>
           <div className="mb-[30px] flex flex-row">
@@ -73,7 +108,10 @@ export default function Detail({
           </div>
 
           <div className="flex justify-center">
-            <button className="w-[10.2vw] h-auto aspect-[196/61] rounded-[15px] border-[1px] border-black flex items-center justify-center">
+            <button
+              className="w-[10.2vw] h-auto aspect-[196/61] rounded-[15px] border-[1px] border-black flex items-center justify-center"
+              onClick={() => setFlow(2)}
+            >
               <text className="text-[#6C88CD] font-bold text-[18px] text-poppins">
                 Calculate
               </text>

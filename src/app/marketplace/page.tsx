@@ -17,6 +17,7 @@ export default function Marketplace() {
   const [sellDate, setSellDate] = useState(null);
   const [bisnisDesc, setBisnisDesc] = useState("");
   const [pribadiDesc, setPribadiDesc] = useState("");
+  const [harga, setHarga] = useState(0);
 
   const formattedBuyDate = buyDate ? format(buyDate, "dd/MM/yyyy") : "";
   const formattedSellDate = sellDate ? format(sellDate, "dd/MM/yyyy") : "";
@@ -25,9 +26,10 @@ export default function Marketplace() {
     setSearchValue(value);
   };
 
-  const handleMaps = (bisnis, pribadi) => {
+  const handleMaps = (bisnis, pribadi, harga) => {
     setBisnisDesc(bisnis);
     setPribadiDesc(pribadi);
+    setHarga(harga);
   };
 
   return (
@@ -53,6 +55,7 @@ export default function Marketplace() {
           onChangeSellDate={(date) => setSellDate(date)}
           deskripsiBisnis={bisnisDesc}
           deskripsiPribadi={pribadiDesc}
+          harga={harga}
         />
       </div>
     </main>

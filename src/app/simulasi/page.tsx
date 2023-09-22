@@ -27,9 +27,18 @@ export default function Marketplace() {
   const [showAssets, setShowAssets] = useState(false);
   const [currentMarker, setCurrentMarket] = useState({});
   const [assets, setAssets] = useState([]);
+  const [showFilter, setShowFilter] = useState(false);
 
   const handleSearch = (value: string) => {
     setSearchValue(value);
+  };
+
+  const handleFilter = () => {
+    if (showFilter) {
+      setShowFilter(false);
+    } else {
+      setShowFilter(true);
+    }
   };
 
   // const handleAssets = {
@@ -75,9 +84,12 @@ export default function Marketplace() {
           <div className="px-[12.6vw] mt-[60px]">
             <div className="flex justify-between flex-row mb-[30px]">
               <Search onSearch={handleSearch} />
-              <button className="relative w-[3.646vw] text-gray-600 flex flex-row aspect-[70/60] bg-white rounded-[10px] shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] items-center justify-center">
+              <button
+                className="relative w-[3.646vw] text-gray-600 flex flex-row aspect-[70/60] bg-white rounded-[10px] shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] items-center justify-center"
+                onClick={handleFilter}
+              >
                 <div className="w-[1.56vw] h-auto aspect-square relative mx-[1vw] z-10 ">
-                  <Image alt="Search" src={filter} fill={true} />
+                  <Image alt="Filter" src={filter} fill={true} />
                 </div>
               </button>
             </div>

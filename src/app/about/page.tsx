@@ -5,7 +5,9 @@ import abu from "@/../public/images/about_abu.svg";
 import yellow from "@/../public/images/about_yellow.svg";
 import yellow2 from "@/../public/images/about_yellow2.svg";
 
-export default function Faq() {
+import Profile from "./components/profile";
+
+export default function About() {
   return (
     <main className="bg-[#EFF2FA] relative overflow-hidden">
       <div className="flex flex-row pb-[60px] pt-[140px] justify-between relative">
@@ -35,14 +37,14 @@ export default function Faq() {
         </div>
       </div>
 
-      <div className="bg-white w-[100vw] h-auto aspect-[1920/1227] flex flex-col items-center justify-center relative overflow-hidden">
+      <div className="bg-white w-[100vw] py-[140px] flex flex-col items-center justify-center relative overflow-hidden">
         <div className="w-[15.23vw] h-auto aspect-[292.5/378.6] absolute top-[-50px] left-[-5vw] z-10">
           <Image alt="About Yellow" src={yellow} fill={true} />
         </div>
         <div className="w-[28.75vw] h-auto aspect-[552/398] absolute top-[-50px] right-[-10vw] z-10">
           <Image alt="About Yellow" src={yellow2} fill={true} />
         </div>
-        <div className="w-[52.5vw] flex flex-col justify-center items-center">
+        <div className="w-[52.5vw] flex flex-col justify-center items-center mb-[40px]">
           <text className="text-[#1E2351] font-bold text-[45px] mb-[20px] text-poppins">
             WHO WE ARE
           </text>
@@ -56,7 +58,17 @@ export default function Faq() {
             sapien.
           </text>
         </div>
-        <div className="flex flex-row"></div>
+        <div className="flex flex-col w-[66vw] h-auto aspect-[1258/794] items-center justify-between">
+          <div className="flex flex-row justify-between w-full h-auto aspect-[1258/357]">
+            <Profile name={"Amjad"} />
+            <Profile name={"Nicholas"} />
+            <Profile name={"Amjad"} />
+          </div>
+          <div className="flex flex-row justify-between w-[40.2vw] h-auto aspect-[772/357]">
+            <Profile name={"Amjad"} />
+            <Profile name={"Nicholas"} />
+          </div>
+        </div>
       </div>
     </main>
   );

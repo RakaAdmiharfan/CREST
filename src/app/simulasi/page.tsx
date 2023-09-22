@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Search from "./components/search";
 import Maps from "./components/maps";
+import Filter from "./components/filter";
 import { useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import React from "react";
@@ -191,6 +192,11 @@ export default function Marketplace() {
               </div>
 
               <div className="flex h-auto w-[54.28vw] aspect-[1052/796] flex-col relative">
+                {showFilter ? (
+                  <div className="absolute z-30 top-0 right-0">
+                    <Filter />
+                  </div>
+                ) : null}
                 <Maps onClick={handleMaps} />
                 <button
                   className="w-[10.4vw] h-auto aspect-[200/47] absolute bg-[#EB5B5B] z-20 bottom-[20px] ml-[1.67vw] rounded-[15px] flex items-center justify-center"

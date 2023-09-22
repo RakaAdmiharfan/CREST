@@ -41,8 +41,8 @@ export default function Maps(props) {
   const [deskripsiPribadi, setDeskripsiPribadi] = useState("");
   const [deskripsiBisnis, setDeskripsiBisnis] = useState("");
 
-  const handleChange = (bisnis, pribadi) => {
-    props.onClick(bisnis, pribadi);
+  const handleChange = (currentMarker) => {
+    props.onClick(currentMarker);
   };
 
   return (
@@ -58,7 +58,7 @@ export default function Maps(props) {
               <Marker
                 key={index}
                 position={{ lat: data.lat_position, lng: data.lng_position }}
-                onClick={() => handleChange(data.bisnis, data.pribadi)}
+                onClick={() => handleChange(data)}
               />
             ))}
             {/* <Marker position={{ lat: -6.914744, lng: 107.60981 }}></Marker> */}

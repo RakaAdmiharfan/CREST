@@ -62,11 +62,11 @@ export default function About() {
           <div className="flex flex-row justify-between w-full h-auto aspect-[1258/357]">
             <Profile name={"Amjad"} />
             <Profile name={"Nicholas"} />
-            <Profile name={"Amjad"} />
+            <Profile name={"Johan"} />
           </div>
           <div className="flex flex-row justify-between w-[40.2vw] h-auto aspect-[772/357]">
-            <Profile name={"Amjad"} />
-            <Profile name={"Nicholas"} />
+            <Profile name={"Iskandar"} />
+            <Profile name={"Raka"} />
           </div>
         </div>
       </div>

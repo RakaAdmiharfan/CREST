@@ -9,6 +9,9 @@ import message from "@/../public/images/message.svg";
 import linkedin from "@/../public/images/linkedin.svg";
 import nicholas from "@/../public/images/nicholas.jpg";
 import amjad from "@/../public/images/amjad.jpg";
+import johan from "@/../public/images/johan.jpg";
+import iskandar from "@/../public/images/iskandar.jpg";
+import raka from "@/../public/images/raka.jpg";
 
 export default function Profile({ name }: { name: string }) {
   let photo;
@@ -23,6 +26,18 @@ export default function Profile({ name }: { name: string }) {
     photo = nicholas;
     nama = "Nicholas";
     profesi = "Designer";
+  } else if (name === "Johan") {
+    photo = johan;
+    nama = "Johan";
+    profesi = "Pebisnis";
+  } else if (name === "Iskandar") {
+    photo = iskandar;
+    nama = "Iskandar";
+    profesi = "Mahasiswa";
+  } else if (name === "Raka") {
+    photo = raka;
+    nama = "Raka";
+    profesi = "Developer";
   }
 
   return (

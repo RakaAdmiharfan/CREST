@@ -18,7 +18,7 @@ export default function PropertyPage() {
   );
 
   return (
-    <div className="p-4 bg-[#EFF2FA] w-1920px">
+    <div className="bg-[#EFF2FA] relative overflow-hidden w-full h-screen">
       <div className="Search">
         <h2 className="mb-4 mt-[140px] text-[#000] text-center">
           Manage Properties
@@ -27,14 +27,14 @@ export default function PropertyPage() {
 
       <div className="ml-[297px]">
         <div className="flex mb-[16px] rounded-[15px] bg-[#2E3362] w-[10.26vw] p-[10px] justify-center">
-          <Link href="/" className="">
+          <Link href="/editProp" className="">
             <h6>Add Properties</h6>
           </Link>
         </div>
 
         <Search onSearch={setSearchTerm} />
 
-        <div className="mt-[30px] vw-[]">
+        <div className="mt-[30px] w-[70vw]">
           <table className="w-full table-fixed border-spacing-1">
             <thead className="border-[3px]">
               <tr>

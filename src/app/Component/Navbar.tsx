@@ -28,7 +28,7 @@ const Navbar = () => {
         </Link>
 
         <div className="flex flex-row">
-          <ul className="hidden sm:flex mr-[2vw] gap-[3vw]">
+          <ul className="hidden sm:flex mr-[5vw] gap-[3vw]">
             <li className="p-4">
               <Link href="/invest" className="text-poppins">
                 Invest

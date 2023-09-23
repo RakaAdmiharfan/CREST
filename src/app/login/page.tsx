@@ -7,7 +7,7 @@ import google from "@/../public/images/google.svg";
 
 export default function Faq() {
   return (
-    <div className="bg-white relative w-[100vw] overflow-hidden pt-[90px]">
+    <div className="bg-white relative w-[100vw] h-[100vh] overflow-hidden pt-[57px]">
       <div className="flex flex-row w-full">
         <div className="w-[50vw] h-auto aspect-[960/1000] relative flex items-center justify-center">
           <div className="w-[50vw] h-full absolute">

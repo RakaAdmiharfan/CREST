@@ -10,8 +10,8 @@ import ContactForm from "./components/contact";
 
 export default function Contact() {
   return (
-    <main className="bg-[#EFF2FA] relative overflow-hidden">
-      <div className="flex flex-row pb-[60px] pt-[140px] justify-between relative">
+    <main className="bg-[#EFF2FA] relative h-[100vh] overflow-hidden">
+      <div className="flex flex-row pb-[60px] pt-[75px] justify-between relative">
         <div className="w-[50vw] h-auto aspect-square py-[1vw] relative flex pl-[3vw]">
           <div className="w-[46vw] h-auto aspect-square absolute">
             <Image alt="House" src={house} fill={true} />

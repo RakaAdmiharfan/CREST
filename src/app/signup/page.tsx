@@ -7,7 +7,7 @@ import google from "@/../public/images/google.svg";
 
 export default function signup() {
   return (
-    <div className="bg-white relative pt-[90px] w-[100vw] overflow-hidden">
+    <div className="bg-white relative pt-[57px] w-[100vw] h-[100vh] overflow-hidden">
       <div className="flex flex-row w-full h-auto aspect-[1920/1000]">
         <div className="w-[50vw] h-full relative flex items-center justify-center">
           <div className="w-[39.6vw] h-auto aspect-[760/696] flex flex-col">

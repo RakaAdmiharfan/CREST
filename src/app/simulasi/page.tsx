@@ -81,8 +81,8 @@ export default function Marketplace() {
   return (
     <main>
       {flow === 0 ? (
-        <div className="relative bg-[#FFFFFF] pt-[90px] pb-[60px] overflow-hidden text-poppins">
-          <div className="px-[12.6vw] mt-[60px]">
+        <div className="relative bg-[#FFFFFF] h-[100vh] pt-[75px] overflow-hidden text-poppins">
+          <div className="px-[12.6vw]">
             <div className="flex justify-between flex-row mb-[30px]">
               <Search onSearch={handleSearch} />
               <button
@@ -213,8 +213,8 @@ export default function Marketplace() {
           </div>
         </div>
       ) : flow === 1 ? (
-        <div className="relative bg-[#CED3DE] pt-[110px] pb-[60px] overflow-hidden text-poppins">
-          <div className="px-[8.33vw] mt-[60px]">
+        <div className="relative bg-[#CED3DE] pt-[95px] h-[100vh] overflow-hidden text-poppins">
+          <div className="px-[8.33vw]">
             <div className="w-full h-auto aspect-[1520/854] bg-white rounded-[20px] flex flex-col overflow-hidden">
               <div className="w-full h-auto aspect-[1520/74] bg-[#2E3362] flex items-center px-[2vw] justify-between">
                 <text className="text-white text-[21px] font-medium text-poppins">
@@ -311,8 +311,8 @@ export default function Marketplace() {
           </div>
         </div>
       ) : flow === 2 ? (
-        <div className="relative bg-[#CED3DE] pt-[110px] pb-[60px] overflow-hidden text-poppins">
-          <div className="px-[8.33vw] mt-[60px]">
+        <div className="relative bg-[#CED3DE] pt-[95px] h-[100vh] pb-[60px] overflow-hidden text-poppins">
+          <div className="px-[8.33vw]">
             <div className="w-full h-auto aspect-[1520/854] bg-white rounded-[20px] flex flex-col overflow-hidden">
               <div className="w-full h-auto aspect-[1520/74] bg-[#2E3362] flex items-center px-[2vw] justify-between">
                 <text className="text-white text-[21px] font-medium text-poppins">
@@ -409,8 +409,8 @@ export default function Marketplace() {
           </div>
         </div>
       ) : (
-        <div className="relative bg-[#CED3DE] pt-[110px] pb-[60px] overflow-hidden text-poppins">
-          <div className="px-[8.33vw] mt-[60px]">
+        <div className="relative bg-[#CED3DE] pt-[95px] h-[100vh] overflow-hidden text-poppins">
+          <div className="px-[8.33vw]">
             <div className="w-full h-auto aspect-[1520/854] bg-white rounded-[20px] flex flex-col overflow-hidden">
               <div className="w-full h-auto aspect-[1520/74] bg-[#2E3362] flex items-center px-[2vw] justify-between">
                 <text className="text-white text-[21px] font-medium text-poppins">

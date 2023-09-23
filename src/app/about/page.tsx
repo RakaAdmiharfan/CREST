@@ -10,8 +10,8 @@ import Profile from "./components/profile";
 export default function About() {
   return (
     <main className="bg-[#EFF2FA] relative overflow-hidden">
-      <div className="flex flex-row pb-[60px] pt-[140px] justify-between relative">
-        <div className="w-[50vw] h-auto aspect-square py-[1vw] relative flex pl-[3vw]">
+      <div className="flex flex-row pb-[60px] pt-[75px] justify-between relative">
+        <div className="w-[50vw] h-auto aspect-square py-[1vw] relative flex pl-[7.8vw]">
           <div className="w-[46vw] h-auto aspect-square absolute">
             <Image alt="House" src={house} fill={true} />
           </div>
@@ -19,7 +19,7 @@ export default function About() {
             <Image alt="About" src={abu} fill={true} />
           </div>
         </div>
-        <div className="w-[50vw] h-auto aspect-square relative flex pr-[3vw] items-center justify-center">
+        <div className="w-[50vw] h-auto aspect-square relative flex flex-row-reverse pr-[3vw]">
           <div className="flex flex-col justify-center w-[34.74vw]">
             <text className="text-[#1E2351] font-bold text-[45px] mb-[30px] text-poppins">
               WHY CHOOSE US

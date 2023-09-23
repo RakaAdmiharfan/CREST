@@ -6,6 +6,9 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 
+import smart from "@/../public/Home/smart.svg";
+import smartF from "@/../public/Home/smartF.svg";
+
 const properties = [
   {
     imgurl: "/Home/fotobox.png",
@@ -91,41 +94,46 @@ export default function Home() {
 
   return (
     <main className=" bg-white">
-      <div className="invest-easier h-[801.5px] overflow-hidden bg-no-repeat">
-        <div className="Tulisan Utama ml-[120px] mt-[156px]">
-          <h1 className="text-montserrat"> Invest Easier</h1>
-          <h5 className="w-[560px] mt-[68px] font-poppins text-white text-justify text-shadow-md">
+      <div className="invest-easier h-[620px] overflow-hidden bg-no-repeat">
+        <div className="Tulisan Utama ml-[6.25vw] mt-[150px]">
+          <h1 className="text-montserrat w-[33.28vw] text-[70px]">
+            {" "}
+            Invest Easier
+          </h1>
+          <h5 className="w-[33.28vw] mt-[50px] text-poppins text-white text-justify text-[18px] text-shadow-md">
             Use our cutting-edge technology to learn and unlock endless
             possibilities through real estate. Find out real estate investments
             tailored solely for your needs."
           </h5>
         </div>
 
-        <div className="Tombol ml-[120px] mt-[100px]">
+        <div className="Tombol ml-[6.25vw] mt-[50px] flex flex-row">
           <Link
             href="/Trending"
-            className="button mr-[30px] bg-[#2E3362] py-[10px] px-[30px] text-white font-poppins font-semibold text-lg rounded-[15px]"
+            className="w-[11.75vw] h-auto aspect-[228/47] button mr-[1vw] bg-[#2E3362] flex flex-col items-center justify-center text-white font-poppins font-semibold text-[14px] rounded-[15px]"
           >
             Explore Properties
           </Link>
           <Link
             href="/about"
-            className="button border-white border-[3px] text-white font-poppins font-semibold text-lg py-[10px] px-[30px] rounded-[15px]"
+            className="w-[7.45vw] h-auto aspect-[143/47] button border-white border-[3px] flex flex-col items-center justify-center text-white font-poppins font-semibold text-[14px] rounded-[15px]"
           >
             About Us
           </Link>
         </div>
       </div>
 
-      <div className="Trending ml-[80px]" id="Trending">
-        <div className="Title mt-[80px]">
-          <h2>Trending</h2>
+      <div className="Trending px-[4.16vw]" id="Trending">
+        <div className="Title mt-[40px]">
+          <h2 className="text-poppins font-semibold text-[43px]">Trending</h2>
 
-          <div className="mt-[24px] flex justify-between">
-            <h4>Explore trending properties</h4>
-            <h4 className="flex items-center mr-[80px]">
+          <div className="mt-[20px] flex justify-between">
+            <h4 className="text-poppins text-[25px]">
+              Explore trending properties
+            </h4>
+            <h4 className="flex items-center text-poppins text-[25px] font-medium">
               More
-              <span className="text-lg mt-[7  px] ml-[20px]">
+              <span className="ml-[1vw]">
                 <AiOutlineArrowRight />
               </span>
             </h4>
@@ -133,28 +141,37 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-row px-20 gap-10 overflow-x-auto no-scrollbar mt-[48px] mb-[60px]">
+      <div className="flex flex-row px-[4.16vw] pb-[8px] gap-[2vw] overflow-x-auto no-scrollbar mt-[40px] mb-[60px]">
         {properties.map((property, index) => (
           <div
             key={index}
-            className="flex-shrink-0 rounded-[30px] bg-[#FAFAFA] shadow-lg p-10 gap-[32px] w-[18,75vw] h-auto aspect-[360/527]"
+            className="flex flex-col items-center rounded-[30px] bg-[#FAFAFA] shadow-lg w-[18,75vw] h-auto aspect-[360/527] p-[2vw]"
           >
-            <img src={property.imgurl} alt={`Property ${index + 1}`} />
-            <div className="flex flex-row mt-[32px] justify-between">
-              <h5>{property.Type}</h5>
-              <h5>{property.Price}</h5>
+            <div className="w-[14.58vw] h-auto aspect-square relative">
+              <Image
+                alt={`Property ${index + 1}`}
+                src={property.imgurl}
+                fill={true}
+              />
             </div>
-            <p className="mt-[10px] text-[#C8C8C8] font-poppins text-base font-medium w-[17.5vw] text-justify">
+            {/* <img src={property.imgurl} alt={`Property ${index + 1}`} /> */}
+            <div className="w-[14.58vw] flex flex-row mt-[24px] justify-between">
+              <h5 className="text-poppins text-[18px]">{property.Type}</h5>
+              <h5 className="text-poppins text-[18px]">{property.Price}</h5>
+            </div>
+            <p className="w-[14.58vw] mt-[10px] text-[#C8C8C8] font-poppins text-base font-medium text-justify text-[14px] text-poppins">
               {property.Addres}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="bg-[#EFF2FA] h-[629px] flex justify-between">
-        <div className="Title ml-[80px] pt-[120px] w-[44.68vw]">
-          <h2>Smart Investment Decisions</h2>
-          <p className="text-[#212653] mt-[60px] w-[44.16vw] text-justify">
+      <div className="bg-[#EFF2FA] w-full h-auto aspect-[1920/812] flex justify-between">
+        <div className="Title ml-[4.16vw] pt-[110px] w-[44.68vw]">
+          <h2 className="text-poppins text-[42px]">
+            Smart Investment Decisions
+          </h2>
+          <p className="text-[#212653] mt-[40px] w-[44.16vw] text-poppins text-[15px] text-justify">
             Unlock the future of real estate investment with AI-driven price
             prediction technology. Say goodbye to uncertainty and hello to
             informed decision-making. Our cutting-edge AI algorithms analyze
@@ -167,18 +184,20 @@ export default function Home() {
             innovation and take the guesswork out of property investments today!
           </p>
         </div>
-        <div className="mw-[50.38vw]">
-          <img src="/Home/smart.svg" alt="Smart Investment" />
+        <div className="w-[50.37vw] h-auto aspect-[967/812] relative">
+          <Image alt="Smart Investment" src={smart} fill={true} />
         </div>
       </div>
 
-      <div className="bg-[#FFF] h-[629px] flex justify-between">
-        <div className="w-[50.38vw]">
-          <img src="/Home/smartF.svg" alt="Smart Investment" />
+      <div className="bg-[#FFF] w-full h-auto aspect-[1920/812] flex justify-between">
+        <div className="w-[50.37vw] h-auto aspect-[967/812] relative">
+          <Image alt="Smart Investment" src={smartF} fill={true} />
         </div>
-        <div className="Title mr-[102px] pt-[120px]  w-[44.68vw]">
-          <h2>Smart Investment Decisions</h2>
-          <p className="text-[#212653] mt-[60px] w-[44.16vw] text-justify">
+        <div className="Title mr-[4.16vw] pt-[110px] w-[44.68vw]">
+          <h2 className="text-poppins text-[42px]">
+            Smart Investment Decisions
+          </h2>
+          <p className="text-[#212653] mt-[40px] w-[44.16vw] text-poppins text-[15px] text-justify">
             Unlock the future of real estate investment with AI-driven price
             prediction technology. Say goodbye to uncertainty and hello to
             informed decision-making. Our cutting-edge AI algorithms analyze

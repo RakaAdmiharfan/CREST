@@ -18,52 +18,49 @@ const Navbar = () => {
 
   console.log(nav);
   return (
-    <div className="w-full h-auto aspect-[1920/80] z-50 absolute flex justify-between">
-      <div className="bg-[#2E3362] w-[100vw] h-auto aspect-[1920/80] flex justify-between items-center p-4 fixed">
-        <Link
-          href="/"
-          className="ml-[5.2vw] w-[9.53vw] h-auto aspect-[183/80] relative"
-        >
+    <div className="w-full h-auto aspect-[1920/80] z-50 absolute flex flex-row justify-between items-center">
+      <div className="bg-[#2E3362] w-[100vw] h-auto aspect-[1920/80] flex justify-between items-center px-[5.2vw]">
+        <Link href="/" className="w-[9.53vw] h-auto aspect-[183/80] relative">
           <Image alt="Logo" src={logo} fill={true} />
         </Link>
 
         <div className="flex flex-row">
           <ul className="hidden sm:flex mr-[2vw] gap-[3vw]">
             <li className="p-4">
-              <Link href="/invest" className="text-poppins">
+              <Link href="/invest" className="text-poppins text-[18px]">
                 Invest
               </Link>
             </li>
             <li className="p-4">
-              <Link href="/about" className="text-poppins">
+              <Link href="/about" className="text-poppins text-[18px]">
                 About
               </Link>
             </li>
             <li className="p-4">
-              <Link href="/faq" className="text-poppins">
+              <Link href="/faq" className="text-poppins text-[18px]">
                 Help
               </Link>
             </li>
             <li className="p-4">
-              <Link href="/contact" className="text-poppins">
+              <Link href="/contact" className="text-poppins text-[18px]">
                 Contact
               </Link>
             </li>
           </ul>
 
-          <ul className="hidden sm:flex gap-[23px] mr-[30px] pt-4">
+          <ul className="hidden sm:flex gap-[23px] flex-row items-center justify-center">
             <li>
               <Link
                 href="/login"
-                className="button border-[#6C88CD] border-[3px] text-[#6C88CD] font-poppins font-semibold text-[14px] py-[10px] px-[30px] rounded-[15px] text-poppins"
+                className="w-[5.9vw] h-auto aspect-[114/47] border-[#6C88CD] border-[3px] text-[#6C88CD] font-poppins font-semibold text-[14px] flex flex-col items-center justify-center rounded-[15px] text-poppins"
               >
                 Log In
               </Link>
             </li>
             <li>
               <Link
-                href="signup"
-                className="button text-[#A5CCD1] border-[#A5CCD1] border-[3px] py-[10px] px-[30px] font-poppins font-semibold text-[14px] rounded-[15px] text-poppins"
+                href="/signup"
+                className="w-[6.7vw] h-auto aspect-[130/47] text-[#A5CCD1] border-[#A5CCD1] border-[3px] font-poppins font-semibold text-[14px] flex flex-col items-center justify-center  rounded-[15px] text-poppins"
               >
                 Sign Up
               </Link>

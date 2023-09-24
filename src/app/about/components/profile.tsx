@@ -46,11 +46,11 @@ export default function Profile({ name }: { name: string }) {
         <Image alt={nama} src={photo} fill={true} />
       </div>
       <div className="bg-[#C8D6E29E] w-full h-auto aspect-[286/304] flex flex-col bottom-0 absolute rounded-[20px] shadow-[0_4px_30px_0px_rgba(0,0,0,0.25)]">
-        <div className="flex w-full bottom-[15px] flex-col absolute items-center justify-center">
-          <text className="flex w-[10.1vw] h-auto aspect-[194/64] items-center justify-center text-poppins font-medium text-[18px]">
+        <div className="flex w-full bottom-[15px] xl:bottom-[15px] lg:bottom-[10px] flex-col absolute items-center justify-center">
+          <text className="flex w-[10.1vw] h-auto aspect-[194/64] items-center justify-center text-poppins font-medium text-[18px] xl:text-[18px] lg:text-[16px]">
             {nama}
           </text>
-          <text className="flex w-[10.1vw] h-auto aspect-[194/64] items-center justify-center text-poppins font-medium text-[18px]">
+          <text className="flex w-[10.1vw] h-auto aspect-[194/64] items-center justify-center text-poppins font-medium text-[18px] xl:text-[18px] lg:text-[16px]">
             {profesi}
           </text>
           <div className="flex w-[8.6vw] h-auto aspect-[194/64] justify-between">

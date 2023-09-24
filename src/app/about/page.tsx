@@ -10,21 +10,21 @@ import Profile from "./components/profile";
 export default function About() {
   return (
     <main className="bg-[#EFF2FA] relative overflow-hidden">
-      <div className="flex flex-row pb-[60px] pt-[75px] justify-between relative">
+      <div className="flex flex-row pb-[60px] xl:pb-[60px] lg:pb-[20px] pt-[75px] xl:pt-[75px] lg:pt-[60px] justify-between relative">
         <div className="w-[50vw] h-auto aspect-square py-[1vw] relative flex pl-[7.8vw]">
           <div className="w-[46vw] h-auto aspect-square absolute">
             <Image alt="House" src={house} fill={true} />
           </div>
-          <div className="w-[34.74vw] h-auto aspect-[667/708] ml-[-18.81vw] absolute bottom-[15px]">
+          <div className="w-[34.74vw] h-auto aspect-[667/708] ml-[-18.81vw] absolute bottom-[15px] xl:bottom-[15px] lg:bottom-[15px]">
             <Image alt="About" src={abu} fill={true} />
           </div>
         </div>
         <div className="w-[50vw] h-auto aspect-square relative flex flex-row-reverse pr-[3vw]">
           <div className="flex flex-col justify-center w-[34.74vw]">
-            <text className="text-[#1E2351] font-bold text-[45px] mb-[30px] text-poppins">
+            <text className="text-[#1E2351] font-bold text-[45px] xl:text-[45px] lg:text-[37px] mb-[30px] xl:mb-[30px] lg:mb-[15px] text-poppins">
               WHY CHOOSE US
             </text>
-            <text className="text-black text-[18px] mb-[30px] text-poppins">
+            <text className="text-black text-[18px] xl:text-[18px] lg:text-[15px] mb-[30px] xl:mb-[30px] lg:mb-[15px] text-poppins">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
               interdum non risus sed finibus. Curabitur mattis arcu justo, eget
               euismod tellus tincidunt ac. Etiam nulla ex, lacinia vel nunc ac,
@@ -37,18 +37,18 @@ export default function About() {
         </div>
       </div>
 
-      <div className="bg-white w-[100vw] py-[140px] flex flex-col items-center justify-center relative overflow-hidden">
-        <div className="w-[15.23vw] h-auto aspect-[292.5/378.6] absolute top-[-50px] left-[-5vw] z-10">
+      <div className="bg-white w-[100vw] py-[140px] xl:py-[140px] lg:py-[115px] flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="w-[15.23vw] h-auto aspect-[292.5/378.6] absolute top-[-50px] xl:top-[-50px] lg:top-[-35px] left-[-5vw] z-10">
           <Image alt="About Yellow" src={yellow} fill={true} />
         </div>
-        <div className="w-[28.75vw] h-auto aspect-[552/398] absolute top-[-50px] right-[-10vw] z-10">
+        <div className="w-[28.75vw] h-auto aspect-[552/398] absolute top-[-50px] xl:top-[-50px] lg:top-[-35px] right-[-10vw] z-10">
           <Image alt="About Yellow" src={yellow2} fill={true} />
         </div>
         <div className="w-[52.5vw] flex flex-col justify-center items-center mb-[40px]">
-          <text className="text-[#1E2351] font-bold text-[45px] mb-[20px] text-poppins">
+          <text className="text-[#1E2351] font-bold text-[45px] xl:text-[45px] lg:text-[37px] mb-[20px] xl:mb-[20px] lg:mb-[15px] text-poppins">
             WHO WE ARE
           </text>
-          <text className="text-black text-[16px] mb-[30px] text-poppins text-center">
+          <text className="text-black text-[16px] xl:text-[16px] lg:text-[13px] mb-[30px] xl:mb-[30px] lg:mb-[20px] text-poppins text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
             interdum non risus sed finibus. Curabitur mattis arcu justo, eget
             euismod tellus tincidunt ac. Etiam nulla ex, lacinia vel nunc ac,

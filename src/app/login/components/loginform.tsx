@@ -25,12 +25,12 @@ export default function LoginForm() {
         }}
       >
         <Form>
-          <div className="mb-[20px] text-poppins flex flex-col">
-            <text className="font-medium text-[14px] mb-[20px] text-poppins">
+          <div className="mb-[20px] xl:mb-[20px] lg:mb-[15px] text-poppins flex flex-col">
+            <text className="font-medium text-[14px] xl:text-[14px] lg:text-[12px] mb-[20px] xl:mb-[20px] lg:mb-[15px] text-poppins">
               Email
             </text>
             <Field
-              className="form-control w-[39.6vw] h-auto aspect-[760/48] rounded-[15px] bg-[#E6EAF4] pl-[1.25vw] text-[13px]"
+              className="form-control w-[39.6vw] h-auto aspect-[760/48] rounded-[15px] bg-[#E6EAF4] pl-[1.25vw] text-[13px] xl:text-[13px] lg:text-[11px]"
               id="email"
               name="email"
               placeholder="Email"
@@ -38,12 +38,12 @@ export default function LoginForm() {
             />
           </div>
 
-          <div className="mb-[35px] text-poppins flex flex-col">
-            <text className="font-medium text-[14px] mb-[20px] text-poppins">
+          <div className="mb-[35px] xl:mb-[35px] lg:mb-[25px] text-poppins flex flex-col">
+            <text className="font-medium text-[14px] xl:text-[14px] lg:text-[12px] mb-[20px] xl:mb-[20px] lg:mb-[15px] text-poppins">
               Password
             </text>
             <Field
-              className="form-control w-[39.6vw] h-auto aspect-[760/48] rounded-[15px] bg-[#E6EAF4] pl-[1.25vw] text-[13px]"
+              className="form-control w-[39.6vw] h-auto aspect-[760/48] rounded-[15px] bg-[#E6EAF4] pl-[1.25vw] text-[13px] xl:text-[13px] lg:text-[11px]"
               id="password"
               type="password"
               name="password"
@@ -57,7 +57,7 @@ export default function LoginForm() {
               type="submit"
               className="btn btn-primary w-[5.93vw] h-auto aspect-[114/47] text-[#2E3362] border-[#2E3362] border-[3px] rounded-[15px] flex items-center justify-center"
             >
-              <text className="text-[#2E3362] font-bold text-[12px] text-poppins">
+              <text className="text-[#2E3362] font-bold text-[12px] xl:text-[12px] lg:text-[10px] text-poppins">
                 Log In
               </text>
             </button>

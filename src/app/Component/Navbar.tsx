@@ -12,7 +12,6 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
 
   const handleNav = () => {
-    console.log("kepencet");
     setNav(!nav);
   };
 
@@ -27,32 +26,44 @@ const Navbar = () => {
         <div className="flex flex-row">
           <ul className="hidden sm:flex mr-[2vw] gap-[3vw]">
             <li className="p-4">
-              <Link href="/invest" className="text-poppins text-[18px]">
+              <Link
+                href="/invest"
+                className="text-poppins text-[18px] xl:text-[18px] lg:text-[16px] md:text-[14px] sm:text-[12px]"
+              >
                 Invest
               </Link>
             </li>
             <li className="p-4">
-              <Link href="/about" className="text-poppins text-[18px]">
+              <Link
+                href="/about"
+                className="text-poppins text-[18px] xl:text-[18px] lg:text-[16px]  md:text-[14px] sm:text-[12px]"
+              >
                 About
               </Link>
             </li>
             <li className="p-4">
-              <Link href="/faq" className="text-poppins text-[18px]">
+              <Link
+                href="/faq"
+                className="text-poppins text-[18px] xl:text-[18px] lg:text-[16px]  md:text-[14px] sm:text-[12px]"
+              >
                 Help
               </Link>
             </li>
             <li className="p-4">
-              <Link href="/contact" className="text-poppins text-[18px]">
+              <Link
+                href="/contact"
+                className="text-poppins text-[18px] xl:text-[18px] lg:text-[16px]  md:text-[14px] sm:text-[12px]"
+              >
                 Contact
               </Link>
             </li>
           </ul>
 
-          <ul className="hidden sm:flex gap-[23px] flex-row items-center justify-center">
+          <ul className="hidden sm:flex gap-[1vw] flex-row items-center justify-center">
             <li>
               <Link
                 href="/login"
-                className="w-[5.9vw] h-auto aspect-[114/47] border-[#6C88CD] border-[3px] text-[#6C88CD] font-poppins font-semibold text-[14px] flex flex-col items-center justify-center rounded-[15px] text-poppins"
+                className="w-[5.9vw] h-auto aspect-[114/47] border-[#6C88CD] border-[3px] text-[#6C88CD] font-poppins font-semibold text-[14px] xl:text-[14px] lg:text-[12px] md:text-[10px] sm-[8px] flex flex-col items-center justify-center rounded-[15px] text-poppins"
               >
                 Log In
               </Link>
@@ -60,7 +71,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/signup"
-                className="w-[6.7vw] h-auto aspect-[130/47] text-[#A5CCD1] border-[#A5CCD1] border-[3px] font-poppins font-semibold text-[14px] flex flex-col items-center justify-center  rounded-[15px] text-poppins"
+                className="w-[6.7vw] h-auto aspect-[130/47] text-[#A5CCD1] border-[#A5CCD1] border-[3px] font-poppins font-semibold text-[14px] xl:text-[14px] lg:text-[12px] md:text-[10px] sm-[8px] flex flex-col items-center justify-center  rounded-[15px] text-poppins"
               >
                 Sign Up
               </Link>

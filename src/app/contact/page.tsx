@@ -11,7 +11,7 @@ import ContactForm from "./components/contact";
 export default function Contact() {
   return (
     <main className="bg-[#EFF2FA] relative h-[100vh] overflow-hidden">
-      <div className="flex flex-row pb-[60px] pt-[75px] justify-between relative">
+      <div className="flex flex-row pb-[60px] xl:pb-[60px] lg:pb-[50px] pt-[75px] xl:pt-[75px] lg:pt-[60px] justify-between relative">
         <div className="w-[50vw] h-auto aspect-square py-[1vw] relative flex pl-[3vw]">
           <div className="w-[46vw] h-auto aspect-square absolute">
             <Image alt="House" src={house} fill={true} />
@@ -19,18 +19,20 @@ export default function Contact() {
         </div>
         <div className="w-[50vw] h-auto aspect-square relative flex pr-[3vw] items-center justify-center">
           <div className="flex flex-col w-[27vw] items-center justify-center">
-            <text className="text-black font-semibold text-[35px] mb-[10px] text-poppins">
+            <text className="text-black font-semibold text-[35px] xl:text-[35px] lg:text-[27px] mb-[10px] xl:mb-[10px] lg:mb-[7px] text-poppins">
               Send Us A Message
             </text>
             <div className="w-[27vw]">
               <ContactForm />
             </div>
-            <div className="w-full mt-[20px] flex justify-between items-center">
+            <div className="w-full mt-[20px] xl:mt-[20px] lg:mt-[15px] flex justify-between items-center">
               <div className="w-[7.9vw] h-[1px] bg-[#808080]"></div>
-              <p className="font-medium text-[16px] text-poppins">or</p>
+              <p className="font-medium text-[16px] xl:text-[16px] lg:text-[14px] text-poppins">
+                or
+              </p>
               <div className="w-[7.9vw] h-[1px] bg-[#808080]"></div>
             </div>
-            <div className="w-[22.9vw] h-auto aspect-[440/80] flex flex-row mt-[20px] justify-between">
+            <div className="w-[22.9vw] h-auto aspect-[440/80] flex flex-row mt-[20px] xl:mt-[20px] lg:mt-[15px] justify-between">
               <button className="w-[4.16vw] h-auto aspect-square rounded-[100%] relative bg-white items-center justify-center flex">
                 <div className="w-[2vw] h-auto aspect-square relative">
                   <Image alt="Envelope" src={envelope} fill={true} />

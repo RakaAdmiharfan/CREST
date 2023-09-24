@@ -42,7 +42,9 @@ export default function Faq() {
             <LoginForm />
             <div className="w-full mt-[35px] xl:mt-[35px] lg:mt-[25px] flex justify-between items-center">
               <div className="w-[14.58vw] h-[1px] bg-[#808080]"></div>
-              <p className="font-medium text-[16px] text-poppins">or</p>
+              <p className="font-medium text-[16px] xl:text-[16px] lg:text-[14px] text-poppins">
+                or
+              </p>
               <div className="w-[14.58vw] h-[1px] bg-[#808080]"></div>
             </div>
             <div className="w-full mt-[35px] xl:mt-[35px] lg:mt-[25px] flex justify-center">

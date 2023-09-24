@@ -25,12 +25,12 @@ export default function ContactForm() {
         }}
       >
         <Form>
-          <div className="mb-[15px] text-poppins flex flex-col">
-            <text className="font-medium text-[14px] mb-[15px] text-poppins">
+          <div className="mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins flex flex-col">
+            <text className="font-medium text-[14px] xl:text-[14px] lg:text-[12px] mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins">
               Name
             </text>
             <Field
-              className="form-control w-[27vw] h-auto aspect-[520/50] rounded-[10px] bg-white pl-[1.25vw] text-[13px] text-poppins"
+              className="form-control w-[27vw] h-auto aspect-[520/50] rounded-[10px] bg-white pl-[1.25vw] text-[13px] xl:text-[13px] lg:text-[11px] text-poppins"
               id="name"
               type="text"
               name="name"
@@ -38,12 +38,12 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="mb-[15px] text-poppins flex flex-col ">
-            <text className="font-medium text-[14px] mb-[15px] text-poppins">
+          <div className="mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins flex flex-col ">
+            <text className="font-medium text-[14px] xl:text-[14px] lg:text-[12px] mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins">
               Email
             </text>
             <Field
-              className="form-control w-[27vw] h-auto aspect-[520/50] rounded-[10px] bg-white pl-[1.25vw] text-[13px] text-poppins"
+              className="form-control w-[27vw] h-auto aspect-[520/50] rounded-[10px] bg-white pl-[1.25vw] text-[13px] xl:text-[13px] lg:text-[11px] text-poppins"
               id="email"
               type="email"
               name="email"
@@ -52,12 +52,12 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="mb-[15px] text-poppins flex flex-col">
-            <text className="font-medium text-[14px] mb-[15px] text-poppins">
+          <div className="mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins flex flex-col">
+            <text className="font-medium text-[14px] xl:text-[14px] lg:text-[12px] mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins">
               Telephone Number
             </text>
             <Field
-              className="form-control w-[27vw] h-auto aspect-[520/50] rounded-[15px] bg-white pl-[1.25vw] top-0 text-[13px] text-poppins"
+              className="form-control w-[27vw] h-auto aspect-[520/50] rounded-[15px] bg-white pl-[1.25vw] top-0 text-[13px] xl:text-[13px] lg:text-[11px] text-poppins"
               id="phone"
               type="number"
               name="phone"
@@ -65,13 +65,14 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="mb-[15px] text-poppins flex flex-col">
-            <text className="font-medium text-[14px] mb-[15px] text-poppins">
+          <div className="mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins flex flex-col">
+            <text className="font-medium text-[14px] xl:text-[14px] lg:text-[12px] mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins">
               Message
             </text>
             <Field
-              className="form-control w-[27vw] h-auto aspect-[520/120] rounded-[15px] bg-white pl-[1.25vw] text-[13px] text-poppins"
+              className="form-control w-[27vw] h-auto aspect-[520/120] rounded-[15px] bg-white pl-[1.25vw] text-[13px] xl:text-[13px] lg:text-[11px] pt-[0.5vw] pr-[0.5vw] text-poppins"
               id="message"
+              as="textarea"
               type="text"
               name="message"
               placeholder="Your Message"
@@ -83,7 +84,7 @@ export default function ContactForm() {
               type="submit"
               className="btn btn-primary w-[6.66vw] h-auto aspect-[128/47] bg-[#2E3362] text-white rounded-[15px] flex items-center justify-center"
             >
-              <text className="text-white font-bold text-[12px] text-poppins">
+              <text className="text-white font-bold text-[12px] xl:text-[12px] lg:text-[10px] text-poppins">
                 Submit
               </text>
             </button>

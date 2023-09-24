@@ -3,13 +3,27 @@ import Link from "next/link";
 // Your client-side code here
 import React, { useState } from "react";
 import Search from "./components/search";
+import PropList from "./components/propList";
+import Pagination from "./components/pagination";
 
 export default function PropertyPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [properties, setProperties] = useState([
-    { id: 1, name: "Property 1", address: "Address 1" },
-    { id: 2, name: "Property 2", address: "Address 2" },
-    { id: 3, name: "Property 3", address: "Address 3" },
+    {
+      id: 1,
+      name: "Apartemen X Jkarta 1",
+      address: "Jl. Ganesa No 10, Lebak Siliwangi, Coblong, Bandun...",
+    },
+    {
+      id: 2,
+      name: "Apartemen X Jkarta 2",
+      address: "Jl. Ganesa No 10, Lebak Siliwangi, Coblong, Bandun...",
+    },
+    {
+      id: 3,
+      name: "Apartemen X Jkarta 3",
+      address: "Jl. Ganesa No 10, Lebak Siliwangi, Coblong, Bandun...",
+    },
     // Add more properties here
   ]);
 
@@ -20,7 +34,7 @@ export default function PropertyPage() {
   return (
     <div className="bg-[#EFF2FA] relative overflow-hidden w-full h-screen">
       <div className="Search">
-        <h2 className="mb-4 mt-[140px] text-[#000] text-center">
+        <h2 className="mb-4 mt-[140px] text-[#000] text-center text-poppins">
           Manage Properties
         </h2>
       </div>
@@ -28,37 +42,23 @@ export default function PropertyPage() {
       <div className="ml-[297px]">
         <div className="flex mb-[16px] rounded-[15px] bg-[#2E3362] w-[10.26vw] p-[10px] justify-center">
           <Link href="/editProp" className="">
-            <h6>Add Properties</h6>
+            <h6 className="text-poppins font-semibold">Add Properties</h6>
           </Link>
         </div>
 
         <Search onSearch={setSearchTerm} />
 
-        <div className="mt-[30px] w-[70vw]">
-          <table className="w-full table-fixed border-spacing-1">
-            <thead className="border-[3px]">
-              <tr>
-                <th className="w-1/6 font-poppins text-black">ID</th>
-                <th className="w-2/6 font-poppins text-black">Nama Properti</th>
-                <th className="w-2/6 font-poppins text-black">Alamat</th>
-                <th className="w-1/6 font-poppins text-black">Edit</th>
-              </tr>
-            </thead>
-            <tbody className="border-[3px]">
-              {filteredProperties.map((property) => (
-                <tr key={property.id}>
-                  <td>{property.id}</td>
-                  <td>{property.name}</td>
-                  <td>{property.address}</td>
-                  <td>
-                    <button className="bg-blue-500 text-white p-2 rounded-md">
-                      Edit
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div>
+          <PropList
+            data={filteredProperties}
+            header={["ID", "Nama", "Alamat", "Edit"]}
+          />
+          <Pagination
+            current={function (x: number): void | undefined {
+              throw new Error("Function not implemented.");
+            }}
+            totalPages={0}
+          />
         </div>
       </div>
     </div>

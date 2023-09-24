@@ -81,9 +81,9 @@ export default function Marketplace() {
   return (
     <main>
       {flow === 0 ? (
-        <div className="relative bg-[#FFFFFF] h-[100vh] pt-[75px] overflow-hidden text-poppins">
+        <div className="relative bg-[#FFFFFF] h-[100vh] pt-[75px] xl:pt-[75px] lg:pt-[70px] overflow-hidden text-poppins">
           <div className="px-[12.6vw]">
-            <div className="flex justify-between flex-row mb-[30px]">
+            <div className="flex justify-between flex-row mb-[30px] xl:mb-[30px] lg:mb-[20px]">
               <Search onSearch={handleSearch} />
               <button
                 className="relative w-[3.646vw] text-gray-600 flex flex-row aspect-[70/60] bg-white rounded-[10px] shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] items-center justify-center"
@@ -102,43 +102,43 @@ export default function Marketplace() {
                 } flex flex-col`}
               >
                 <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                  <text className="text-[#FFFFFF] font-medium text-[18px] text-poppins">
+                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                     Year
                   </text>
-                  <text className="text-[#FFFFFF] font-medium text-[18px] text-poppins">
+                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                     2023
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
                 <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                  <text className="text-[#FFFFFF] font-medium text-[18px] text-poppins">
+                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                     Net Worth
                   </text>
-                  <text className="text-[#FFFFFF] font-medium text-[18px] text-poppins">
+                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                     $10.000
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
                 <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                  <text className="text-[#FFFFFF] font-medium text-[18px] text-poppins">
+                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                     Balance
                   </text>
-                  <text className="text-[#FFFFFF] font-medium text-[18px] text-poppins">
+                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                     $10.000
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
                 <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                  <text className="text-[#FFFFFF] font-medium text-[18px] text-poppins">
+                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                     Earnings
                   </text>
-                  <text className="text-[#FFFFFF] font-medium text-[18px] text-poppins">
+                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                     $10.000
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
                 <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                  <text className="text-[#FFFFFF] font-medium text-[18px] text-poppins">
+                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                     Assets
                   </text>
                   {showAssets ? (
@@ -169,14 +169,14 @@ export default function Marketplace() {
                           <div className="w-full">
                             <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
                               <div className="flex flex-col">
-                                <text className="text-[#FFFFFF] text-[13px] font-medium text-poppins">
+                                <text className="text-[#FFFFFF] text-[13px] xl:text-[13px] lg:text-[11px] font-medium text-poppins">
                                   {data.nama}
                                 </text>
-                                <text className="text-[#CFF1EF] text-[12px] font-medium text-poppins">
+                                <text className="text-[#CFF1EF] text-[12px] xl:text-[12px] lg:text-[10px] font-medium text-poppins">
                                   {data.deskripsi}
                                 </text>
                               </div>
-                              <text className="text-[#FFFFFF] font-medium text-poppins text-[18px]">
+                              <text className="text-[#FFFFFF] font-medium text-poppins text-[18px] xl:text-[18px] lg:text-[15px]">
                                 {data.harga}
                               </text>
                             </div>
@@ -204,7 +204,7 @@ export default function Marketplace() {
                     setFlow(3), setShowAssets(false);
                   }}
                 >
-                  <text className="text-[12px] text-white font-bold text-poppins">
+                  <text className="text-[12px] xl:text-[12px] lg:text-[10px] text-white font-bold text-poppins">
                     End Simulation
                   </text>
                 </button>
@@ -213,11 +213,11 @@ export default function Marketplace() {
           </div>
         </div>
       ) : flow === 1 ? (
-        <div className="relative bg-[#CED3DE] pt-[95px] h-[100vh] overflow-hidden text-poppins">
+        <div className="relative bg-[#CED3DE] pt-[95px] xl:pt-[95px] lg:pt-[85px] h-[100vh] overflow-hidden text-poppins">
           <div className="px-[8.33vw]">
             <div className="w-full h-auto aspect-[1520/854] bg-white rounded-[20px] flex flex-col overflow-hidden">
               <div className="w-full h-auto aspect-[1520/74] bg-[#2E3362] flex items-center px-[2vw] justify-between">
-                <text className="text-white text-[21px] font-medium text-poppins">
+                <text className="text-white text-[21px] xl:text-[21px] lg:text-[17px] font-medium text-poppins">
                   Property Details
                 </text>
                 <button
@@ -231,47 +231,38 @@ export default function Marketplace() {
               <div className="flex flex-row w-full h-full">
                 <div className="w-[20vw] h-full bg-white flex flex-col relative items-center">
                   <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Price
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                       {currentMarker.harga}
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
                   <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      Age
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                      Condition
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      10
-                    </text>
-                  </div>
-                  <div className="w-full h-[1px] bg-[#808080]"></div>
-                  <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      Earning Value
-                    </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      $2000
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                      New
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
                   <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      Downpayment
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                      Tipe
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      $2000
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                      Rumah
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
                   <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      Mortgage
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                      Area
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      $2000
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                      20x20
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -279,7 +270,7 @@ export default function Marketplace() {
                     className="w-[7.7vw] h-auto aspect-[148/47] border-[3px] border-[#2E3362] rounded-[15px] absolute bottom-[40px] flex items-center justify-center"
                     onClick={handlePurchase}
                   >
-                    <text className="text-poppins text-[14px] font-bold text-[#2E3362]">
+                    <text className="text-poppins text-[14px] xl:text-[14px] lg:text-[12px] font-bold text-[#2E3362]">
                       Purchase
                     </text>
                   </button>
@@ -287,23 +278,28 @@ export default function Marketplace() {
 
                 <div className="w-[1px] h-full bg-[#808080]"></div>
 
-                <div className="w-[63.34vw] h-full bg-[#EFF2FA] pt-[35px] pl-[3.125vw] pr-[4.16vw] flex flex-row justify-between">
+                <div className="w-[63.34vw] h-full bg-[#EFF2FA] py-[35px] xl:py-[35px] lg:py-[25px] pl-[3.125vw] pr-[4.16vw] flex flex-row justify-between">
                   <div className="flex flex-col">
-                    <text className="text-[27px] font-medium text-poppins">
+                    <text className="text-[27px] xl:text-[27px] lg:text-[22px] font-medium text-poppins">
                       {currentMarker.deskripsi}
                     </text>
-                    <text className="text-[#5D716F] font-medium mb-[18px] text-poppins text-[14px]">
+                    <text className="text-[#5D716F] font-medium mb-[18px] xl:mb-[18px] lg:mb-[10px] text-poppins text-[14px] xl:text-[14px] lg:text-[12px]">
                       Alamat
                     </text>
                     <div className="w-[26.875vw] flex flex-row">
-                      <text className="text-[16px] font-medium text-poppins">
+                      <text className="text-[16px] xl:text-[16px] lg:text-[14px] font-medium text-poppins">
                         {currentMarker.bisnis}
                       </text>
                     </div>
                   </div>
 
                   <div className="w-[26vw] h-auto aspect-[500/500] relative z-10">
-                    <Image alt="Rumah" src={rumah} fill={true} />
+                    <Image
+                      alt="Rumah"
+                      src={rumah}
+                      fill={true}
+                      objectFit="cover"
+                    />
                   </div>
                 </div>
               </div>
@@ -311,11 +307,11 @@ export default function Marketplace() {
           </div>
         </div>
       ) : flow === 2 ? (
-        <div className="relative bg-[#CED3DE] pt-[95px] h-[100vh] pb-[60px] overflow-hidden text-poppins">
+        <div className="relative bg-[#CED3DE] pt-[95px] xl:pt-[95px] lg:pt-[85px] h-[100vh] overflow-hidden text-poppins">
           <div className="px-[8.33vw]">
             <div className="w-full h-auto aspect-[1520/854] bg-white rounded-[20px] flex flex-col overflow-hidden">
               <div className="w-full h-auto aspect-[1520/74] bg-[#2E3362] flex items-center px-[2vw] justify-between">
-                <text className="text-white text-[21px] font-medium text-poppins">
+                <text className="text-white text-[21px] xl:text-[21px] lg:text-[17px] font-medium text-poppins">
                   Property Details
                 </text>
                 <button
@@ -329,47 +325,38 @@ export default function Marketplace() {
               <div className="flex flex-row w-full h-full">
                 <div className="w-[20vw] h-full bg-white flex flex-col relative items-center">
                   <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Price
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                       $10.000
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
                   <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      Age
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px]text-poppins">
+                      Condition
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      10
-                    </text>
-                  </div>
-                  <div className="w-full h-[1px] bg-[#808080]"></div>
-                  <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      Earning Value
-                    </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      $2000
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                      New
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
                   <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      Downpayment
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                      Tipe
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      $2000
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                      Rumah
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
                   <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      Mortgage
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                      Area
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
-                      $2000
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                      20x20
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -377,7 +364,7 @@ export default function Marketplace() {
                     className="w-[7.7vw] h-auto aspect-[148/47] border-[3px] border-[#2E3362] rounded-[15px] absolute bottom-[40px] flex items-center justify-center"
                     onClick={handleSell}
                   >
-                    <text className="text-poppins text-[14px] font-bold text-[#2E3362]">
+                    <text className="text-poppins text-[14px] xl:text-[14px] lg:text-[12px] font-bold text-[#2E3362]">
                       Sell
                     </text>
                   </button>
@@ -385,23 +372,28 @@ export default function Marketplace() {
 
                 <div className="w-[1px] h-full bg-[#808080]"></div>
 
-                <div className="w-[63.34vw] h-full bg-[#EFF2FA] pt-[35px] pl-[3.125vw] pr-[4.16vw] flex flex-row justify-between">
+                <div className="w-[63.34vw] h-full bg-[#EFF2FA] py-[35px] xl:py-[35px] lg:py-[25px] pl-[3.125vw] pr-[4.16vw] flex flex-row justify-between">
                   <div className="flex flex-col">
-                    <text className="text-[27px] font-medium text-poppins">
+                    <text className="text-[27px] xl:text-[27px] lg:text-[22px] font-medium text-poppins">
                       {currentMarker.deskripsi}
                     </text>
-                    <text className="text-[#5D716F] font-medium mb-[18px] text-poppins text-[14px]">
+                    <text className="text-[#5D716F] font-medium mb-[18px] xl:mb-[18px] lg:mb-[10px] text-poppins text-[14px] xl:text-[14px] lg:text-[12px]">
                       Alamat
                     </text>
                     <div className="w-[26.875vw] flex flex-row">
-                      <text className="text-[16px] font-medium text-poppins">
+                      <text className="text-[16px] xl:text-[16px] lg:text-[14px] font-medium text-poppins">
                         {currentMarker.bisnis}
                       </text>
                     </div>
                   </div>
 
                   <div className="w-[26vw] h-auto aspect-[500/500] relative z-10">
-                    <Image alt="Rumah" src={rumah} fill={true} />
+                    <Image
+                      alt="Rumah"
+                      src={rumah}
+                      fill={true}
+                      objectFit="cover"
+                    />
                   </div>
                 </div>
               </div>
@@ -409,11 +401,11 @@ export default function Marketplace() {
           </div>
         </div>
       ) : (
-        <div className="relative bg-[#CED3DE] pt-[95px] h-[100vh] overflow-hidden text-poppins">
+        <div className="relative bg-[#CED3DE] pt-[95px] xl:pt-[95px] lg:pt-[85px] h-[100vh] overflow-hidden text-poppins">
           <div className="px-[8.33vw]">
             <div className="w-full h-auto aspect-[1520/854] bg-white rounded-[20px] flex flex-col overflow-hidden">
               <div className="w-full h-auto aspect-[1520/74] bg-[#2E3362] flex items-center px-[2vw] justify-between">
-                <text className="text-white text-[21px] font-medium text-poppins">
+                <text className="text-white text-[21px] xl:text-[21px] lg:text-[17px] font-medium text-poppins">
                   User Report
                 </text>
                 <Link
@@ -427,37 +419,37 @@ export default function Marketplace() {
               <div className="flex flex-row w-full h-full">
                 <div className="w-[20vw] h-full bg-white flex flex-col">
                   <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Net Worth
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                       $10.000
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
                   <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Increase
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                       10x
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
                   <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Years
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                       20
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
                   <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Earnings
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                       $2000
                     </text>
                   </div>
@@ -467,7 +459,7 @@ export default function Marketplace() {
                       showAssets ? "bg-[#F8F8F8]" : "bg-white"
                     } h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]`}
                   >
-                    <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
+                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Assets
                     </text>
                     {showAssets ? (
@@ -496,14 +488,14 @@ export default function Marketplace() {
                         <div key={index} className="w-full">
                           <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
                             <div className="flex flex-col">
-                              <text className="text-[#1E2351] text-[13px] font-medium text-poppins">
+                              <text className="text-[#1E2351] text-[13px] xl:text-[13px] lg:text-[11px] font-medium text-poppins">
                                 {data.nama}
                               </text>
-                              <text className="text-[#CFF1EF] text-[12px] font-medium text-poppins">
+                              <text className="text-[#CFF1EF] text-[12px] xl:text-[12px] lg:text-[10px] font-medium text-poppins">
                                 {data.deskripsi}
                               </text>
                             </div>
-                            <text className="text-[#1E2351] font-medium text-[18px] text-poppins">
+                            <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                               {data.harga}
                             </text>
                           </div>
@@ -518,50 +510,55 @@ export default function Marketplace() {
 
                 <div className="w-[1px] h-full bg-[#808080]"></div>
 
-                <div className="w-[63.34vw] h-full bg-[#EFF2FA] pt-[35px] pl-[3.125vw] pr-[4.16vw] flex flex-row justify-between">
+                <div className="w-[63.34vw] h-full bg-[#EFF2FA] py-[35px] xl:py-[35px] lg:py-[25px] pl-[3.125vw] pr-[4.16vw] flex flex-row justify-between">
                   <div className="flex flex-col">
-                    <text className="text-[27px] font-medium text-poppins">
+                    <text className="text-[27px] xl:text-[27px] lg:text-[22px] font-medium text-poppins">
                       Nama Property
                     </text>
-                    <text className="text-[#5D716F] font-medium mb-[18px] text-poppins text-[14px]">
+                    <text className="text-[#5D716F] font-medium mb-[18px] xl:mb-[18px] lg:mb-[10px] text-poppins text-[14px] xl:text-[14px] lg:text-[12px]">
                       Alamat
                     </text>
-                    <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] items-center justify-between">
-                      <text className="text-[20px] font-medium text-poppins">
+                    <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] xl:mb-[14px] lg:mb-[8px] items-center justify-between">
+                      <text className="text-[20px] xl:text-[20px] lg:text-[16px] font-medium text-poppins">
                         {" "}
                         Starting price
                       </text>
-                      <text className="font-medium text-[18px] text-poppins">
+                      <text className="font-medium text-[18px] xl:text-[18px] lg:text-[14px] text-poppins">
                         $10.000
                       </text>
                     </div>
-                    <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] items-center justify-between">
-                      <text className="text-[20px] font-medium text-poppins">
+                    <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] xl:mb-[14px] lg:mb-[8px] items-center justify-between">
+                      <text className="text-[20px] xl:text-[20px] lg:text-[16px] font-medium text-poppins">
                         {" "}
                         Current Price
                       </text>
-                      <text className="font-medium text-[18px] text-poppins">
+                      <text className="font-medium text-[18px] xl:text-[18px] lg:text-[14px] text-poppins">
                         $10.000
                       </text>
                     </div>
-                    <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] items-center justify-between">
-                      <text className="text-[20px] font-medium text-poppins">
+                    <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] xl:mb-[14px] lg:mb-[8px] items-center justify-between">
+                      <text className="text-[20px] xl:text-[20px] lg:text-[16px] font-medium text-poppins">
                         {" "}
                         Years on hold
                       </text>
-                      <text className="font-medium text-[18px] text-poppins">
+                      <text className="font-medium text-[18px] xl:text-[18px] lg:text-[14px] text-poppins">
                         $10.000
                       </text>
                     </div>
                     <div className="w-[26.875vw] flex flex-row">
-                      <text className="text-[16px] font-medium text-poppins">
+                      <text className="text-[16px] xl:text-[16px] lg:text-[14px] font-medium text-poppins">
                         deskripsi
                       </text>
                     </div>
                   </div>
 
                   <div className="w-[26vw] h-auto aspect-[500/500] relative z-10">
-                    <Image alt="Rumah" src={rumah} fill={true} />
+                    <Image
+                      alt="Rumah"
+                      src={rumah}
+                      fill={true}
+                      objectFit="cover"
+                    />
                   </div>
                 </div>
               </div>

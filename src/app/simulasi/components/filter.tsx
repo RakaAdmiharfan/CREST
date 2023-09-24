@@ -17,7 +17,7 @@ export default function Filter() {
   return (
     <div className="w-[28.7vw] bg-white h-auto aspect-[551/332] rounded-[15px] flex flex-col justify-center px-[2.5vw]">
       <div className="w-[23.7vw] h-auto aspect-[455/268] flex flex-col justify-between">
-        <text className="text-[18px] font-medium text-poppins">
+        <text className="text-[18px] xl:text-[18px] lg:text-[15px] font-medium text-poppins">
           Filter Berdasarkan Harga
         </text>
         <div className="flex flex-row justify-between">
@@ -29,7 +29,9 @@ export default function Filter() {
                 }`}
                 onClick={() => handleFilter(1)}
               ></button>
-              <text className="text-poppins text-[14px]">{"< Rp 500jt"}</text>
+              <text className="text-poppins text-[14px] xl:text-[14px] lg:text-[11px]">
+                {"< Rp 500jt"}
+              </text>
             </div>
             <div className="flex flex-row">
               <button
@@ -38,7 +40,9 @@ export default function Filter() {
                 }`}
                 onClick={() => handleFilter(2)}
               ></button>
-              <text className="text-poppins text-[14px]">Rp 500jt - 1M</text>
+              <text className="text-poppins text-[14px] xl:text-[14px] lg:text-[11px]">
+                Rp 500jt - 1M
+              </text>
             </div>
             <div className="flex flex-row">
               <button
@@ -47,7 +51,9 @@ export default function Filter() {
                 }`}
                 onClick={() => handleFilter(3)}
               ></button>
-              <text className="text-poppins text-[14px]">Rp 1.5M - 2M </text>
+              <text className="text-poppins text-[14px] xl:text-[14px] lg:text-[11px]">
+                Rp 1.5M - 2M{" "}
+              </text>
             </div>
             <div className="flex flex-row">
               <button
@@ -56,7 +62,9 @@ export default function Filter() {
                 }`}
                 onClick={() => handleFilter(4)}
               ></button>
-              <text className="text-poppins text-[14px]">Rp 2M - 2.5M</text>
+              <text className="text-poppins text-[14px] xl:text-[14px] lg:text-[11px]">
+                Rp 2M - 2.5M
+              </text>
             </div>
           </div>
           <div className="flex flex-col justify-between w-[9.2vw] h-auto aspect-[177/204]">
@@ -68,7 +76,9 @@ export default function Filter() {
                 }`}
                 onClick={() => handleFilter(5)}
               ></button>
-              <text className="text-poppins text-[14px]">Rp 2.5M - 3M</text>
+              <text className="text-poppins text-[14px] xl:text-[14px] lg:text-[11px]">
+                Rp 2.5M - 3M
+              </text>
             </div>
             <div className="flex flex-row">
               <button
@@ -77,7 +87,9 @@ export default function Filter() {
                 }`}
                 onClick={() => handleFilter(6)}
               ></button>
-              <text className="text-poppins text-[14px]">Rp 3M - 3.5M</text>
+              <text className="text-poppins text-[14px] xl:text-[14px] lg:text-[11px]">
+                Rp 3M - 3.5M
+              </text>
             </div>
             <div className="flex flex-row">
               <button
@@ -86,7 +98,9 @@ export default function Filter() {
                 }`}
                 onClick={() => handleFilter(7)}
               ></button>
-              <text className="text-poppins text-[14px]">Rp 3.5M - 4M </text>
+              <text className="text-poppins text-[14px] xl:text-[14px] lg:text-[11px]">
+                Rp 3.5M - 4M{" "}
+              </text>
             </div>
             <div className="flex flex-row">
               <button
@@ -95,7 +109,9 @@ export default function Filter() {
                 }`}
                 onClick={() => handleFilter(8)}
               ></button>
-              <text className="text-poppins text-[14px]">{"> Rp 4M"}</text>
+              <text className="text-poppins text-[14px] xl:text-[14px] lg:text-[11px]">
+                {"> Rp 4M"}
+              </text>
             </div>
           </div>
         </div>

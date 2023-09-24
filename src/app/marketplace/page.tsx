@@ -43,9 +43,9 @@ export default function Marketplace() {
   };
 
   return (
-    <main className="bg-[#EFF2FA] relative overflow-hidden pt-[110px] pb-[50px]">
+    <main className="bg-[#EFF2FA] relative overflow-hidden pt-[110px] xl:pt-[110px] lg:pt-[95px] pb-[50px] xl:pb-[50px] lg:pb-[35px]">
       <div className="px-[12.6vw]">
-        <div className="flex justify-between flex-row mb-[30px]">
+        <div className="flex justify-between flex-row mb-[30px] xl:mb-[30px] lg:mb-[20px]">
           <Search onSearch={handleSearch} />
           <button
             className="relative w-[3.646vw] text-gray-600 flex flex-row aspect-[70/60] bg-white rounded-[10px] shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] items-center justify-center"
@@ -57,7 +57,7 @@ export default function Marketplace() {
           </button>
         </div>
 
-        <div className="w-full h-auto aspect-[1436/866] relative mb-[75px]">
+        <div className="w-full h-auto aspect-[1436/866] relative mb-[75px] xl:mb-[75px] lg:mb-[55px]">
           {showFilter ? (
             <div className="absolute z-30 top-0 right-0">
               <Filter />

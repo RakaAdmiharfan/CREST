@@ -39,7 +39,7 @@ export default function signup() {
         </div>
 
         <div className="w-[50vw] h-full relative flex items-center justify-center">
-          <div className="w-[50vw] h-full absolute">
+          <div className="w-[50vw] h-[100vh] absolute">
             <Image alt="House" src={house} fill={true} objectFit="cover" />
           </div>
           <div className="z-10 flex justify-center flex-col items-center">

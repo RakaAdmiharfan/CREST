@@ -11,7 +11,7 @@ export default function DatePicker({ selectedDate, onChange }) {
   return (
     <React.Fragment>
       <div className="w-[14.8vw] relative h-auto aspect-[284/40] bg-[#F5F5F5] rounded-[10px] shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] justify-center flex items-center">
-        <text className="absolute text-poppins text-[14px]">
+        <text className="absolute text-poppins text-[14px] xl:text-[14px] lg:text-[12px]">
           {formattedDate}
         </text>
         <Datepicker

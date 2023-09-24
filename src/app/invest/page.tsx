@@ -27,38 +27,38 @@ export default function Home() {
         </div>
 
         <div className="flex bg-slate-100 flex-row items-center justify-between px-[10.88vw] mt-[45px] xl:mt-[45px] lg:mt-[35px] z-20">
-          <div className="w-[33.9vw] h-auto aspect-[651/430] flex flex-col justify-center items-center text-center gap-8 xl:gap-8 lg:gap-[22px]">
+          <Link
+            href="/marketplace"
+            className="w-[33.9vw] h-auto aspect-[651/430] flex flex-col justify-center items-center text-center gap-8 xl:gap-8 lg:gap-[22px] z-40"
+          >
             <h3 className="text-black text-[38px] xl:text-[38px] lg:text-[30px] font-semibold text-poppins">
               Marketplace
             </h3>
-            <Link
-              href="/marketplace"
-              className="w-[8.33vw] h-auto aspect-square relative"
-            >
+            <div className="w-[8.33vw] h-auto aspect-square relative">
               <Image alt="Kios" src={kios} fill={true} />
-            </Link>
+            </div>
             {/* <Image src={kios} alt="Kios" /> */}
             <p className="text-poppins text-[16px] xl:text-[16px] lg:text-[14px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
               interdum non risus sed finibus.{" "}
             </p>
-          </div>
-          <div className="w-[33.9vw] h-auto aspect-[651/430] flex flex-col justify-center items-center text-center gap-8 xl:gap-8 lg:gap-[22px]">
+          </Link>
+          <Link
+            href="/simulasi"
+            className="w-[33.9vw] h-auto aspect-[651/430] flex flex-col justify-center items-center text-center gap-8 xl:gap-8 lg:gap-[22px]"
+          >
             <h3 className="text-black text-[38px] xl:text-[38px] lg:text-[30px] font-semibold text-poppins">
               Simulation
             </h3>
-            <Link
-              href="/simulasi"
-              className="w-[8.33vw] h-auto aspect-square relative"
-            >
+            <div className="w-[8.33vw] h-auto aspect-square relative">
               <Image alt="PC" src={pc} fill={true} />
-            </Link>
+            </div>
             {/* <Image src={pc} alt="PC" /> */}
             <p className="text-poppins text-[16px] xl:text-[16px] lg:text-[14px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
               interdum non risus sed finibus.
             </p>
-          </div>
+          </Link>
         </div>
       </div>
     </main>

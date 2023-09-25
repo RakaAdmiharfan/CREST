@@ -18,8 +18,8 @@ const Navbar = () => {
 
   console.log(nav);
   return (
-    <div className="w-full h-auto lg:aspect-[1920/80] aspect-[360/50] z-50 absolute flex flex-row justify-between items-center">
-      <div className="bg-[#2E3362] w-[100vw] h-auto lg:aspect-[1920/80] aspect-[360/50] flex justify-between items-center lg:px-[5.2vw] px-[7.77vw]">
+    <div className="w-full  z-50 fixed flex flex-row justify-between items-center">
+      <div className="bg-[#2E3362] w-[100vw] h-auto lg:aspect-[1920/80] aspect-[360/50] flex justify-between items-center lg:px-[5.2vw] px-[7.77vw] relative">
         <Link
           href="/"
           className="lg:w-[9.53vw] w-[23.3vw] h-auto lg:aspect-[183/80] aspect-[84/37] relative"
@@ -91,7 +91,7 @@ const Navbar = () => {
           )}
         </div>
         <div
-          className={`lg:hidden absolute top-0 ${
+          className={`lg:hidden fixed top-0 ${
             nav ? "translate-x-0" : "translate-x-full"
           } transition duration-300 right-0 bottom-0 flex justify-center items-center w-[80vw] h-screen bg-[#2E3362] text-center text-white`}
         >

@@ -17,7 +17,7 @@ export default function Question() {
   return (
     <div>
       {handle1 === 1 ? (
-        <div className="mb-[20px] xl:mb-[20px] lg:mb-[15px]">
+        <div className="mb-[10px] sm:mb-[15px] md:mb-[20px] xl:mb-[20px] lg:mb-[15px]">
           <button
             className="pl-[1.146vw] pr-[1.46vw] w-[41.875vw] aspect-[804/50] bg-[#212653] rounded-t-[10px] flex items-center justify-between "
             onClick={() => {
@@ -39,7 +39,7 @@ export default function Question() {
         </div>
       ) : (
         <button
-          className="mb-[20px] xl:mb-[20px] lg:mb-[15px] pl-[1.146vw] pr-[1.46vw] w-[41.875vw] aspect-[804/50] bg-[#212653] rounded-[10px] flex items-center justify-between "
+          className="mb-[10px] sm:mb-[15px] md:mb-[20px] xl:mb-[20px] lg:mb-[15px] pl-[1.146vw] pr-[1.46vw] w-[41.875vw] aspect-[804/50] bg-[#212653] rounded-[10px] flex items-center justify-between "
           onClick={() => {
             setHandle1(1);
           }}

@@ -134,7 +134,7 @@ export default function Home() {
                 {property.Price}
               </h5>
             </div>
-            <p className="w-[21.66vw] lg:w-[14.58vw] mt-[2px] sm:mt-[3px] md:mt-[4px] xl:mt-[10px] lg:mt-[5px] text-[#C8C8C8] font-poppins text-base font-medium text-justify text-[6px] sm:text-[8px] md:text-[10px] xl:text-[14px] lg:text-[12px]  text-poppins">
+            <p className="w-[21.66vw] lg:w-[14.58vw] mt-[2px] sm:mt-[3px] md:mt-[4px] xl:mt-[10px] lg:mt-[5px] text-[#C8C8C8] font-poppins font-medium text-justify text-[6px] sm:text-[8px] md:text-[10px] xl:text-[14px] lg:text-[12px]  text-poppins">
               {property.Addres}
             </p>
           </div>

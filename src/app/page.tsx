@@ -59,64 +59,34 @@ const properties = [
     Addres:
       "Jl. Ganesa No.10, Lb. Siliwangi, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132",
   },
-
-  // Add more employees here
 ];
 
 export default function Home() {
-  // const containerRef = useRef(null);
-  // const [startX, setStartX] = useState<number | null>(null);
-  // const [scrollLeftStart, setScrollLeftStart] = useState<number | null>(null);
-
-  // const handleMouseDown = (e: React.MouseEvent) => {
-  //   const container = containerRef.current;
-  //   if (!container) return;
-
-  //   setStartX(e.clientX);
-  //   setScrollLeftStart(container.scrollLeft);
-
-  //   document.addEventListener("mousemove", handleMouseMove);
-  //   document.addEventListener("mouseup", handleMouseUp);
-  // };
-
-  // const handleMouseMove = (e: React.MouseEvent) => {
-  //   const container = containerRef.current;
-  //   if (!container) return;
-
-  //   const dx = startX !== null ? startX - e.clientX : 0;
-  //   container.scrollLeft = scrollLeftStart !== null ? scrollLeftStart + dx : 0;
-  // };
-
-  // const handleMouseUp = () => {
-  //   document.removeEventListener("mousemove", handleMouseMove);
-  //   document.removeEventListener("mouseup", handleMouseUp);
-  // };
-
   return (
-    <main className=" bg-white">
-      <div className="invest-easier h-[620px] xl:h-[620px] lg:h-[450px] overflow-hidden bg-no-repeat">
-        <div className="Tulisan Utama ml-[6.25vw] mt-[150px] xl:mt-[150px] lg:mt-[120px]">
-          <h1 className="text-montserrat w-[33.28vw] text-[70px] xl:text-[67px] lg:text-[54px]">
+    <main className=" bg-white overflow-hidden">
+      <div className="invest-easier h-[320px] sm:h-[370px] md:h-[450px] xl:h-[620px] lg:h-[450px] overflow-hidden bg-no-repeat">
+        <div className="Tulisan Utama ml-[8vw] lg:ml-[6.25vw] mt-[90px] sm:mt-[130px] md:mt-[140px] xl:mt-[150px] lg:mt-[120px]">
+          <h1 className="text-montserrat w-[78.8vw] lg:w-[33.28vw] text-[30px] sm:text-[40px] md:text-[50px] xl:text-[67px] lg:text-[54px]">
             {" "}
             Invest Easier
           </h1>
-          <h5 className="w-[33.28vw] mt-[50px] xl:mt-[50px] lg:mt-[35px] text-poppins text-white text-justify xl:text-[18px] lg:text-[16px] text-shadow-md">
+          <h5 className="w-[78.8vw] lg:w-[33.28vw] mt-[20px] sm:mt-[25px] md:mt-[35px] xl:mt-[50px] lg:mt-[35px] text-poppins text-white text-justify text-[13px] sm:text-[14px] md:text-[15px] xl:text-[18px] lg:text-[16px] text-shadow-md">
             Use our cutting-edge technology to learn and unlock endless
             possibilities through real estate. Find out real estate investments
             tailored solely for your needs."
           </h5>
         </div>
 
-        <div className="Tombol ml-[6.25vw] mt-[50px] xl:mt-[50px] lg:mt-[35px] flex flex-row">
+        <div className="Tombol ml-[8vw] lg:ml-[6.25vw] mt-[25px] sm:mt-[25px] md:mt-[35px] xl:mt-[50px] lg:mt-[35px] flex flex-row">
           <Link
             href="/Trending"
-            className="w-[11.75vw] h-auto aspect-[228/47] button mr-[1vw] bg-[#2E3362] flex flex-col items-center justify-center text-white font-poppins font-semibold text-[14px] xl:text-[14px] lg:text-[12px] rounded-[15px]"
+            className="w-[28.8vw] lg:w-[11.75vw] h-auto aspect-[104/21] lg:aspect-[228/47] button mr-[2.5vw] lg:mr-[1vw] bg-[#2E3362] flex flex-col items-center justify-center text-white font-poppins font-semibold text-[11px] sm:text-[13px] md:text-[14px] xl:text-[14px] lg:text-[12px] rounded-[15px]"
           >
             Explore Properties
           </Link>
           <Link
             href="/about"
-            className="w-[7.45vw] h-auto aspect-[143/47] button border-white border-[3px] flex flex-col items-center justify-center text-white font-poppins font-semibold text-[14px] xl:text-[14px] lg:text-[12px] rounded-[15px]"
+            className="w-[18.5vw] lg:w-[7.45vw] h-auto aspect-[66.6/21] lg:aspect-[143/47] button border-white border-[3px] flex flex-col items-center justify-center text-white font-poppins font-semibold text-[11px] sm:text-[13px] md:text-[14px] xl:text-[14px] lg:text-[12px] rounded-[15px]"
           >
             About Us
           </Link>
@@ -156,7 +126,6 @@ export default function Home() {
                 fill={true}
               />
             </div>
-            {/* <img src={property.imgurl} alt={`Property ${index + 1}`} /> */}
             <div className="w-[14.58vw] flex flex-row mt-[24px] xl:mt-[24px] lg:mt-[16px] justify-between">
               <h5 className="text-poppins text-[18px] xl:text-[18px] lg:text-[16px]">
                 {property.Type}

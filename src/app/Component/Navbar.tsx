@@ -7,6 +7,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import "./Navbar.css";
 
 import logo from "@/../public/Home/Logo.png";
+import options from "@/../public/images/navbar.svg";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -17,14 +18,17 @@ const Navbar = () => {
 
   console.log(nav);
   return (
-    <div className="w-full h-auto aspect-[1920/80] z-50 absolute flex flex-row justify-between items-center">
-      <div className="bg-[#2E3362] w-[100vw] h-auto aspect-[1920/80] flex justify-between items-center px-[5.2vw]">
-        <Link href="/" className="w-[9.53vw] h-auto aspect-[183/80] relative">
+    <div className="w-full h-auto lg:aspect-[1920/80] aspect-[360/50] z-50 absolute flex flex-row justify-between items-center">
+      <div className="bg-[#2E3362] w-[100vw] h-auto lg:aspect-[1920/80] aspect-[360/50] flex justify-between items-center lg:px-[5.2vw] px-[7.77vw]">
+        <Link
+          href="/"
+          className="lg:w-[9.53vw] w-[23.3vw] h-auto lg:aspect-[183/80] aspect-[84/37] relative"
+        >
           <Image alt="Logo" src={logo} fill={true} />
         </Link>
 
         <div className="flex flex-row">
-          <ul className="hidden sm:flex mr-[2vw] gap-[3vw]">
+          <ul className="hidden lg:flex mr-[2vw] gap-[3vw]">
             <li className="p-4">
               <Link
                 href="/invest"
@@ -59,7 +63,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <ul className="hidden sm:flex gap-[1vw] flex-row items-center justify-center">
+          <ul className="hidden lg:flex gap-[1vw] flex-row items-center justify-center">
             <li>
               <Link
                 href="/login"
@@ -79,17 +83,17 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div onClick={handleNav} className="block sm:hidden z-40">
+        <div onClick={handleNav} className="block lg:hidden z-40">
           {nav ? (
-            <AiOutlineClose size={20} style={{ color: `white` }} />
+            <AiOutlineClose size={30} style={{ color: `white` }} />
           ) : (
-            <AiOutlineMenu size={20} />
+            <AiOutlineMenu style={{ color: "white" }} size={30} />
           )}
         </div>
         <div
-          className={`sm:hidden absolute top-0 ${
+          className={`lg:hidden absolute top-0 ${
             nav ? "translate-x-0" : "translate-x-full"
-          } transition duration-300 right-0 bottom-0 flex justify-center items-center w-[80vw] h-screen bg-[#14037D] text-center text-white`}
+          } transition duration-300 right-0 bottom-0 flex justify-center items-center w-[80vw] h-screen bg-[#2E3362] text-center text-white`}
         >
           <ul>
             <li onClick={handleNav} className="p-4">

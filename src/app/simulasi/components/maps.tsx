@@ -48,7 +48,7 @@ export default function Maps(props) {
   return (
     <div>
       {isLoaded ? (
-        <div className="w-[full] h-auto aspect-[1052/796] relative rounded-[15px] z-10">
+        <div className="w-[full] h-auto aspect-[312/236] lg:aspect-[1052/796] relative rounded-[5px] lg:rounded-[15px] z-10">
           <GoogleMap
             zoom={12}
             center={{ lat: -6.914744, lng: 107.60981 }}

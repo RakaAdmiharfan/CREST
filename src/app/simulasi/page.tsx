@@ -81,76 +81,76 @@ export default function Marketplace() {
   return (
     <main>
       {flow === 0 ? (
-        <div className="relative bg-[#FFFFFF] h-[100vh] pt-[75px] xl:pt-[75px] lg:pt-[70px] overflow-hidden text-poppins">
-          <div className="px-[12.6vw]">
-            <div className="flex justify-between flex-row mb-[30px] xl:mb-[30px] lg:mb-[20px]">
+        <div className="relative bg-[#FFFFFF] min-h-[100vh] pt-[70px] sm:pt-[95px] md:pt-[130px] xl:pt-[75px] lg:pt-[70px] overflow-hidden text-poppins pb-[20px] sm:pb-[25px] md:pb-[30px] lg:pb-[0px]">
+          <div className="px-[6.6vw] lg:px-[12.6vw]">
+            <div className="flex justify-between flex-row mb-[20px] sm:mb-[22px] md:mb-[25px] xl:mb-[30px] lg:mb-[20px]">
               <Search onSearch={handleSearch} />
               <button
-                className="relative w-[3.646vw] text-gray-600 flex flex-row aspect-[70/60] bg-white rounded-[10px] shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] items-center justify-center"
+                className="relative w-[6.66vw] lg:w-[3.646vw] text-gray-600 flex flex-row aspect-[70/60] bg-white rounded-[5px] lg:rounded-[10px] shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] items-center justify-center"
                 onClick={handleFilter}
               >
-                <div className="w-[1.56vw] h-auto aspect-square relative mx-[1vw] z-10 ">
+                <div className="w-[2.7vw] lg:w-[1.56vw] h-auto aspect-square relative mx-[1vw] z-10 ">
                   <Image alt="Filter" src={filter} fill={true} />
                 </div>
               </button>
             </div>
 
-            <div className="w-full h-auto aspect-[1436/796] flex flex-row rounded-[20px] overflow-hidden">
+            <div className="w-full h-auto lg:aspect-[1436/796] flex flex-col-reverse lg:flex-row lg:rounded-[20px] overflow-hidden">
               <div
-                className={`w-[20vw] h-full ${
+                className={`w-full lg:w-[20vw] h-full ${
                   showAssets ? "bg-[#464C87]" : "bg-[#30366C]"
-                } flex flex-col`}
+                } flex flex-col rounded-[10px] lg:rounded-none overflow-hidden`}
               >
-                <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                <div className="w-full bg-[#30366C] h-auto aspect-[312/50] lg:aspect-[384/100] flex flex-row items-center justify-between px-[3.88vw] lg:px-[1.46vw]">
+                  <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
                     Year
                   </text>
-                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                  <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] text-poppins">
                     2023
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
-                <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                <div className="w-full bg-[#30366C] h-auto aspect-[312/50] lg:aspect-[384/100] flex flex-row items-center justify-between px-[3.88vw] lg:px-[1.46vw]">
+                  <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
                     Net Worth
                   </text>
-                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                  <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
                     $10.000
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
-                <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                <div className="w-full bg-[#30366C] h-auto aspect-[312/50] lg:aspect-[384/100] flex flex-row items-center justify-between px-[3.88vw] lg:px-[1.46vw]">
+                  <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
                     Balance
                   </text>
-                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                  <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
                     $10.000
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
-                <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                <div className="w-full bg-[#30366C] h-auto aspect-[312/50] lg:aspect-[384/100] flex flex-row items-center justify-between px-[3.88vw] lg:px-[1.46vw]">
+                  <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
                     Earnings
                   </text>
-                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                  <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
                     $10.000
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
-                <div className="w-full bg-[#30366C] h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                  <text className="text-[#FFFFFF] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                <div className="w-full bg-[#30366C] h-auto aspect-[312/50] lg:aspect-[384/100] flex flex-row items-center justify-between px-[3.88vw] lg:px-[1.46vw]">
+                  <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
                     Assets
                   </text>
                   {showAssets ? (
                     <button
-                      className="w-[1.46vw] h-auto aspect-square relative z-10 "
+                      className="w-[3.88vw] lg:w-[1.46vw] h-auto aspect-square relative z-10 "
                       onClick={() => setShowAssets(false)}
                     >
                       <Image alt="Arrow Up" src={arrowupwhite} fill={true} />
                     </button>
                   ) : (
                     <button
-                      className="w-[1.46vw] h-auto aspect-square relative z-10 "
+                      className="w-[3.88vw] lg:w-[1.46vw] h-auto aspect-square relative z-10 "
                       onClick={() => setShowAssets(true)}
                     >
                       <Image
@@ -162,26 +162,26 @@ export default function Marketplace() {
                   )}
                 </div>
                 {showAssets ? (
-                  <div className="overflow-auto w-full h-auto aspect-[384/301] no-scrollbar">
+                  <div className="overflow-auto w-full h-auto aspect-[312/150] lg:aspect-[384/301] no-scrollbar">
                     {assets.map((data, index) => (
                       <div key={index} className="w-full">
                         {assets.length > 0 ? (
                           <div className="w-full">
-                            <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
+                            <div className="w-full h-auto aspect-[312/50] lg:aspect-[384/100] flex flex-row items-center justify-between px-[3.88vw] lg:px-[1.46vw]">
                               <div className="flex flex-col">
-                                <text className="text-[#FFFFFF] text-[13px] xl:text-[13px] lg:text-[11px] font-medium text-poppins">
+                                <text className="text-[#FFFFFF] text-[10px] sm:text-[13px] md:text-[15px] xl:text-[13px] lg:text-[11px] font-medium text-poppins">
                                   {data.nama}
                                 </text>
-                                <text className="text-[#CFF1EF] text-[12px] xl:text-[12px] lg:text-[10px] font-medium text-poppins">
+                                <text className="text-[#CFF1EF] text-[9px] sm:text-[12px] md:text-[14px] xl:text-[12px] lg:text-[10px] font-medium text-poppins">
                                   {data.deskripsi}
                                 </text>
                               </div>
-                              <text className="text-[#FFFFFF] font-medium text-poppins text-[18px] xl:text-[18px] lg:text-[15px]">
+                              <text className="text-[#FFFFFF] font-medium text-poppins text-[13px] sm:text-[15px] md:text-[18px] xl:text-[18px] lg:text-[15px]">
                                 {data.harga}
                               </text>
                             </div>
                             <div className="flex items-center justify-center">
-                              <div className=" bg-[#808080] w-[14.58vw] h-[1px]"></div>
+                              <div className=" bg-[#808080] w-[57vw] lg:w-[14.58vw] h-[1px]"></div>
                             </div>{" "}
                           </div>
                         ) : null}
@@ -191,7 +191,7 @@ export default function Marketplace() {
                 ) : null}
               </div>
 
-              <div className="flex h-auto w-[54.28vw] aspect-[1052/796] flex-col relative">
+              <div className="flex h-auto w-full lg:w-[54.8vw] lg:aspect-[1052/796] rounded-[5px] lg:rounded-none mb-[25px] sm:mb-[30px] md:mb-[35px] lg:mb-[0px] flex-col relative overflow-hidden">
                 {showFilter ? (
                   <div className="absolute z-30 top-0 right-0">
                     <Filter />
@@ -199,12 +199,22 @@ export default function Marketplace() {
                 ) : null}
                 <Maps onClick={handleMaps} />
                 <button
-                  className="w-[10.4vw] h-auto aspect-[200/47] absolute bg-[#EB5B5B] z-20 bottom-[20px] ml-[1.67vw] rounded-[15px] flex items-center justify-center"
+                  className="w-[19.7vw] lg:w-[10.4vw] aspect-[71/17] h-auto lg:aspect-[200/47] absolute bg-white z-20 bottom-[48px] sm:bottom-[55px] md:bottom-[68px] xl:bottom-[60px] lg:bottom-[55px] ml-[2.2vw] lg:ml-[1.67vw] rounded-[5px] lg:rounded-[15px] flex items-center justify-center"
                   onClick={() => {
                     setFlow(3), setShowAssets(false);
                   }}
                 >
-                  <text className="text-[12px] xl:text-[12px] lg:text-[10px] text-white font-bold text-poppins">
+                  <text className="text-[8px] sm:text-[11px] md:text-[14px] xl:text-[12px] lg:text-[10px] text-black font-bold text-poppins">
+                    Next A Year
+                  </text>
+                </button>
+                <button
+                  className="w-[19.7vw] lg:w-[10.4vw] aspect-[71/17] h-auto lg:aspect-[200/47] absolute bg-[#EB5B5B] z-20 bottom-[20px] ml-[2.2vw] lg:ml-[1.67vw] rounded-[5px] lg:rounded-[15px] flex items-center justify-center"
+                  onClick={() => {
+                    setFlow(3), setShowAssets(false);
+                  }}
+                >
+                  <text className="text-[8px] sm:text-[11px] md:text-[14px] xl:text-[12px] lg:text-[10px] text-white font-bold text-poppins">
                     End Simulation
                   </text>
                 </button>

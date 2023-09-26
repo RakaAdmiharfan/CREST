@@ -38,10 +38,11 @@ export default function signup() {
           </div>
         </div>
 
+        <div className="w-[50vw] h-[100vh] absolute right-0">
+          <Image alt="House" src={house} fill={true} objectFit="cover" />
+        </div>
+
         <div className="w-[50vw] h-full relative flex items-center justify-center">
-          <div className="w-[50vw] h-[100vh] absolute">
-            <Image alt="House" src={house} fill={true} objectFit="cover" />
-          </div>
           <div className="z-10 flex justify-center flex-col items-center">
             <text className="text-[40px] xl:text-[40px] lg:text-[32px] text-white font-semibold mb-[30px] xl:mb-[30px] lg:mb-[15px] text-poppins">
               Have an Account?

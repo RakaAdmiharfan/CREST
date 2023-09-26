@@ -90,11 +90,11 @@ export default function Home() {
   // };
 
   return (
-    <main className=" bg-white">
+    <main className=" bg-white relative overflow-hidden">
       <div className="invest-easier h-[801.5px] overflow-hidden bg-no-repeat">
         <div className="Tulisan Utama ml-[120px] mt-[156px]">
           <h1 className="text-montserrat"> Invest Easier</h1>
-          <h5 className="w-[560px] mt-[68px] font-poppins text-white text-justify text-shadow-md">
+          <h5 className="text-montserrat w-[560px] mt-[68px] font-poppins text-white text-justify text-shadow-md">
             Use our cutting-edge technology to learn and unlock endless
             possibilities through real estate. Find out real estate investments
             tailored solely for your needs."

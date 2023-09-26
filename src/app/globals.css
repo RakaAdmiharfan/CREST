@@ -27,11 +27,11 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
-  
-  .text-poppins{
+
+  .text-poppins {
     font-family: var(--font-poppins);
   }
-  .text-montserrat{
+  .text-montserrat {
     font-family: var(--font-montserrat);
   }
 }

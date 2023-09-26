@@ -19,183 +19,183 @@ export default function Question() {
       {handle1 === 1 ? (
         <div className="mb-[10px] sm:mb-[15px] md:mb-[20px] xl:mb-[20px] lg:mb-[15px]">
           <button
-            className="pl-[1.146vw] pr-[1.46vw] w-[41.875vw] aspect-[804/50] bg-[#212653] rounded-t-[10px] flex items-center justify-between "
+            className="pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/38] lg:aspect-[804/50] bg-[#212653] rounded-t-[5px] lg:rounded-t-[10px] flex items-center justify-between "
             onClick={() => {
               setHandle1(0);
             }}
           >
-            <text className="text-[#FFF] text-[14px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
+            <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
               {faqData.faq[0].question}
             </text>
-            <div className="w-[1.25vw] h-auto aspect-square relative">
+            <div className="w-[3.2vw] lg:w-[1.25vw] h-auto aspect-square relative">
               <Image alt="Plus" src={minus} fill={true} />
             </div>
           </button>
-          <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
-            <text className="text-[#FFF] text-[16px] xl:text-[16px] lg:text-[13px] font-normal text-poppins">
+          <div className="py-[1vw] md:py-[0.5vw] pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/74] lg:aspect-[804/144] bg-[#8495BF] rounded-t-[5pz] rounded-b-[10px] flex items-center ">
+            <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[13px] font-normal text-poppins">
               {faqData.faq[0].answer}
             </text>
           </div>
         </div>
       ) : (
         <button
-          className="mb-[10px] sm:mb-[15px] md:mb-[20px] xl:mb-[20px] lg:mb-[15px] pl-[1.146vw] pr-[1.46vw] w-[41.875vw] aspect-[804/50] bg-[#212653] rounded-[10px] flex items-center justify-between "
+          className="mb-[10px] sm:mb-[15px] md:mb-[20px] xl:mb-[20px] lg:mb-[15px] pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/38] lg:aspect-[804/50] bg-[#212653] rounded-[5px] lg:rounded-[10px] flex items-center justify-between "
           onClick={() => {
             setHandle1(1);
           }}
         >
-          <text className="text-[#FFF] text-[14px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
+          <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
             {faqData.faq[0].question}
           </text>
-          <div className="w-[1.25vw] h-auto aspect-square relative">
+          <div className="w-[3.2vw] lg:w-[1.25vw] h-auto aspect-square relative">
             <Image alt="Plus" src={plus} fill={true} />
           </div>
         </button>
       )}
 
       {handle2 === 1 ? (
-        <div className="mb-[20px] xl:mb-[20px] lg:mb-[15px]">
+        <div className="mb-[10px] sm:mb-[15px] md:mb-[20px] xl:mb-[20px] lg:mb-[15px]">
           <button
-            className="pl-[1.146vw] pr-[1.46vw] w-[41.875vw] aspect-[804/50] bg-[#212653] rounded-t-[10px] flex items-center justify-between "
+            className="pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/38] lg:aspect-[804/50] bg-[#212653] rounded-t-[5px] lg:rounded-t-[10px] flex items-center justify-between"
             onClick={() => {
               setHandle2(0);
             }}
           >
-            <text className="text-[#FFF] text-[14px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
+            <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
               {faqData.faq[1].question}
             </text>
-            <div className="w-[1.25vw] h-auto aspect-square relative">
+            <div className="w-[3.2vw] lg:w-[1.25vw] h-auto aspect-square relative">
               <Image alt="Plus" src={minus} fill={true} />
             </div>
           </button>
-          <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
-            <text className="text-[#FFF] text-[16px] xl:text-[16px] lg:text-[13px] font-normal text-poppins">
+          <div className="py-[1vw] md:py-[0.5vw] pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/74] lg:aspect-[804/144] bg-[#8495BF] rounded-t-[5pz] rounded-b-[10px] flex items-center">
+            <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[13px] font-normal text-poppins">
               {faqData.faq[1].answer}
             </text>
           </div>
         </div>
       ) : (
         <button
-          className="mb-[20px] xl:mb-[20px] lg:mb-[15px] pl-[1.146vw] pr-[1.46vw] w-[41.875vw] aspect-[804/50] bg-[#212653] rounded-[10px] flex items-center justify-between "
+          className="mb-[10px] sm:mb-[15px] md:mb-[20px] xl:mb-[20px] lg:mb-[15px] pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/38] lg:aspect-[804/50] bg-[#212653] rounded-[5px] lg:rounded-[10px] flex items-center justify-between"
           onClick={() => {
             setHandle2(1);
           }}
         >
-          <text className="text-[#FFF] text-[14px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
+          <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
             {faqData.faq[1].question}
           </text>
-          <div className="w-[1.25vw] h-auto aspect-square relative">
+          <div className="w-[3.2vw] lg:w-[1.25vw] h-auto aspect-square relative">
             <Image alt="Plus" src={plus} fill={true} />
           </div>
         </button>
       )}
 
       {handle3 === 1 ? (
-        <div className="mb-[20px] xl:mb-[20px] lg:mb-[15px]">
+        <div className="mb-[10px] sm:mb-[15px] md:mb-[20px] xl:mb-[20px] lg:mb-[15px]">
           <button
-            className="pl-[1.146vw] pr-[1.46vw] w-[41.875vw] aspect-[804/50] bg-[#212653] rounded-t-[10px] flex items-center justify-between "
+            className="pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/38] lg:aspect-[804/50] bg-[#212653] rounded-t-[5px] lg:rounded-t-[10px] flex items-center justify-between"
             onClick={() => {
               setHandle3(0);
             }}
           >
-            <text className="text-[#FFF] text-[14px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
+            <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
               {faqData.faq[2].question}
             </text>
-            <div className="w-[1.25vw] h-auto aspect-square relative">
+            <div className="w-[3.2vw] lg:w-[1.25vw] h-auto aspect-square relative">
               <Image alt="Plus" src={minus} fill={true} />
             </div>
           </button>
-          <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
-            <text className="text-[#FFF] text-[16px] xl:text-[16px] lg:text-[13px] font-normal text-poppins">
+          <div className="py-[1vw] md:py-[0.5vw] pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/74] lg:aspect-[804/144] bg-[#8495BF] rounded-t-[5pz] rounded-b-[10px] flex items-center">
+            <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[13px] font-normal text-poppins">
               {faqData.faq[2].answer}
             </text>
           </div>
         </div>
       ) : (
         <button
-          className="mb-[20px] xl:mb-[20px] lg:mb-[15px] pl-[1.146vw] pr-[1.46vw] w-[41.875vw] aspect-[804/50] bg-[#212653] rounded-[10px] flex items-center justify-between "
+          className="mb-[10px] sm:mb-[15px] md:mb-[20px] xl:mb-[20px] lg:mb-[15px] pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/38] lg:aspect-[804/50] bg-[#212653] rounded-[5px] lg:rounded-[10px] flex items-center justify-between"
           onClick={() => {
             setHandle3(1);
           }}
         >
-          <text className="text-[#FFF] text-[14px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
+          <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
             {faqData.faq[2].question}
           </text>
-          <div className="w-[1.25vw] h-auto aspect-square relative">
+          <div className="w-[3.2vw] lg:w-[1.25vw] h-auto aspect-square relative">
             <Image alt="Plus" src={plus} fill={true} />
           </div>
         </button>
       )}
 
       {handle4 === 1 ? (
-        <div className="mb-[20px] xl:mb-[20px] lg:mb-[15px]">
+        <div className="mb-[10px] sm:mb-[15px] md:mb-[20px] xl:mb-[20px] lg:mb-[15px]">
           <button
-            className="pl-[1.146vw] pr-[1.46vw] w-[41.875vw] aspect-[804/50] bg-[#212653] rounded-t-[10px] flex items-center justify-between "
+            className="pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/38] lg:aspect-[804/50] bg-[#212653] rounded-t-[5px] lg:rounded-t-[10px] flex items-center justify-between"
             onClick={() => {
               setHandle4(0);
             }}
           >
-            <text className="text-[#FFF] text-[14px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
+            <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
               {faqData.faq[3].question}
             </text>
-            <div className="w-[1.25vw] h-auto aspect-square relative">
+            <div className="w-[3.2vw] lg:w-[1.25vw] h-auto aspect-square relative">
               <Image alt="Plus" src={minus} fill={true} />
             </div>
           </button>
-          <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
-            <text className="text-[#FFF] text-[16px] xl:text-[16px] lg:text-[13px] font-normal text-poppins">
+          <div className="py-[1vw] md:py-[0.5vw] pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/74] lg:aspect-[804/144] bg-[#8495BF] rounded-t-[5pz] rounded-b-[10px] flex items-center">
+            <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[13px] font-normal text-poppins">
               {faqData.faq[3].answer}
             </text>
           </div>
         </div>
       ) : (
         <button
-          className="mb-[20px] xl:mb-[20px] lg:mb-[15px] pl-[1.146vw] pr-[1.46vw] w-[41.875vw] aspect-[804/50] bg-[#212653] rounded-[10px] flex items-center justify-between "
+          className="mb-[10px] sm:mb-[15px] md:mb-[20px] xl:mb-[20px] lg:mb-[15px] pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/38] lg:aspect-[804/50] bg-[#212653] rounded-[5px] lg:rounded-[10px] flex items-center justify-between"
           onClick={() => {
             setHandle4(1);
           }}
         >
-          <text className="text-[#FFF] text-[14px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
+          <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
             {faqData.faq[3].question}
           </text>
-          <div className="w-[1.25vw] h-auto aspect-square relative">
+          <div className="w-[3.2vw] lg:w-[1.25vw] h-auto aspect-square relative">
             <Image alt="Plus" src={plus} fill={true} />
           </div>
         </button>
       )}
 
       {handle5 === 1 ? (
-        <div className="mb-[20px] xl:mb-[20px] lg:mb-[15px]">
+        <div className="mb-[10px] sm:mb-[15px] md:mb-[20px] xl:mb-[20px] lg:mb-[15px]">
           <button
-            className="pl-[1.146vw] pr-[1.46vw] w-[41.875vw] aspect-[804/50] bg-[#212653] rounded-t-[10px] flex items-center justify-between "
+            className="pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/38] lg:aspect-[804/50] bg-[#212653] rounded-t-[5px] lg:rounded-t-[10px] flex items-center justify-between"
             onClick={() => {
               setHandle5(0);
             }}
           >
-            <text className="text-[#FFF] text-[14px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
+            <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
               {faqData.faq[4].question}
             </text>
-            <div className="w-[1.25vw] h-auto aspect-square relative">
+            <div className="w-[3.2vw] lg:w-[1.25vw] h-auto aspect-square relative">
               <Image alt="Plus" src={minus} fill={true} />
             </div>
           </button>
-          <div className="pl-[1.146vw] pr-[3.23vw] w-[41.875vw] aspect-[804/144] bg-[#8495BF] rounded-b-[10px] flex items-center ">
-            <text className="text-[#FFF] text-[16px] xl:text-[16px] lg:text-[13px] font-normal text-poppins">
+          <div className="py-[1vw] md:py-[0.5vw] pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/74] lg:aspect-[804/144] bg-[#8495BF] rounded-t-[5pz] rounded-b-[10px] flex items-center">
+            <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[16px] font-normal text-poppins">
               {faqData.faq[4].answer}
             </text>
           </div>
         </div>
       ) : (
         <button
-          className="mb-[20px] xl:mb-[20px] lg:mb-[15px] pl-[1.146vw] pr-[1.46vw] w-[41.875vw] aspect-[804/50] bg-[#212653] rounded-[10px] flex items-center justify-between "
+          className="mb-[10px] sm:mb-[15px] md:mb-[20px] xl:mb-[20px] lg:mb-[15px] pl-[2.7vw] pr-[3.6vw] lg:pl-[1.146vw] lg:pr-[1.46vw] w-[82.2vw] lg:w-[41.875vw] aspect-[296/38] lg:aspect-[804/50] bg-[#212653] rounded-[5px] lg:rounded-[10px] flex items-center justify-between"
           onClick={() => {
             setHandle5(1);
           }}
         >
-          <text className="text-[#FFF] text-[14px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
+          <text className="text-[#FFF] text-[12px] sm:text-[16px] md:text-[20px] xl:text-[14px] lg:text-[12px] font-bold text-poppins">
             {faqData.faq[4].question}
           </text>
-          <div className="w-[1.25vw] h-auto aspect-square relative">
+          <div className="w-[3.2vw] lg:w-[1.25vw] h-auto aspect-square relative">
             <Image alt="Plus" src={plus} fill={true} />
           </div>
         </button>

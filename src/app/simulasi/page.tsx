@@ -223,72 +223,91 @@ export default function Marketplace() {
           </div>
         </div>
       ) : flow === 1 ? (
-        <div className="relative bg-[#CED3DE] pt-[95px] xl:pt-[95px] lg:pt-[85px] h-[100vh] overflow-hidden text-poppins">
-          <div className="px-[8.33vw]">
-            <div className="w-full h-auto aspect-[1520/854] bg-white rounded-[20px] flex flex-col overflow-hidden">
-              <div className="w-full h-auto aspect-[1520/74] bg-[#2E3362] flex items-center px-[2vw] justify-between">
-                <text className="text-white text-[21px] xl:text-[21px] lg:text-[17px] font-medium text-poppins">
+        <div className="relative bg-[#CED3DE] pt-[75px] sm:pt-[110px] md:pt-[140px] xl:pt-[95px] lg:pt-[85px] min-h-[100vh] pb-[20px] sm:pb-[25px] md:pb-[30px] lg:pb-[0px] overflow-hidden text-poppins">
+          <div className="px-[5vw] lg:px-[8.33vw]">
+            <div className="w-full h-auto aspect-[324/670] lg:aspect-[1520/854] bg-white rounded-[5px] lg:rounded-[20px] flex flex-col overflow-hidden">
+              <div className="w-full h-auto aspect-[324/48] lg:aspect-[1520/74] bg-[#2E3362] flex items-center px-[4.4vw] lg:px-[2vw] justify-between">
+                <text className="text-white text-[17px] sm:text-[23px] md:text-[29px] xl:text-[21px] lg:text-[17px] font-medium text-poppins">
                   Property Details
                 </text>
                 <button
-                  className="w-[1.25vw] h-auto aspect-square relative z-10 "
+                  className="w-[4.4vw] lg:w-[1.25vw] h-auto aspect-square relative z-10 "
                   onClick={() => setFlow(0)}
                 >
                   <Image alt="x" src={x} fill={true} />
                 </button>
               </div>
 
+              <div className="w-full lg:hidden h-auto aspect-[324/248] relative z-10">
+                <Image alt="Rumah" src={rumah} fill={true} objectFit="cover" />
+              </div>
+
+              <div className="w-full lg:hidden h-auto aspect-[324/55] flex-col flex pl-[5.5vw] justify-center">
+                <text className="text-[12px] sm:text-[15px] md:text-[19px] font-semibold text-poppins">
+                  {currentMarker.deskripsi}
+                </text>
+                <text className="text-[#5D716F] text-[11px] sm:text-[14px] md:text-[18px] font-semibold text-poppins">
+                  Alamat
+                </text>
+              </div>
+              <div className="lg:hidden w-full h-[1px] bg-[#808080]"></div>
+
               <div className="flex flex-row w-full h-full">
-                <div className="w-[20vw] h-full bg-white flex flex-col relative items-center">
-                  <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                <div className="w-full lg:w-[20vw] h-full bg-white flex flex-col relative items-center">
+                  <div className="w-full h-auto aspect-[324/34] lg:aspect-[384/100] flex flex-row items-center justify-between px-[5.5vw] lg:px-[1.46vw]">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Price
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       {currentMarker.harga}
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
-                  <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                  <div className="w-full h-auto aspect-[324/34] lg:aspect-[384/100] flex flex-row items-center justify-between px-[5.5vw] lg:px-[1.46vw]">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Condition
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       New
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
-                  <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                  <div className="w-full h-auto aspect-[324/34] lg:aspect-[384/100] flex flex-row items-center justify-between px-[5.5vw] lg:px-[1.46vw]">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Tipe
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Rumah
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
-                  <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                  <div className="w-full h-auto aspect-[324/34] lg:aspect-[384/100] flex flex-row items-center justify-between px-[5.5vw] lg:px-[1.46vw]">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Area
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       20x20
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
+                  <div className="lg:hidden w-[79.4vw] h-auto flex mt-[10px] sm:mt-[15px] md:mt-[20px]">
+                    <text className="text-[#1E2351] font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
+                      {currentMarker.bisnis}
+                    </text>
+                  </div>
                   <button
-                    className="w-[7.7vw] h-auto aspect-[148/47] border-[3px] border-[#2E3362] rounded-[15px] absolute bottom-[40px] flex items-center justify-center"
+                    className="w-[20vw] lg:w-[7.7vw] h-auto aspect-[73/23] lg:aspect-[148/47] border-[3px] border-[#2E3362] rounded-[8px] lg:rounded-[15px] absolute bottom-[20px] sm:bottom-[25px] md:bottom-[30px] lg:bottom-[40px] flex items-center justify-center"
                     onClick={handlePurchase}
                   >
-                    <text className="text-poppins text-[14px] xl:text-[14px] lg:text-[12px] font-bold text-[#2E3362]">
+                    <text className="text-poppins text-[12px] sm:text-[15px] md:text-[18px] xl:text-[14px] lg:text-[12px] font-bold text-[#2E3362]">
                       Purchase
                     </text>
                   </button>
                 </div>
 
-                <div className="w-[1px] h-full bg-[#808080]"></div>
+                <div className="hidden lg:flex w-[1px] h-full bg-[#808080]"></div>
 
-                <div className="w-[63.34vw] h-full bg-[#EFF2FA] py-[35px] xl:py-[35px] lg:py-[25px] pl-[3.125vw] pr-[4.16vw] flex flex-row justify-between">
+                <div className="hidden w-[63.34vw] h-full bg-[#EFF2FA] py-[35px] xl:py-[35px] lg:py-[25px] pl-[3.125vw] pr-[4.16vw] lg:flex flex-row justify-between">
                   <div className="flex flex-col">
                     <text className="text-[27px] xl:text-[27px] lg:text-[22px] font-medium text-poppins">
                       {currentMarker.deskripsi}
@@ -317,72 +336,91 @@ export default function Marketplace() {
           </div>
         </div>
       ) : flow === 2 ? (
-        <div className="relative bg-[#CED3DE] pt-[95px] xl:pt-[95px] lg:pt-[85px] h-[100vh] overflow-hidden text-poppins">
-          <div className="px-[8.33vw]">
-            <div className="w-full h-auto aspect-[1520/854] bg-white rounded-[20px] flex flex-col overflow-hidden">
-              <div className="w-full h-auto aspect-[1520/74] bg-[#2E3362] flex items-center px-[2vw] justify-between">
-                <text className="text-white text-[21px] xl:text-[21px] lg:text-[17px] font-medium text-poppins">
+        <div className="relative bg-[#CED3DE] pt-[75px] sm:pt-[110px] md:pt-[140px] xl:pt-[95px] lg:pt-[85px] min-h-[100vh] pb-[20px] sm:pb-[25px] md:pb-[30px] lg:pb-[0px] overflow-hidden text-poppins">
+          <div className="px-[5vw] lg:px-[8.33vw]">
+            <div className="w-full h-auto aspect-[324/670] lg:aspect-[1520/854] bg-white rounded-[5px] lg:rounded-[20px] flex flex-col overflow-hidden">
+              <div className="w-full h-auto aspect-[324/48] lg:aspect-[1520/74] bg-[#2E3362] flex items-center px-[4.4vw] lg:px-[2vw] justify-between">
+                <text className="text-white text-[17px] sm:text-[23px] md:text-[29px] xl:text-[21px] lg:text-[17px] font-medium text-poppins">
                   Property Details
                 </text>
                 <button
-                  className="w-[1.25vw] h-auto aspect-square relative z-10 "
+                  className="w-[4.4vw] lg:w-[1.25vw] h-auto aspect-square relative z-10 "
                   onClick={() => setFlow(0)}
                 >
                   <Image alt="x" src={x} fill={true} />
                 </button>
               </div>
 
+              <div className="w-full lg:hidden h-auto aspect-[324/248] relative z-10">
+                <Image alt="Rumah" src={rumah} fill={true} objectFit="cover" />
+              </div>
+
+              <div className="w-full lg:hidden h-auto aspect-[324/55] flex-col flex pl-[5.5vw] justify-center">
+                <text className="text-[12px] sm:text-[15px] md:text-[19px] font-semibold text-poppins">
+                  {currentMarker.deskripsi}
+                </text>
+                <text className="text-[#5D716F] text-[11px] sm:text-[14px] md:text-[18px] font-semibold text-poppins">
+                  Alamat
+                </text>
+              </div>
+              <div className="lg:hidden w-full h-[1px] bg-[#808080]"></div>
+
               <div className="flex flex-row w-full h-full">
-                <div className="w-[20vw] h-full bg-white flex flex-col relative items-center">
-                  <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                <div className="w-full lg:w-[20vw] h-full bg-white flex flex-col relative items-center">
+                  <div className="w-full h-auto aspect-[324/34] lg:aspect-[384/100] flex flex-row items-center justify-between px-[5.5vw] lg:px-[1.46vw]">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Price
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
-                      $10.000
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
+                      {currentMarker.harga}
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
-                  <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px]text-poppins">
+                  <div className="w-full h-auto aspect-[324/34] lg:aspect-[384/100] flex flex-row items-center justify-between px-[5.5vw] lg:px-[1.46vw]">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Condition
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       New
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
-                  <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                  <div className="w-full h-auto aspect-[324/34] lg:aspect-[384/100] flex flex-row items-center justify-between px-[5.5vw] lg:px-[1.46vw]">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Tipe
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Rumah
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
-                  <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                  <div className="w-full h-auto aspect-[324/34] lg:aspect-[384/100] flex flex-row items-center justify-between px-[5.5vw] lg:px-[1.46vw]">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Area
                     </text>
-                    <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
+                    <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       20x20
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
+                  <div className="lg:hidden w-[79.4vw] h-auto flex mt-[10px] sm:mt-[15px] md:mt-[20px]">
+                    <text className="text-[#1E2351] font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
+                      {currentMarker.bisnis}
+                    </text>
+                  </div>
                   <button
-                    className="w-[7.7vw] h-auto aspect-[148/47] border-[3px] border-[#2E3362] rounded-[15px] absolute bottom-[40px] flex items-center justify-center"
+                    className="w-[20vw] lg:w-[7.7vw] h-auto aspect-[73/23] lg:aspect-[148/47] border-[3px] border-[#2E3362] rounded-[8px] lg:rounded-[15px] absolute bottom-[20px] sm:bottom-[25px] md:bottom-[30px] lg:bottom-[40px] flex items-center justify-center"
                     onClick={handleSell}
                   >
-                    <text className="text-poppins text-[14px] xl:text-[14px] lg:text-[12px] font-bold text-[#2E3362]">
+                    <text className="text-poppins text-[12px] sm:text-[15px] md:text-[18px] xl:text-[14px] lg:text-[12px] font-bold text-[#2E3362]">
                       Sell
                     </text>
                   </button>
                 </div>
 
-                <div className="w-[1px] h-full bg-[#808080]"></div>
+                <div className="hidden lg:flex w-[1px] h-full bg-[#808080]"></div>
 
-                <div className="w-[63.34vw] h-full bg-[#EFF2FA] py-[35px] xl:py-[35px] lg:py-[25px] pl-[3.125vw] pr-[4.16vw] flex flex-row justify-between">
+                <div className="hidden w-[63.34vw] h-full bg-[#EFF2FA] py-[35px] xl:py-[35px] lg:py-[25px] pl-[3.125vw] pr-[4.16vw] lg:flex flex-row justify-between">
                   <div className="flex flex-col">
                     <text className="text-[27px] xl:text-[27px] lg:text-[22px] font-medium text-poppins">
                       {currentMarker.deskripsi}

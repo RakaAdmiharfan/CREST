@@ -41,7 +41,13 @@ export default function PropertyPage() {
 
       <div className="ml-[297px]">
         <div className="flex mb-[16px] rounded-[15px] bg-[#2E3362] w-[10.26vw] p-[10px] justify-center">
-          <Link href="/editProp" className="">
+          <Link
+            href={{
+              pathname: "/editProp",
+              query: { id: "new" },
+            }}
+            className=""
+          >
             <h6 className="text-poppins font-semibold">Add Properties</h6>
           </Link>
         </div>

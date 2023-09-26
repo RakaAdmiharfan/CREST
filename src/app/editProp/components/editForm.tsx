@@ -1,6 +1,10 @@
+"use client";
+
 import { Formik, Form, Field } from "formik";
 import React, { useEffect, useState } from "react";
 import InputField from "./inputBox";
+import { useParams } from "next/navigation";
+import { useRouter } from "next/router";
 
 const EditFormComponent: React.FC = () => {
   const [initialData, setInitialData] = useState({
@@ -14,6 +18,9 @@ const EditFormComponent: React.FC = () => {
     DeskripsiBisnis: "",
     DeskripsiPribadi: "",
   });
+
+  // const router = useRouter();
+  // const { id } = router.query;
 
   // Function to fetch data from the database (you need to implement this)
   const fetchDataFromDatabase = async () => {
@@ -42,7 +49,9 @@ const EditFormComponent: React.FC = () => {
     <Formik initialValues={initialData} onSubmit={handleSubmit}>
       <Form>
         <div className="Nama Properti mb-[20px]">
-          <h5 className="text-poppins font-medium mb-[20px]">Nama Properti</h5>
+          <h5 className="text-poppins font-medium mb-[20px]">
+            {"Nama Properti"}
+          </h5>
           <div className="w-[68.75vw]">
             <InputField
               name="namaProperti"

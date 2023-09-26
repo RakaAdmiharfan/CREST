@@ -43,21 +43,21 @@ export default function Marketplace() {
   };
 
   return (
-    <main className="bg-[#EFF2FA] relative overflow-hidden pt-[110px] xl:pt-[110px] lg:pt-[95px] pb-[50px] xl:pb-[50px] lg:pb-[35px]">
-      <div className="px-[12.6vw]">
-        <div className="flex justify-between flex-row mb-[30px] xl:mb-[30px] lg:mb-[20px]">
+    <main className="bg-[#EFF2FA] min-h-[100vh] relative overflow-hidden pt-[70px] sm:pt-[95px] md:pt-[130px] xl:pt-[110px] lg:pt-[95px] pb-[50px] xl:pb-[50px] lg:pb-[35px]">
+      <div className="px-[6.6vw] lg:px-[12.6vw]">
+        <div className="flex justify-between flex-row mb-[20px] sm:mb-[22px] md:mb-[25px] xl:mb-[30px] lg:mb-[20px]">
           <Search onSearch={handleSearch} />
           <button
-            className="relative w-[3.646vw] text-gray-600 flex flex-row aspect-[70/60] bg-white rounded-[10px] shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] items-center justify-center"
+            className="relative w-[6.66vw] lg:w-[3.646vw] text-gray-600 flex flex-row aspect-[24/20] lg:aspect-[70/60] bg-white rounded-[5px] lg:rounded-[10px] shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] items-center justify-center"
             onClick={handleFilter}
           >
-            <div className="w-[1.56vw] h-auto aspect-square relative mx-[1vw] z-10 ">
+            <div className="w-[2.7vw] lg:w-[1.56vw] h-auto aspect-square relative mx-[1vw] z-10 ">
               <Image alt="Filter" src={filter} fill={true} />
             </div>
           </button>
         </div>
 
-        <div className="w-full h-auto aspect-[1436/866] relative mb-[75px] xl:mb-[75px] lg:mb-[55px]">
+        <div className="w-full h-auto aspect-[312/187] lg:aspect-[1436/866] relative mb-[25px] sm:mb-[30px] md:mb-[35px] xl:mb-[75px] lg:mb-[55px]">
           {showFilter ? (
             <div className="absolute z-30 top-0 right-0">
               <Filter />

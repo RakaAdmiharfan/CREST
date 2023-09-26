@@ -25,12 +25,12 @@ export default function ContactForm() {
         }}
       >
         <Form>
-          <div className="mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins flex flex-col">
-            <text className="font-medium text-[14px] xl:text-[14px] lg:text-[12px] mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins">
+          <div className="mb-[10px] sm:mb-[13px] md:mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins flex flex-col">
+            <text className="font-medium text-[14px] sm:text-[18px] md:text-[22px] xl:text-[14px] lg:text-[12px] mb-[10px] sm:mb-[13px] md:mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins">
               Name
             </text>
             <Field
-              className="form-control w-[27vw] h-auto aspect-[520/50] rounded-[10px] bg-white pl-[1.25vw] text-[13px] xl:text-[13px] lg:text-[11px] text-poppins"
+              className="form-control w-[77.7vw] lg:w-[27vw] h-auto aspect-[308/30] lg:aspect-[520/50] rounded-[6px] lg:rounded-[10px] bg-white pl-[3vw] lg:pl-[1.25vw] text-[13px] sm:text-[17px] md:text-[21px] xl:text-[13px] lg:text-[11px] text-poppins"
               id="name"
               type="text"
               name="name"
@@ -38,12 +38,12 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins flex flex-col ">
-            <text className="font-medium text-[14px] xl:text-[14px] lg:text-[12px] mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins">
+          <div className="mb-[10px] sm:mb-[13px] md:mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins flex flex-col ">
+            <text className="font-medium text-[14px] sm:text-[18px] md:text-[22px] xl:text-[14px] lg:text-[12px] mb-[10px] sm:mb-[13px] md:mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins">
               Email
             </text>
             <Field
-              className="form-control w-[27vw] h-auto aspect-[520/50] rounded-[10px] bg-white pl-[1.25vw] text-[13px] xl:text-[13px] lg:text-[11px] text-poppins"
+              className="form-control w-[77.7vw] lg:w-[27vw] h-auto aspect-[308/30] lg:aspect-[520/50] rounded-[6px] lg:rounded-[10px] bg-white pl-[3vw] lg:pl-[1.25vw] text-[13px] sm:text-[17px] md:text-[21px] xl:text-[13px] lg:text-[11px] text-poppins"
               id="email"
               type="email"
               name="email"
@@ -52,12 +52,12 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins flex flex-col">
-            <text className="font-medium text-[14px] xl:text-[14px] lg:text-[12px] mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins">
+          <div className="mb-[10px] sm:mb-[13px] md:mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins flex flex-col">
+            <text className="font-medium text-[14px] sm:text-[18px] md:text-[22px] xl:text-[14px] lg:text-[12px] mb-[10px] sm:mb-[13px] md:mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins">
               Telephone Number
             </text>
             <Field
-              className="form-control w-[27vw] h-auto aspect-[520/50] rounded-[15px] bg-white pl-[1.25vw] top-0 text-[13px] xl:text-[13px] lg:text-[11px] text-poppins"
+              className="form-control w-[77.7vw] lg:w-[27vw] h-auto aspect-[308/30] lg:aspect-[520/50] rounded-[6px] lg:rounded-[10px] bg-white  pl-[3vw] lg:pl-[1.25vw] sm:text-[17px] md:text-[21px] top-0 text-[13px] xl:text-[13px] lg:text-[11px] text-poppins"
               id="phone"
               type="number"
               name="phone"
@@ -65,12 +65,12 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins flex flex-col">
-            <text className="font-medium text-[14px] xl:text-[14px] lg:text-[12px] mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins">
+          <div className="mb-[10px] sm:mb-[13px] md:mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins flex flex-col">
+            <text className="font-medium text-[14px] sm:text-[18px] md:text-[22px] xl:text-[14px] lg:text-[12px] mb-[10px] sm:mb-[13px] md:mb-[15px] xl:mb-[15px] lg:mb-[10px] text-poppins">
               Message
             </text>
             <Field
-              className="form-control w-[27vw] h-auto aspect-[520/120] rounded-[15px] bg-white pl-[1.25vw] text-[13px] xl:text-[13px] lg:text-[11px] pt-[0.5vw] pr-[0.5vw] text-poppins"
+              className="form-control w-[77.7vw] lg:w-[27vw] h-auto aspect-[307/151] lg:aspect-[520/50] rounded-[6px] lg:rounded-[15px] bg-white pl-[3vw] lg:pl-[1.25vw] text-[13px] sm:text-[17px] md:text-[21px] xl:text-[13px] lg:text-[11px] pt-[0.5vw] pr-[0.5vw] text-poppins"
               id="message"
               as="textarea"
               type="text"
@@ -79,12 +79,12 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="w-[27vw] flex flex-col items-center justify-center text-poppins">
+          <div className="w-[77.7vw] lg:w-[27vw] flex flex-col items-center justify-center text-poppins">
             <button
               type="submit"
-              className="btn btn-primary w-[6.66vw] h-auto aspect-[128/47] bg-[#2E3362] text-white rounded-[15px] flex items-center justify-center"
+              className="btn btn-primary w-[20.8vw] lg:w-[6.66vw] h-auto aspect-[75/27] lg:aspect-[128/47] bg-[#2E3362] text-white rounded-[6px] lg:rounded-[15px] flex items-center justify-center"
             >
-              <text className="text-white font-bold text-[12px] xl:text-[12px] lg:text-[10px] text-poppins">
+              <text className="text-white font-bold text-[11px] sm:text-[16px] md:text-[20px] xl:text-[12px] lg:text-[10px] text-poppins">
                 Submit
               </text>
             </button>

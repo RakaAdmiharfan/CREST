@@ -10,7 +10,7 @@ import Profile from "./components/profile";
 export default function About() {
   return (
     <main className="bg-[#EFF2FA] relative overflow-hidden">
-      <div className="flex flex-col lg:flex-row pb-[15px] sm:pb-[20px] md:pb-[25px] xl:pb-[60px] lg:pb-[20px] pt-[70px] md:pt-[130px] xl:pt-[75px] lg:pt-[60px] items-center lg:items-start lg:justify-between relative">
+      <div className="flex flex-col lg:flex-row pb-[15px] sm:pb-[20px] md:pb-[25px] xl:pb-[60px] lg:pb-[20px] pt-[70px] sm:pt-[95px] md:pt-[130px] xl:pt-[75px] lg:pt-[60px] items-center lg:items-start lg:justify-between relative">
         <div className="flex lg:hidden w-[48vw] h-auto aspect-square relative">
           <Image alt="House" src={house} fill={true} />
         </div>

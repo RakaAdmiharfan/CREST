@@ -66,11 +66,11 @@ export default function Home() {
     <main className=" bg-white overflow-hidden">
       <div className="invest-easier h-[330px] sm:h-[370px] md:h-[450px] xl:h-[620px] lg:h-[450px] overflow-hidden bg-no-repeat">
         <div className="Tulisan Utama ml-[8vw] lg:ml-[6.25vw] mt-[90px] sm:mt-[130px] md:mt-[140px] xl:mt-[150px] lg:mt-[120px]">
-          <h1 className="text-montserrat w-[78.8vw] lg:w-[33.28vw] text-[30px] sm:text-[40px] md:text-[50px] xl:text-[67px] lg:text-[54px]">
+          <h1 className="text-montserrat text-shadow w-[78.8vw] lg:w-[33.28vw] text-[30px] sm:text-[40px] md:text-[50px] xl:text-[67px] lg:text-[54px]">
             {" "}
             Invest Easier
           </h1>
-          <h5 className="w-[78.8vw] lg:w-[33.28vw] mt-[20px] sm:mt-[25px] md:mt-[35px] xl:mt-[50px] lg:mt-[35px] text-poppins text-white text-justify text-[13px] sm:text-[14px] md:text-[15px] xl:text-[18px] lg:text-[16px] text-shadow-md">
+          <h5 className="w-[78.8vw] text-shadow lg:w-[33.28vw] mt-[20px] sm:mt-[25px] md:mt-[35px] xl:mt-[50px] lg:mt-[35px] text-poppins text-white text-justify text-[13px] sm:text-[14px] md:text-[15px] xl:text-[18px] lg:text-[16px] text-shadow-md">
             Use our cutting-edge technology to learn and unlock endless
             possibilities through real estate. Find out real estate investments
             tailored solely for your needs.

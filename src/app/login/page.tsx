@@ -14,10 +14,10 @@ export default function Login() {
       <div className="flex flex-col lg:flex-row w-full">
         <div className="hidden w-[50vw] h-auto aspect-[960/1000] relative lg:flex items-center justify-center">
           <div className="z-10 flex justify-center flex-col items-center">
-            <text className="text-[40px] xl:text-[40px] lg:text-[32px] text-white font-semibold mb-[30px] xl:mb-[30px] lg:mb-[15px] text-poppins">
+            <text className="text-shadow text-[40px] xl:text-[40px] lg:text-[32px] text-white font-semibold mb-[30px] xl:mb-[30px] lg:mb-[15px] text-poppins">
               New here?
             </text>
-            <text className="w-[28.85vw] text-[24px] xl:text-[24px] lg:text-[18px] font-medium mb-[40px] xl:mb-[40px] lg:mb-[25px] text-center text-poppins text-white">
+            <text className="w-[28.85vw] text-shadow text-[24px] xl:text-[24px] lg:text-[18px] font-medium mb-[40px] xl:mb-[40px] lg:mb-[25px] text-center text-poppins text-white">
               Sign Up to enjoy our signature AI prediction technology
             </text>
             <Link

@@ -15,7 +15,7 @@ export default function Filter() {
   };
 
   return (
-    <div className="w-[50vw] lg:w-[28.7vw] bg-white h-auto aspect-[551/332] rounded-[10px] lg:rounded-[15px] flex flex-col justify-center px-[2.5vw]">
+    <div className="w-[50vw] lg:w-[28.7vw] bg-white border-[1px] border-gray-500 h-auto aspect-[551/332] rounded-[10px] lg:rounded-[15px] flex flex-col justify-center px-[2.5vw]">
       <div className="w-[39vw] lg:w-[23.7vw] h-auto aspect-[455/268] flex flex-col justify-between py-[5px] lg:py-[0px]">
         <text className="text-[11px] sm:text-[15px] md:text-[18px] xl:text-[18px] lg:text-[15px] font-medium text-poppins mb-[5px] sm:mb-[7px] md:mb-[10px] lg:py-[0px]">
           Filter Berdasarkan Harga

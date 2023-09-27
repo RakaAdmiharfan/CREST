@@ -44,10 +44,10 @@ export default function signup() {
 
         <div className="hidden w-[50vw] h-full relative lg:flex items-center justify-center">
           <div className="z-10 flex justify-center flex-col items-center">
-            <text className="text-[40px] xl:text-[40px] lg:text-[32px] text-white font-semibold mb-[30px] xl:mb-[30px] lg:mb-[15px] text-poppins">
-              Have an Account?
+            <text className="text-[40px] xl:text-[40px] lg:text-[32px] text-white text-shadow font-semibold mb-[30px] xl:mb-[30px] lg:mb-[15px] text-poppins">
+              Have an Account ?
             </text>
-            <text className="w-[28.85vw] text-[24px] xl:text-[24px] lg:text-[18px] text-white font-medium mb-[40px] xl:mb-[40px] lg:mb-[25px] text-center text-poppins">
+            <text className="w-[28.85vw] text-[24px] xl:text-[24px] lg:text-[18px] text-white text-shadow font-medium mb-[40px] xl:mb-[40px] lg:mb-[25px] text-center text-poppins">
               Log back into your account by clicking the button below
             </text>
             <Link

@@ -32,7 +32,7 @@ const Navbar = () => {
             <li className="p-4">
               <Link
                 href="/invest"
-                className="text-poppins text-[18px] xl:text-[18px] lg:text-[16px] md:text-[14px] sm:text-[12px]"
+                className="text-poppins hover:text-gray-300 text-[18px] xl:text-[18px] lg:text-[16px] md:text-[14px] sm:text-[12px]"
               >
                 Invest
               </Link>
@@ -40,7 +40,7 @@ const Navbar = () => {
             <li className="p-4">
               <Link
                 href="/about"
-                className="text-poppins text-[18px] xl:text-[18px] lg:text-[16px]  md:text-[14px] sm:text-[12px]"
+                className="text-poppins hover:text-gray-300 text-[18px] xl:text-[18px] lg:text-[16px]  md:text-[14px] sm:text-[12px]"
               >
                 About
               </Link>
@@ -48,7 +48,7 @@ const Navbar = () => {
             <li className="p-4">
               <Link
                 href="/faq"
-                className="text-poppins text-[18px] xl:text-[18px] lg:text-[16px]  md:text-[14px] sm:text-[12px]"
+                className="text-poppins hover:text-gray-300 text-[18px] xl:text-[18px] lg:text-[16px]  md:text-[14px] sm:text-[12px]"
               >
                 Help
               </Link>
@@ -56,7 +56,7 @@ const Navbar = () => {
             <li className="p-4">
               <Link
                 href="/contact"
-                className="text-poppins text-[18px] xl:text-[18px] lg:text-[16px]  md:text-[14px] sm:text-[12px]"
+                className="text-poppins hover:text-gray-300 text-[18px] xl:text-[18px] lg:text-[16px]  md:text-[14px] sm:text-[12px]"
               >
                 Contact
               </Link>
@@ -97,16 +97,27 @@ const Navbar = () => {
         >
           <ul>
             <li onClick={handleNav} className="p-4">
-              <Link href="/invest">Invest</Link>
+              <Link href="/invest" className="hover:text-gray-300 text-poppins">
+                Invest
+              </Link>
             </li>
             <li onClick={handleNav} className="p-4">
-              <Link href="/about">About</Link>
+              <Link href="/about" className="hover:text-gray-300 text-poppins">
+                About
+              </Link>
             </li>
             <li onClick={handleNav} className="p-4">
-              <Link href="/faq">Help</Link>
+              <Link href="/faq" className="hover:text-gray-300 text-poppins">
+                Help
+              </Link>
             </li>
             <li onClick={handleNav} className="p-4">
-              <Link href="/contact">Contact</Link>
+              <Link
+                href="/contact"
+                className="hover:text-gray-300 text-poppins"
+              >
+                Contact
+              </Link>
             </li>
           </ul>
         </div>

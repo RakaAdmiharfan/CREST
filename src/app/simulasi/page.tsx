@@ -29,6 +29,7 @@ export default function Marketplace() {
   const [currentMarker, setCurrentMarket] = useState({});
   const [assets, setAssets] = useState([]);
   const [showFilter, setShowFilter] = useState(false);
+  const [year, setYear] = useState(2023);
 
   const handleSearch = (value: string) => {
     setSearchValue(value);
@@ -105,8 +106,8 @@ export default function Marketplace() {
                   <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
                     Year
                   </text>
-                  <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] text-poppins">
-                    2023
+                  <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
+                    {year}
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -201,7 +202,7 @@ export default function Marketplace() {
                 <button
                   className="w-[19.7vw] lg:w-[10.4vw] aspect-[71/17] h-auto lg:aspect-[200/47] absolute bg-white z-20 bottom-[48px] sm:bottom-[55px] md:bottom-[68px] xl:bottom-[60px] lg:bottom-[55px] ml-[2.2vw] lg:ml-[1.67vw] rounded-[5px] lg:rounded-[15px] flex items-center justify-center"
                   onClick={() => {
-                    setFlow(3), setShowAssets(false);
+                    setYear(year + 1);
                   }}
                 >
                   <text className="text-[8px] sm:text-[11px] md:text-[14px] xl:text-[12px] lg:text-[10px] text-black font-bold text-poppins">

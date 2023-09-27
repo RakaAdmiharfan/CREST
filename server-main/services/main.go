@@ -9,7 +9,7 @@ var db *pgxpool.Pool
 const dbTimeout = time.Second * 3
 
 type Models struct {
-	Coffee Coffee
+	Properti Properti
 	JsonResponse JsonResponse
 }
 

@@ -21,8 +21,7 @@ func Routes() http.Handler {
         MaxAge: 300,
 	}))
 
-	router.Get("/api/v1/coffees", controllers.GetAllCoffees)
-	router.Post("/api/v1/cofees/coffee/{id}", controllers.CreateCoffee)
+	router.Get("/api/v1/properti", controllers.GetAllProperti)
 
 	return router
 }

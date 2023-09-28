@@ -6,8 +6,6 @@ import kios from "@/../public/images/kios.svg";
 import pc from "@/../public/images/pc.svg";
 import gedung from "@/../public/images/gedungInvest.svg";
 
-// shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]
-
 export default function Home() {
   return (
     <main>
@@ -59,7 +57,6 @@ export default function Home() {
             <div className="w-[19.7vw] lg:w-[8.33vw] h-auto aspect-square relative">
               <Image alt="PC" src={pc} fill={true} />
             </div>
-            {/* <Image src={pc} alt="PC" /> */}
             <p className="w-[75vw] lg:w-auto text-poppins text-[12px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[14px]">
               Learn the edges and corners of real estate investment to begin
               your real estate investing journey.

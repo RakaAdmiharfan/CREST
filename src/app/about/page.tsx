@@ -36,13 +36,10 @@ export default function About() {
               WHY CHOOSE US
             </text>
             <text className="text-black text-center lg:text-start text-[10px] sm:text-[13px] md:text-[16px] xl:text-[18px] lg:text-[15px] mb-[0px] xl:mb-[30px] lg:mb-[15px] text-poppins">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-              interdum non risus sed finibus. Curabitur mattis arcu justo, eget
-              euismod tellus tincidunt ac. Etiam nulla ex, lacinia vel nunc ac,
-              pharetra dignissim purus. Duis ut rhoncus ante. Praesent vitae
-              erat ut quam pellentesque porttitor eu ut ligula. Quisque porta
-              nisl vel augue fringilla posuere. Fusce vitae ligula suscipit,
-              lacinia sapien.
+            We understand that the world of real estate investment is dynamic and ever-changing. 
+            That's why we've harnessed the power of AI-driven prediction technology to provide you with a distinct advantage.
+            Use our revolutionary cutting-edge AI technology with user friendly interface to create timely insights and informed decision making.
+            We combine the best of both worlds of expertise and automation by creating a learning interface for newcomers of the market, ensuring you receive the most comprehensive and well-informed decision.
             </text>
           </div>
         </div>
@@ -60,13 +57,7 @@ export default function About() {
             WHO WE ARE
           </text>
           <text className="text-black text-[10px] sm:text-[13px] md:text-[16px] xl:text-[16px] lg:text-[13px] mb-[35px] sm:mb-[30px] md:mb-[45px] xl:mb-[30px] lg:mb-[20px] text-poppins text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-            interdum non risus sed finibus. Curabitur mattis arcu justo, eget
-            euismod tellus tincidunt ac. Etiam nulla ex, lacinia vel nunc ac,
-            pharetra dignissim purus. Duis ut rhoncus ante. Praesent vitae erat
-            ut quam pellentesque porttitor eu ut ligula. Quisque porta nisl vel
-            augue fringilla posuere. Fusce vitae ligula suscipit, lacinia
-            sapien.
+            We are a team of motivated developers to create a better learning place for the real estate market. We strive to straighten the steep learning curve of real estate investment and create a friendlier environment for everyone to learn real estate investment and we make it our mission to help you achieve your real estate investment goals with a wealth of resources and guidance to support you at every step.
           </text>
         </div>
         <div className="hidden lg:flex flex-col w-[66vw] h-auto aspect-[1258/794] items-center justify-between"data-aos="fade-up">

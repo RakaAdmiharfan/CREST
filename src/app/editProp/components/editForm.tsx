@@ -92,6 +92,30 @@ const EditFormComponent: React.FC = () => {
           </div>
         </div>
 
+        <div className="cp flex flex-row mb-[20px]">
+          <div className="Agent Name mr-[44px]">
+            <h5 className="text-poppins font-medium mb-[20px]">Agent Name</h5>
+            <div className="w-[33.23vw]">
+              <InputField
+                name="AgentName"
+                label="Agent Name"
+                placeholder="Agent Name"
+              />
+            </div>
+          </div>
+
+          <div className="Agent ID">
+            <h5 className="text-poppins font-medium mb-[20px]">Agent ID</h5>
+            <div className="w-[33.23vw]">
+              <InputField
+                name="AgentID"
+                label="Agent ID"
+                placeholder="Agent ID"
+              />
+            </div>
+          </div>
+        </div>
+
         <div className="BPMT flex flex-row mb-[20px]">
           <div className="Base Price mr-[44px]">
             <h5 className="text-poppins font-medium mb-[20px]">Base Price</h5>

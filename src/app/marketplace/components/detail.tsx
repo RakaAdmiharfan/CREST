@@ -81,8 +81,11 @@ export default function Detail({
               <text className="text-poppins text-[12px] sm:text-[17px] md:text-[23px] xl:text-[16px] lg:text-[14px]">
                 DESCRIPTION
               </text>
-              <text className="mb-[20px] sm:mb-[40px] md:mb-[80px] xl:mb-[40px] lg:mb-[25px] mt-[5px] sm:mt-[6px] md:mt-[7px] xl:mt-[10px] lg:mt-[7px] text-[11px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[14px] text-poppins">
+              <text className="mt-[5px] sm:mt-[6px] md:mt-[7px] xl:mt-[10px] lg:mt-[7px] text-[11px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[14px] text-poppins">
                 {flow === 0 ? deskripsiBisnis : deskripsiPribadi}
+              </text>
+              <text className="mb-[10px] sm:mb-[20px] md:mb-[40px] xl:mb-[40px] lg:mb-[25px] mt-[5px] sm:mt-[6px] md:mt-[7px] xl:mt-[10px] lg:mt-[7px] text-poppins text-[11px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[14px]">
+                {"CP: 081223456789 (Budi)"}
               </text>
             </div>
           )}
@@ -115,7 +118,7 @@ export default function Detail({
 
           <div className="flex justify-center">
             <button
-              className="w-[14.1vw] lg:w-[10.2vw] h-auto aspect-[51/15] lg:aspect-[196/61] rounded-[5px] lg:rounded-[15px] border-[1px] border-black flex items-center justify-center"
+              className="w-[14.1vw] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] lg:w-[10.2vw] h-auto aspect-[51/15] lg:aspect-[196/61] rounded-[5px] lg:rounded-[15px] border-[1px] border-black flex items-center justify-center"
               onClick={() => setFlow(2)}
             >
               <text className="text-[#6C88CD] font-bold text-[8px] sm:text-[13px] md:text-[16px] xl:text-[18px] lg:text-[16px] text-poppins">

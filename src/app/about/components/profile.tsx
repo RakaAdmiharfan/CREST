@@ -3,10 +3,12 @@
 import faqData from "@/data/faq.json";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import phone from "@/../public/images/phone.svg";
 import message from "@/../public/images/message.svg";
 import linkedin from "@/../public/images/linkedin.svg";
+import instagram from "@/../public/images/instagram.svg";
 import nicholas from "@/../public/images/nicholas.jpg";
 import amjad from "@/../public/images/amjad.jpg";
 import johan from "@/../public/images/johan.jpg";
@@ -17,27 +19,42 @@ export default function Profile({ name }: { name: string }) {
   let photo;
   let nama;
   let profesi;
+  let link_linkedin = "";
+  let link_instagram = "";
 
   if (name === "Amjad") {
     photo = amjad;
     nama = "Amjad";
     profesi = "TNI";
+    link_linkedin =
+      "https://www.linkedin.com/in/amjad-adhie-prasetyo-43a3601a1/";
+    link_instagram = "https://www.instagram.com/amjad_adhie/";
   } else if (name === "Nicholas") {
     photo = nicholas;
     nama = "Nicholas";
     profesi = "Designer";
+    link_linkedin = "https://www.linkedin.com/in/nicholas438/";
+    link_instagram = "https://www.instagram.com/nicholas1.8";
   } else if (name === "Johan") {
     photo = johan;
     nama = "Johan";
     profesi = "Pebisnis";
+    link_linkedin =
+      "https://www.linkedin.com/in/johan-hariara-sijabat-80538b258/";
+    link_instagram = "https://www.instagram.com/johanhariara/";
   } else if (name === "Iskandar") {
     photo = iskandar;
     nama = "Iskandar";
     profesi = "Mahasiswa";
+    link_linkedin =
+      "https://www.linkedin.com/in/iskandar-muda-rizky-parlambang-266942215/";
+    link_instagram = "https://www.instagram.com/iskandarmrp/";
   } else if (name === "Raka") {
     photo = raka;
     nama = "Raka";
     profesi = "Developer";
+    link_linkedin = "https://www.linkedin.com/in/raka-admiharfan-3132b622a/";
+    link_instagram = "https://www.instagram.com/rakaadmiharfan/";
   }
 
   return (
@@ -54,15 +71,21 @@ export default function Profile({ name }: { name: string }) {
             {profesi}
           </text>
           <div className="flex w-[18vw] lg:w-[8.6vw] h-auto aspect-[65/9.5] lg:aspect-[194/64] justify-between">
-            <button className="w-[2.6vw] lg:w-[1.25vw] h-auto aspect-square z-10 relative">
+            <Link
+              href={link_linkedin}
+              className="w-[2.6vw] lg:w-[1.25vw] h-auto aspect-square z-10 relative"
+            >
               <Image alt="Linked In" src={linkedin} fill={true} />
-            </button>
+            </Link>
             <button className="w-[2.6vw] lg:w-[1.25vw] h-auto aspect-square z-10 relative">
               <Image alt="Message" src={message} fill={true} />
             </button>
-            <button className="w-[2.6vw] lg:w-[1.25vw] h-auto aspect-square z-10 relative">
-              <Image alt="Phone" src={phone} fill={true} />
-            </button>
+            <Link
+              href={link_instagram}
+              className="w-[2.6vw] lg:w-[1.25vw] h-auto aspect-square z-10 relative"
+            >
+              <Image alt="Instagram" src={instagram} fill={true} />
+            </Link>
           </div>
         </div>
       </div>

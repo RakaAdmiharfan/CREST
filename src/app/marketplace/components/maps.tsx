@@ -59,7 +59,11 @@ export default function Maps(props) {
                 key={index}
                 position={{ lat: data.lat_position, lng: data.lng_position }}
                 onClick={() =>
-                  handleChange(data.bisnis, data.pribadi, data.harga)
+                  handleChange(
+                    data.deskripsi_bisnis,
+                    data.deskripsi_pribadi,
+                    data.harga_dasar
+                  )
                 }
               />
             ))}

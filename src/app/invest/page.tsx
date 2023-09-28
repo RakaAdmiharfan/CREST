@@ -47,8 +47,7 @@ export default function Home() {
             </div>
             {/* <Image src={kios} alt="Kios" /> */}
             <p className="w-[75vw] lg:w-auto text-poppins text-[12px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[14px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-              interdum non risus sed finibus.{" "}
+              Explore real estates and use our AI-driven prediction to make informed decisions about your investments.{" "}
             </p>
           </Link>
           <Link
@@ -63,8 +62,7 @@ export default function Home() {
             </div>
             {/* <Image src={pc} alt="PC" /> */}
             <p className="w-[75vw] lg:w-auto text-poppins text-[12px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[14px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-              interdum non risus sed finibus.
+              Learn the edges and corners of real estate investment to begin your real estate investing journey. 
             </p>
           </Link>
         </div>

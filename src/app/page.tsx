@@ -156,9 +156,11 @@ export default function Home() {
         <div className="Title ml-[4.4vw] lg:ml-[4.16vw] pt-[10px] sm:pt-[20px] md:pt-[30px] xl:pt-[110px] lg:pt-[85px] w-[45.27vw] lg:w-[44.68vw]"
           data-aos = "fade-right">
           <h2 className="text-poppins text-[12px] sm:text-[16px] md:text-[23px] xl:text-[42px] lg:text-[32px]">
-            Smart Investment Decisions
+            Your Real Estate Jourmey, Elevated
           </h2>
-          <p className="text-[#212653] mt-[10px] sm:mt-[15px] md:mt-[20px] xl:mt-[40px] lg:mt-[30px] w-[43.8vw] lg:w-[44.16vw] text-poppins text-[5px] sm:text-[7px] md:text-[11px] xl:text-[15px] lg:text-[12px] text-justify">
+          <p className="text-[#212653] mt-[10px] sm:mt-[15px] md:mt-[20px] xl:mt-[40px] lg:mt-[30px] w-[43.8vw] lg:w-[44.16vw] text-poppins text-[5px] sm:text-[7px] md:text-[11px] xl:text-[20px] lg:text-[12px] text-justify">
+          We understand that buying, selling, or investing in real estate can be a significant endeavor. That's why we've created the ultimate companion — CREST, our Computer Assisted Real Estate Simulation Technology. It's more than just an app; it's your trusted guide to success.
+          <br></br>
             Unlock the future of real estate investment with AI-driven price
             prediction technology. Say goodbye to uncertainty and hello to
             informed decision-making. Our cutting-edge AI algorithms analyze
@@ -195,19 +197,15 @@ export default function Home() {
         <div className="Title mr-[4.4vw] lg:mr-[4.16vw] pt-[10px] sm:pt-[20px] md:pt-[30px] xl:pt-[110px] lg:pt-[85px] w-[45.27vw] lg:w-[44.68vw]"
         data-aos="fade-left">
           <h2 className="text-poppins text-[12px] sm:text-[16px] md:text-[23px] xl:text-[42px] lg:text-[32px]">
-            Smart Investment Decisions
+            Navigate Real Estate with Confidence
           </h2>
-          <p className="text-[#212653] mt-[10px] sm:mt-[15px] md:mt-[20px] xl:mt-[40px] lg:mt-[30px] w-[43.8vw] lg:w-[44.16vw] text-poppins text-[5px] sm:text-[7px] md:text-[11px] xl:text-[15px] lg:text-[12px] text-justify">
-            Unlock the future of real estate investment with AI-driven price
-            prediction technology. Say goodbye to uncertainty and hello to
-            informed decision-making. Our cutting-edge AI algorithms analyze
-            vast datasets, market trends, and historical property data to
-            provide you with accurate and reliable predictions for property
-            prices. Whether you're a seasoned investor looking to maximize your
-            returns or a first-time homebuyer searching for the perfect deal,
-            our AI-powered solution empowers you to make smarter choices in the
-            ever-evolving real estate market. Join us on the forefront of
-            innovation and take the guesswork out of property investments today!
+          <p className="text-[#212653] mt-[10px] sm:mt-[15px] md:mt-[20px] xl:mt-[40px] lg:mt-[30px] w-[43.8vw] lg:w-[44.16vw] text-poppins text-[5px] sm:text-[7px] md:text-[11px]  lg:text-[12px] xl:text-[20px] text-justify">
+          Gone are the days of relying solely on gut feelings and educated guesses. In today's dynamic real estate market, having a crystal ball to predict property trends and investment opportunities is no longer a fantasy—it's a reality. Our signature AI prediction technology has revolutionized the way we approach real estate, offering a glimpse into what lies ahead.
+          <br></br>
+          Imagine having a trusted advisor who continuously analyzes vast amounts of data—market trends, historical prices, economic indicators, and more—to provide you with accurate forecasts. AI prediction technology leverages this data to anticipate shifts in the real estate landscape, helping you make decisions with confidence.
+          <br></br>
+          The future of real estate is here, and it's yours to discover. Join us on this exciting journey and embrace a future where you can navigate the world of real estate with confidence. Unlock your potential with AI predictions—your key to a brighter real estate future.
+          Get Started Today and embark on a journey of informed decisions and endless possibilities.
           </p>
         </div>
       </div>

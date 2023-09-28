@@ -82,7 +82,7 @@ export default function ContactForm() {
           <div className="w-[77.7vw] lg:w-[27vw] flex flex-col items-center justify-center text-poppins">
             <button
               type="submit"
-              className="btn btn-primary w-[20.8vw] lg:w-[6.66vw] h-auto aspect-[75/27] lg:aspect-[128/47] bg-[#2E3362] text-white rounded-[6px] lg:rounded-[15px] flex items-center justify-center"
+              className="btn hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] btn-primary w-[20.8vw] lg:w-[6.66vw] h-auto aspect-[75/27] lg:aspect-[128/47] bg-[#2E3362] text-white rounded-[6px] lg:rounded-[15px] flex items-center justify-center"
             >
               <text className="text-white font-bold text-[11px] sm:text-[16px] md:text-[20px] xl:text-[12px] lg:text-[10px] text-poppins">
                 Submit

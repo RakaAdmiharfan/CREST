@@ -67,7 +67,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/login"
-                className="w-[5.9vw] h-auto aspect-[114/47] border-[#6C88CD] border-[3px] text-[#6C88CD] font-poppins font-semibold text-[14px] xl:text-[14px] lg:text-[12px] md:text-[10px] sm-[8px] flex flex-col items-center justify-center rounded-[15px] text-poppins"
+                className="w-[5.9vw] h-auto aspect-[114/47] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] border-[#6C88CD] border-[3px] text-[#6C88CD] font-poppins font-semibold text-[14px] xl:text-[14px] lg:text-[12px] md:text-[10px] sm-[8px] flex flex-col items-center justify-center rounded-[15px] text-poppins"
               >
                 Log In
               </Link>
@@ -75,7 +75,7 @@ const Navbar = () => {
             <li>
               <Link
                 href="/signup"
-                className="w-[6.7vw] h-auto aspect-[130/47] text-[#A5CCD1] border-[#A5CCD1] border-[3px] font-poppins font-semibold text-[14px] xl:text-[14px] lg:text-[12px] md:text-[10px] sm-[8px] flex flex-col items-center justify-center  rounded-[15px] text-poppins"
+                className="w-[6.7vw] h-auto aspect-[130/47] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] text-[#A5CCD1] border-[#A5CCD1] border-[3px] font-poppins font-semibold text-[14px] xl:text-[14px] lg:text-[12px] md:text-[10px] sm-[8px] flex flex-col items-center justify-center  rounded-[15px] text-poppins"
               >
                 Sign Up
               </Link>

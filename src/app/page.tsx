@@ -79,14 +79,14 @@ export default function Home() {
 
         <div className="Tombol ml-[8vw] lg:ml-[6.25vw] mt-[25px] sm:mt-[25px] md:mt-[35px] xl:mt-[50px] lg:mt-[35px] flex flex-row">
           <Link
-            href="/Trending"
-            className="w-[28.8vw] lg:w-[11.75vw] h-auto aspect-[104/21] lg:aspect-[228/47] button mr-[2.5vw] lg:mr-[1vw] bg-[#2E3362] flex flex-col items-center justify-center text-white font-poppins font-semibold text-[9px] sm:text-[12px] md:text-[14px] xl:text-[14px] lg:text-[12px] rounded-[15px]"
+            href="/marketplace"
+            className="w-[28.8vw] lg:w-[11.75vw] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] h-auto aspect-[104/21] lg:aspect-[228/47] button mr-[2.5vw] lg:mr-[1vw] bg-[#2E3362] flex flex-col items-center justify-center text-white font-poppins font-semibold text-[9px] sm:text-[12px] md:text-[14px] xl:text-[14px] lg:text-[12px] rounded-[15px]"
           >
             Explore Properties
           </Link>
           <Link
             href="/about"
-            className="w-[18.5vw] lg:w-[7.45vw] h-auto aspect-[66.6/21] lg:aspect-[143/47] button border-white border-[3px] flex flex-col items-center justify-center text-white font-poppins font-semibold text-[9px] sm:text-[12px] md:text-[14px] xl:text-[14px] lg:text-[12px] rounded-[15px]"
+            className="w-[18.5vw] lg:w-[7.45vw] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] h-auto aspect-[66.6/21] lg:aspect-[143/47] button border-white border-[3px] flex flex-col items-center justify-center text-white font-poppins font-semibold text-[9px] sm:text-[12px] md:text-[14px] xl:text-[14px] lg:text-[12px] rounded-[15px]"
           >
             About Us
           </Link>
@@ -103,12 +103,15 @@ export default function Home() {
             <h4 className="text-poppins text-[13px] sm:text-[15px] md:text-[19px] xl:text-[25px] lg:text-[20px]">
               Explore trending properties
             </h4>
-            <h4 className="flex items-center text-poppins text-[13px] sm:text-[15px] md:text-[19px] xl:text-[25px] lg:text-[20px] font-medium">
+            <Link
+              href="/marketplace"
+              className="flex items-center text-poppins text-[13px] sm:text-[15px] md:text-[19px] xl:text-[25px] lg:text-[20px] font-medium"
+            >
               More
               <span className="ml-[1vw]">
                 <AiOutlineArrowRight />
               </span>
-            </h4>
+            </Link>
           </div>
         </div>
       </div>

@@ -26,7 +26,7 @@ export default function signup() {
               <div className="w-[33.6vw] lg:w-[14.58vw] h-[1px] bg-[#808080]"></div>
             </div>
             <div className="w-full mt-[20px] sm:mt-[25px] md:mt-[30px] xl:mt-[35px] lg:mt-[25px] flex justify-center">
-              <button className="w-[42.2vw] lg:w-[14.375vw] h-auto aspect-[152/26] lg:aspect-[276/47] border-[3px] text-[#2E3362] border-[#2E3362] rounded-[8px] lg:rounded-[15px] flex justify-center items-center">
+              <button className="w-[42.2vw] lg:w-[14.375vw] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] h-auto aspect-[152/26] lg:aspect-[276/47] border-[3px] text-[#2E3362] border-[#2E3362] rounded-[8px] lg:rounded-[15px] flex justify-center items-center">
                 <div className="w-[3.6vw] lg:w-[1.25vw] h-auto aspect-square relative mr-[2.5vw] lg:mr-[0.83vw]">
                   <Image alt="Google" src={google} fill={true} />
                 </div>
@@ -37,7 +37,7 @@ export default function signup() {
             </div>
           </div>
         </div>
-
+        <div className="hidden lg:flex w-[50vw] h-[100vh] aspect-[360/300] absolute bg-black z-10 opacity-60 right-0"></div>
         <div className="w-[100vw] lg:w-[50vw] h-auto lg:h-[100vh] aspect-[360/300] lg:aspect-auto relative lg:absolute lg:right-0">
           <Image alt="House" src={house} fill={true} objectFit="cover" />
         </div>
@@ -51,7 +51,7 @@ export default function signup() {
               Log back into your account by clicking the button below
             </text>
             <Link
-              className="bg-[#2E3362] w-[6.77vw] h-auto aspect-[130/47] rounded-[15px] flex items-center justify-center"
+              className="bg-[#2E3362] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] w-[6.77vw] h-auto aspect-[130/47] rounded-[15px] flex items-center justify-center"
               href="/login"
             >
               <text className="text-white font-bold text-[12px] xl:text-[12px] lg:text-[10px] text-poppins">

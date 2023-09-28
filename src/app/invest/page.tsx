@@ -13,6 +13,7 @@ export default function Home() {
     <main>
       <div className="bg-slate-100 min-h-[100vh] lg:h-[100vh] pt-[50px] xl:pt-[50px] lg:pt-[40px] pb-[30px] xl:pb-[60px] lg:pb-[50px] ">
         <div className="w-[full] h-auto aspect-[360/230] lg:aspect-[1920/476] flex flex-col justify-center items-center z-10">
+          <div className="w-full h-auto aspect-[360/230] lg:aspect-[1920/476] absolute bg-black z-10 opacity-40"></div>
           <div className="absolute w-full h-auto aspect-[360/230] lg:aspect-[1920/476]">
             <Image
               src={gedung}

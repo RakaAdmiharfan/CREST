@@ -104,13 +104,13 @@ const EditFormComponent: React.FC = () => {
             </div>
           </div>
 
-          <div className="Agent ID">
-            <h5 className="text-poppins font-medium mb-[20px]">Agent ID</h5>
+          <div className="No Agent">
+            <h5 className="text-poppins font-medium mb-[20px]">No Agent</h5>
             <div className="w-[33.23vw]">
               <InputField
-                name="AgentID"
-                label="Agent ID"
-                placeholder="Agent ID"
+                name="NoAgent"
+                label="No Agent"
+                placeholder="No Agent"
               />
             </div>
           </div>

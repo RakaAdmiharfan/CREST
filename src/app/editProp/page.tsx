@@ -23,7 +23,7 @@ export default function PropertyPage() {
           Manage Properties
         </h2>
       </div>
-      <div className="Box ml-[300px]">
+      <div className="Box ml-[32px] lg:ml-[300px]">
         <EditFormComponent />
       </div>
     </div>

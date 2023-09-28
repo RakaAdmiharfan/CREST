@@ -119,6 +119,19 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
+            <li onClick={handleNav} className="p-4">
+              <Link href="/login" className="hover:text-gray-300 text-poppins">
+                Login
+              </Link>
+            </li>
+            <li onClick={handleNav} className="p-4">
+              <Link
+                href="/contact"
+                className="hover:text-gray-300 text-poppins"
+              >
+                Sign Up
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

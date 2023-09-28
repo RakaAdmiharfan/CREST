@@ -472,9 +472,9 @@ export default function Marketplace() {
           </div>
         </div>
       ) : (
-        <div className="relative bg-[#CED3DE] pt-[95px] xl:pt-[95px] lg:pt-[85px] h-[100vh] overflow-hidden text-poppins">
-          <div className="px-[8.33vw]">
-            <div className="w-full h-auto aspect-[1520/854] bg-white rounded-[20px] flex flex-col overflow-hidden">
+        <div className="relative bg-[#CED3DE] pt-[75px] sm:pt-[110px] md:pt-[140px] xl:pt-[95px] lg:pt-[85px] min-h-[100vh] overflow-hidden text-poppins">
+          <div className="px-[5vw] lg:px-[8.33vw]">
+            <div className="w-full h-auto lg:aspect-[1520/854] bg-white rounded-[20px] flex flex-col overflow-hidden">
               <div className="w-full h-auto aspect-[1520/74] bg-[#2E3362] flex items-center px-[2vw] justify-between">
                 <text className="text-white text-[21px] xl:text-[21px] lg:text-[17px] font-medium text-poppins">
                   User Report

@@ -24,11 +24,14 @@ export default function Marketplace() {
   const [searchValue, setSearchValue] = useState("");
   const [flow, setFlow] = useState(0);
   const [showAssets, setShowAssets] = useState(false);
+  const [showAssetsHistory, setShowAssetsHistory] = useState(false);
   const [currentMarker, setCurrentMarket] = useState({});
   const [assets, setAssets] = useState([]);
   const [showFilter, setShowFilter] = useState(false);
   const [year, setYear] = useState(2023);
   const [assetsHistory, setAssetsHistory] = useState([]);
+  const [currentAssetsHistory, setCurrentAssetsHistory] = useState({});
+  const [tahunSimulasi, setTahunSimulasi] = useState(0);
 
   const handleSearch = (value: string) => {
     setSearchValue(value);
@@ -44,23 +47,53 @@ export default function Marketplace() {
 
   const handleMaps = (current) => {
     setCurrentMarket(current);
-    if (assets.find((obj) => obj === current)) {
+    if (assets.find((obj) => obj.id_property === current.id_property)) {
       setFlow(2);
     } else {
       setFlow(1);
     }
   };
 
+  const handleShowAssets = (current) => {
+    setCurrentMarket(current);
+    setFlow(2);
+  };
+
   const handlePurchase = () => {
+    currentMarker.tahun_beli = year;
     setAssets([...assets, currentMarker]);
     setFlow(0);
   };
 
   const handleSell = () => {
-    const updatedAssets = assets.filter((obj) => obj !== currentMarker);
+    const updatedAssets = assets.filter(
+      (obj) => obj.id_property !== currentMarker.id_property
+    );
+    const foundAsset = assets.find(
+      (obj) => obj.id_property === currentMarker.id_property
+    );
+    if (foundAsset) {
+      foundAsset.years_on_hold = year - foundAsset.tahun_beli;
+      setAssetsHistory([...assetsHistory, foundAsset]);
+    }
     setFlow(0);
     setAssets(updatedAssets);
-    console.log(assets);
+  };
+
+  const handleEnd = () => {
+    if (assets.length > 0) {
+      const updatedAssetsHistory = [...assetsHistory];
+      for (let i = 0; i < assets.length; i++) {
+        const foundAsset = assets[i];
+        foundAsset.years_on_hold = year - foundAsset.tahun_beli;
+        updatedAssetsHistory.push(foundAsset);
+      }
+      setAssetsHistory(updatedAssetsHistory);
+    }
+    setFlow(3),
+      setShowAssets(false),
+      setCurrentAssetsHistory(assetsHistory[0]),
+      setTahunSimulasi(year - 2023);
   };
 
   return (
@@ -151,9 +184,12 @@ export default function Marketplace() {
                     {assets.map((data, index) => (
                       <div key={index} className="w-full">
                         {assets.length > 0 ? (
-                          <div className="w-full">
+                          <button
+                            className="w-full"
+                            onClick={() => handleShowAssets(data)}
+                          >
                             <div className="w-full h-auto aspect-[312/50] lg:aspect-[384/100] flex flex-row items-center justify-between px-[3.88vw] lg:px-[1.46vw]">
-                              <div className="flex flex-col">
+                              <div className="flex flex-col items-start">
                                 <text className="text-[#FFFFFF] text-[10px] sm:text-[13px] md:text-[15px] xl:text-[13px] lg:text-[11px] font-medium text-poppins">
                                   {data.nama_properti}
                                 </text>
@@ -168,7 +204,7 @@ export default function Marketplace() {
                             <div className="flex items-center justify-center">
                               <div className=" bg-[#808080] w-[57vw] lg:w-[14.58vw] h-[1px]"></div>
                             </div>{" "}
-                          </div>
+                          </button>
                         ) : null}
                       </div>
                     ))}
@@ -195,9 +231,7 @@ export default function Marketplace() {
                 </button>
                 <button
                   className="w-[19.7vw] lg:w-[10.4vw] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] aspect-[71/17] h-auto lg:aspect-[200/47] absolute bg-[#EB5B5B] z-20 bottom-[20px] ml-[2.2vw] lg:ml-[1.67vw] rounded-[5px] lg:rounded-[15px] flex items-center justify-center"
-                  onClick={() => {
-                    setFlow(3), setShowAssets(false);
-                  }}
+                  onClick={handleEnd}
                 >
                   <text className="text-[8px] sm:text-[11px] md:text-[14px] xl:text-[12px] lg:text-[10px] text-white font-bold text-poppins">
                     End Simulation
@@ -478,7 +512,7 @@ export default function Marketplace() {
                       Years
                     </text>
                     <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
-                      20
+                      {tahunSimulasi}
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -499,17 +533,17 @@ export default function Marketplace() {
                     <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                       Assets
                     </text>
-                    {showAssets ? (
+                    {showAssetsHistory ? (
                       <button
                         className="w-[1.46vw] h-auto aspect-square relative z-10 "
-                        onClick={() => setShowAssets(false)}
+                        onClick={() => setShowAssetsHistory(false)}
                       >
                         <Image alt="Arrow Up" src={arrowupblack} fill={true} />
                       </button>
                     ) : (
                       <button
                         className="w-[1.46vw] h-auto aspect-square relative z-10 "
-                        onClick={() => setShowAssets(true)}
+                        onClick={() => setShowAssetsHistory(true)}
                       >
                         <Image
                           alt="Arrow Down"
@@ -519,24 +553,26 @@ export default function Marketplace() {
                       </button>
                     )}
                   </div>
-                  {showAssets ? (
+                  {showAssetsHistory ? (
                     <div className="overflow-auto w-full h-auto aspect-[384/301] no-scrollbar">
-                      {houseData.maps.map((data, index) => (
+                      {assetsHistory.map((data, index) => (
                         <div key={index} className="w-full">
-                          <div className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]">
-                            <div className="flex flex-col">
+                          <button
+                            className="w-full h-auto aspect-[384/100] flex flex-row items-center justify-between px-[1.46vw]"
+                            onClick={() => setCurrentAssetsHistory(data)}
+                          >
+                            <div className="flex flex-col items-start">
                               <text className="text-[#1E2351] text-[13px] xl:text-[13px] lg:text-[11px] font-medium text-poppins">
                                 {data.nama_properti}
                               </text>
                               <text className="text-[#CFF1EF] text-[12px] xl:text-[12px] lg:text-[10px] font-medium text-poppins">
-                                {data.deskripsi_bisnis}.{" "}
-                                {data.deskripsi_pribadi}
+                                {data.tipe}
                               </text>
                             </div>
                             <text className="text-[#1E2351] font-medium text-[18px] xl:text-[18px] lg:text-[15px] text-poppins">
                               {data.harga_dasar}
                             </text>
-                          </div>
+                          </button>
                           <div className="flex items-center justify-center">
                             <div className=" bg-[#808080] w-[14.58vw] h-[1px]"></div>
                           </div>
@@ -548,57 +584,59 @@ export default function Marketplace() {
 
                 <div className="w-[1px] h-full bg-[#808080]"></div>
 
-                <div className="w-[63.34vw] h-full bg-[#EFF2FA] py-[35px] xl:py-[35px] lg:py-[25px] pl-[3.125vw] pr-[4.16vw] flex flex-row justify-between">
-                  <div className="flex flex-col">
-                    <text className="text-[27px] xl:text-[27px] lg:text-[22px] font-medium text-poppins">
-                      Nama Property
-                    </text>
-                    <text className="text-[#5D716F] font-medium mb-[18px] xl:mb-[18px] lg:mb-[10px] text-poppins text-[14px] xl:text-[14px] lg:text-[12px]">
-                      Alamat
-                    </text>
-                    <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] xl:mb-[14px] lg:mb-[8px] items-center justify-between">
-                      <text className="text-[20px] xl:text-[20px] lg:text-[16px] font-medium text-poppins">
-                        {" "}
-                        Starting price
+                {assetsHistory.length > 0 ? (
+                  <div className="w-[63.34vw] h-full bg-[#EFF2FA] py-[35px] xl:py-[35px] lg:py-[25px] pl-[3.125vw] pr-[4.16vw] flex flex-row justify-between">
+                    <div className="flex flex-col">
+                      <text className="text-[27px] xl:text-[27px] lg:text-[22px] font-medium text-poppins">
+                        {currentAssetsHistory.nama_properti}
                       </text>
-                      <text className="font-medium text-[18px] xl:text-[18px] lg:text-[14px] text-poppins">
-                        $10.000
+                      <text className="text-[#5D716F] font-medium mb-[18px] xl:mb-[18px] lg:mb-[10px] text-poppins text-[14px] xl:text-[14px] lg:text-[12px]">
+                        {currentAssetsHistory.alamat}
                       </text>
+                      <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] xl:mb-[14px] lg:mb-[8px] items-center justify-between">
+                        <text className="text-[20px] xl:text-[20px] lg:text-[16px] font-medium text-poppins">
+                          {" "}
+                          Starting price
+                        </text>
+                        <text className="font-medium text-[18px] xl:text-[18px] lg:text-[14px] text-poppins">
+                          {currentAssetsHistory.harga_dasar}
+                        </text>
+                      </div>
+                      <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] xl:mb-[14px] lg:mb-[8px] items-center justify-between">
+                        <text className="text-[20px] xl:text-[20px] lg:text-[16px] font-medium text-poppins">
+                          {" "}
+                          Current Price
+                        </text>
+                        <text className="font-medium text-[18px] xl:text-[18px] lg:text-[14px] text-poppins">
+                          $10.000
+                        </text>
+                      </div>
+                      <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] xl:mb-[14px] lg:mb-[8px] items-center justify-between">
+                        <text className="text-[20px] xl:text-[20px] lg:text-[16px] font-medium text-poppins">
+                          {" "}
+                          Years on hold
+                        </text>
+                        <text className="font-medium text-[18px] xl:text-[18px] lg:text-[14px] text-poppins">
+                          {currentAssetsHistory.years_on_hold}
+                        </text>
+                      </div>
+                      <div className="w-[26.875vw] flex flex-row">
+                        <text className="text-[16px] xl:text-[16px] lg:text-[14px] font-medium text-poppins">
+                          deskripsi
+                        </text>
+                      </div>
                     </div>
-                    <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] xl:mb-[14px] lg:mb-[8px] items-center justify-between">
-                      <text className="text-[20px] xl:text-[20px] lg:text-[16px] font-medium text-poppins">
-                        {" "}
-                        Current Price
-                      </text>
-                      <text className="font-medium text-[18px] xl:text-[18px] lg:text-[14px] text-poppins">
-                        $10.000
-                      </text>
-                    </div>
-                    <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] xl:mb-[14px] lg:mb-[8px] items-center justify-between">
-                      <text className="text-[20px] xl:text-[20px] lg:text-[16px] font-medium text-poppins">
-                        {" "}
-                        Years on hold
-                      </text>
-                      <text className="font-medium text-[18px] xl:text-[18px] lg:text-[14px] text-poppins">
-                        $10.000
-                      </text>
-                    </div>
-                    <div className="w-[26.875vw] flex flex-row">
-                      <text className="text-[16px] xl:text-[16px] lg:text-[14px] font-medium text-poppins">
-                        deskripsi
-                      </text>
-                    </div>
-                  </div>
 
-                  <div className="w-[26vw] h-auto aspect-[500/500] relative z-10">
-                    <Image
-                      alt="Rumah"
-                      src={rumah}
-                      fill={true}
-                      objectFit="cover"
-                    />
+                    <div className="w-[26vw] h-auto aspect-[500/500] relative z-10">
+                      <Image
+                        alt="Rumah"
+                        src={rumah}
+                        fill={true}
+                        objectFit="cover"
+                      />
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </div>
             </div>
           </div>

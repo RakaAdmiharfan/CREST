@@ -25,20 +25,20 @@ export default function Profile({ name }: { name: string }) {
   if (name === "Amjad") {
     photo = amjad;
     nama = "Amjad";
-    profesi = "TNI";
+    profesi = "Mahasiswa";
     link_linkedin =
       "https://www.linkedin.com/in/amjad-adhie-prasetyo-43a3601a1/";
     link_instagram = "https://www.instagram.com/amjad_adhie/";
   } else if (name === "Nicholas") {
     photo = nicholas;
     nama = "Nicholas";
-    profesi = "Designer";
+    profesi = "Mahasiswa";
     link_linkedin = "https://www.linkedin.com/in/nicholas438/";
     link_instagram = "https://www.instagram.com/nicholas1.8";
   } else if (name === "Johan") {
     photo = johan;
     nama = "Johan";
-    profesi = "Pebisnis";
+    profesi = "Mahasiswa";
     link_linkedin =
       "https://www.linkedin.com/in/johan-hariara-sijabat-80538b258/";
     link_instagram = "https://www.instagram.com/johanhariara/";
@@ -52,7 +52,7 @@ export default function Profile({ name }: { name: string }) {
   } else if (name === "Raka") {
     photo = raka;
     nama = "Raka";
-    profesi = "Developer";
+    profesi = "Mahasiswa";
     link_linkedin = "https://www.linkedin.com/in/raka-admiharfan-3132b622a/";
     link_instagram = "https://www.instagram.com/rakaadmiharfan/";
   }

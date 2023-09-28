@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 import house from "@/../public/images/contact.svg";
@@ -5,15 +7,26 @@ import envelope from "@/../public/images/envelope.svg";
 import chat from "@/../public/images/chat.svg";
 import phone from "@/../public/images/contact_phone.svg";
 import plane from "@/../public/images/paperplane.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import React, { useEffect } from "react";
 
 import ContactForm from "./components/contact";
 
 export default function Contact() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  });
+
   return (
     <main className="bg-[#EFF2FA] relative min-h-[100vh] overflow-hidden">
       <div className="flex flex-row pb-[15px] sm:pb-[25px] md:pb-[35px] xl:pb-[60px] lg:pb-[50px] pt-[70px] sm:pt-[95px] md:pt-[130px] xl:pt-[75px] lg:pt-[60px] justify-between relative">
         <div className="hidden lg:flex w-[50vw] h-auto aspect-square py-[1vw] relative pl-[3vw]">
-          <div className="w-[46vw] h-auto aspect-square absolute">
+          <div
+            className="w-[46vw] h-auto aspect-square absolute"
+            data-aos="fade-right"
+            data-aos-duration="1000ms"
+          >
             <Image alt="House" src={house} fill={true} />
           </div>
         </div>
@@ -33,22 +46,38 @@ export default function Contact() {
               <div className="w-[20.5vw] lg:w-[7.9vw] h-[1px] bg-[#808080]"></div>
             </div>
             <div className="w-[59.4vw] lg:w-[22.9vw] h-auto aspect-[214/39] lg:aspect-[440/80] flex flex-row  mt-[10px] sm:mt-[15px] md:mt-[20px] xl:mt-[20px] lg:mt-[15px] justify-between">
-              <button className="w-[10.8vw] lg:w-[4.16vw] h-auto aspect-square rounded-[100%] relative bg-white items-center justify-center flex">
+              <button
+                className="w-[10.8vw] lg:w-[4.16vw] h-auto aspect-square rounded-[100%] relative bg-white items-center justify-center flex"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
                 <div className="w-[5vw] lg:w-[2vw] h-auto aspect-square relative">
                   <Image alt="Envelope" src={envelope} fill={true} />
                 </div>
               </button>
-              <button className="w-[10.8vw] lg:w-[4.16vw] h-auto aspect-square rounded-[100%] relative bg-white items-center justify-center flex">
+              <button
+                className="w-[10.8vw] lg:w-[4.16vw] h-auto aspect-square rounded-[100%] relative bg-white items-center justify-center flex"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 <div className="w-[5vw] lg:w-[2vw] h-auto aspect-square relative">
                   <Image alt="Chat" src={chat} fill={true} />
                 </div>
               </button>
-              <button className="w-[10.8vw] lg:w-[4.16vw] h-auto aspect-square rounded-[100%] relative bg-white items-center justify-center flex">
+              <button
+                className="w-[10.8vw] lg:w-[4.16vw] h-auto aspect-square rounded-[100%] relative bg-white items-center justify-center flex"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <div className="w-[5vw] lg:w-[2vw] h-auto aspect-square relative">
                   <Image alt="Phone" src={phone} fill={true} />
                 </div>
               </button>
-              <button className="w-[10.8vw] lg:w-[4.16vw] h-auto aspect-square rounded-[100%] relative bg-white items-center justify-center flex">
+              <button
+                className="w-[10.8vw] lg:w-[4.16vw] h-auto aspect-square rounded-[100%] relative bg-white items-center justify-center flex"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
                 <div className="w-[5vw] lg:w-[2vw] h-auto aspect-square relative">
                   <Image alt="Plane" src={plane} fill={true} />
                 </div>

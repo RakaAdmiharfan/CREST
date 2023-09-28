@@ -3,8 +3,10 @@ import Image from "next/image";
 import "./page.css";
 import "./globals.css";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import smart from "@/../public/Home/smart.svg";
 import smartF from "@/../public/Home/smartF.svg";
@@ -62,10 +64,17 @@ const properties = [
 ];
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  });
+
   return (
     <main className=" bg-white overflow-hidden">
       <div className="invest-easier h-[330px] sm:h-[370px] md:h-[450px] xl:h-[620px] lg:h-[450px] overflow-hidden bg-no-repeat">
-        <div className="Tulisan Utama ml-[8vw] lg:ml-[6.25vw] mt-[90px] sm:mt-[130px] md:mt-[140px] xl:mt-[150px] lg:mt-[120px]">
+        <div
+          className="Tulisan Utama ml-[8vw] lg:ml-[6.25vw] mt-[90px] sm:mt-[130px] md:mt-[140px] xl:mt-[150px] lg:mt-[120px]"
+          data-aos="fade-right"
+        >
           <h1 className="text-montserrat text-shadow w-[78.8vw] lg:w-[33.28vw] text-[30px] sm:text-[40px] md:text-[50px] xl:text-[67px] lg:text-[54px]">
             {" "}
             Invest Easier
@@ -77,7 +86,10 @@ export default function Home() {
           </h5>
         </div>
 
-        <div className="Tombol ml-[8vw] lg:ml-[6.25vw] mt-[25px] sm:mt-[25px] md:mt-[35px] xl:mt-[50px] lg:mt-[35px] flex flex-row">
+        <div
+          className="Tombol ml-[8vw] lg:ml-[6.25vw] mt-[25px] sm:mt-[25px] md:mt-[35px] xl:mt-[50px] lg:mt-[35px] flex flex-row"
+          data-aos="fade-right"
+        >
           <Link
             href="/marketplace"
             className="w-[28.8vw] lg:w-[11.75vw] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] h-auto aspect-[104/21] lg:aspect-[228/47] button mr-[2.5vw] lg:mr-[1vw] bg-[#2E3362] flex flex-col items-center justify-center text-white font-poppins font-semibold text-[9px] sm:text-[12px] md:text-[14px] xl:text-[14px] lg:text-[12px] rounded-[15px]"
@@ -95,17 +107,24 @@ export default function Home() {
 
       <div className="Trending px-[5.55vw] lg:px-[4.16vw]" id="Trending">
         <div className="Title mt-[20px] sm:mt-[25px] md:mt-[30px] xl:mt-[40px] lg:mt-[30px]">
-          <h2 className="text-poppins font-semibold text-[20px] sm:text-[25px] md:text-[32px] xl:text-[43px] lg:text-[35px]">
+          <h2
+            className="text-poppins font-semibold text-[20px] sm:text-[25px] md:text-[32px] xl:text-[43px] lg:text-[35px]"
+            data-aos="fade-right"
+          >
             Trending
           </h2>
 
           <div className="mt-[7px] sm:mt-[10px] md:mt-[13px] xl:mt-[20px] lg:mt-[15px] flex justify-between">
-            <h4 className="text-poppins text-[13px] sm:text-[15px] md:text-[19px] xl:text-[25px] lg:text-[20px]">
+            <h4
+              className="text-poppins text-[13px] sm:text-[15px] md:text-[19px] xl:text-[25px] lg:text-[20px]"
+              data-aos="fade-right"
+            >
               Explore trending properties
             </h4>
             <Link
               href="/marketplace"
               className="flex items-center text-poppins text-[13px] sm:text-[15px] md:text-[19px] xl:text-[25px] lg:text-[20px] font-medium"
+              data-aos="fade-left"
             >
               More
               <span className="ml-[1vw]">
@@ -121,6 +140,7 @@ export default function Home() {
           <div
             key={index}
             className="flex flex-col items-center rounded-[10px] lg:rounded-[30px] bg-[#FAFAFA] shadow-lg w-[28.3vw] lg:w-[18,75vw] h-auto aspect-[102/130] lg:aspect-[360/527] p-[3vw] lg:p-[2vw]"
+            data-aos="zoom-in-up"
           >
             <div className="w-[21.66vw] lg:w-[14.58vw] h-auto aspect-square relative">
               <Image
@@ -145,24 +165,25 @@ export default function Home() {
       </div>
 
       <div className="bg-[#EFF2FA] w-full h-auto aspect-[360/154] lg:aspect-[1920/812] flex justify-between">
-        <div className="Title ml-[4.4vw] lg:ml-[4.16vw] pt-[10px] sm:pt-[20px] md:pt-[30px] xl:pt-[110px] lg:pt-[85px] w-[45.27vw] lg:w-[44.68vw]">
+        <div
+          className="Title ml-[4.4vw] lg:ml-[4.16vw] pt-[10px] sm:pt-[20px] md:pt-[30px] xl:pt-[110px] lg:pt-[85px] w-[45.27vw] lg:w-[44.68vw]"
+          data-aos="fade-right"
+        >
           <h2 className="text-poppins text-[12px] sm:text-[16px] md:text-[23px] xl:text-[42px] lg:text-[32px]">
-            Smart Investment Decisions
+            Your Real Estate Journey, Elevated
           </h2>
           <p className="text-[#212653] mt-[10px] sm:mt-[15px] md:mt-[20px] xl:mt-[40px] lg:mt-[30px] w-[43.8vw] lg:w-[44.16vw] text-poppins text-[5px] sm:text-[7px] md:text-[11px] xl:text-[15px] lg:text-[12px] text-justify">
-            Unlock the future of real estate investment with AI-driven price
-            prediction technology. Say goodbye to uncertainty and hello to
-            informed decision-making. Our cutting-edge AI algorithms analyze
-            vast datasets, market trends, and historical property data to
-            provide you with accurate and reliable predictions for property
-            prices. Whether you're a seasoned investor looking to maximize your
-            returns or a first-time homebuyer searching for the perfect deal,
-            our AI-powered solution empowers you to make smarter choices in the
-            ever-evolving real estate market. Join us on the forefront of
-            innovation and take the guesswork out of property investments today!
+            We understand that buying, selling, or investing in real estate can
+            be a significant endeavor. That's why we've created the ultimate
+            companion — CREST, our Computer Assisted Real Estate Simulation
+            Technology. It's more than just an app; it's your trusted guide to
+            success.
           </p>
         </div>
-        <div className="w-[50.37vw] h-auto aspect-[183/154] lg:aspect-[967/812] relative">
+        <div
+          className="w-[50.37vw] h-auto aspect-[183/154] lg:aspect-[967/812] relative"
+          data-aos="fade-left"
+        >
           <Image
             alt="Smart Investment"
             src={smart}
@@ -172,7 +193,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-[#FFF] w-full h-auto aspect-[360/154] lg:aspect-[1920/812] flex justify-between">
+      <div
+        className="bg-[#FFF] w-full h-auto aspect-[360/154] lg:aspect-[1920/812] flex justify-between"
+        data-aos="fade-right"
+      >
         <div className="w-[50.37vw] h-auto aspect-[183/154] lg:aspect-[967/812] relative">
           <Image
             alt="Smart Investment"
@@ -183,19 +207,15 @@ export default function Home() {
         </div>
         <div className="Title mr-[4.4vw] lg:mr-[4.16vw] pt-[10px] sm:pt-[20px] md:pt-[30px] xl:pt-[110px] lg:pt-[85px] w-[45.27vw] lg:w-[44.68vw]">
           <h2 className="text-poppins text-[12px] sm:text-[16px] md:text-[23px] xl:text-[42px] lg:text-[32px]">
-            Smart Investment Decisions
+            Navigate Real Estate with Confidence
           </h2>
           <p className="text-[#212653] mt-[10px] sm:mt-[15px] md:mt-[20px] xl:mt-[40px] lg:mt-[30px] w-[43.8vw] lg:w-[44.16vw] text-poppins text-[5px] sm:text-[7px] md:text-[11px] xl:text-[15px] lg:text-[12px] text-justify">
-            Unlock the future of real estate investment with AI-driven price
-            prediction technology. Say goodbye to uncertainty and hello to
-            informed decision-making. Our cutting-edge AI algorithms analyze
-            vast datasets, market trends, and historical property data to
-            provide you with accurate and reliable predictions for property
-            prices. Whether you're a seasoned investor looking to maximize your
-            returns or a first-time homebuyer searching for the perfect deal,
-            our AI-powered solution empowers you to make smarter choices in the
-            ever-evolving real estate market. Join us on the forefront of
-            innovation and take the guesswork out of property investments today!
+            The future of real estate is here, and it's yours to discover. Join
+            us on this exciting journey and embrace a future where you can
+            navigate the world of real estate with confidence. Unlock your
+            potential with AI predictions—your key to a brighter real estate
+            future. Get Started Today and embark on a journey of informed
+            decisions and endless possibilities.
           </p>
         </div>
       </div>

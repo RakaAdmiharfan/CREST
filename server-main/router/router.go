@@ -22,6 +22,8 @@ func Routes() http.Handler {
 	}))
 
 	router.Get("/api/v1/properti", controllers.GetAllProperti)
+	router.Get("/api/v1/properti/{id}", controllers.GetPropertiById)
+	router.Post("/api/v1/properti/properti", controllers.CreateProperti)
 
 	return router
 }

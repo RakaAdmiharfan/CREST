@@ -1,18 +1,18 @@
 package helpers
 
-import(
+import (
 	"encoding/json"
 	"errors"
 	"log"
-	"os"
 	"net/http"
+	"os"
 	"tes-module/services"
 )
 
-type Envelope map[string] interface{}
+type Envelope map[string]interface{}
 
 type Message struct {
-	InfoLog *log.Logger
+	InfoLog  *log.Logger
 	ErrorLog *log.Logger
 }
 
@@ -20,7 +20,7 @@ var infoLog = log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
 var errorLog = log.New(os.Stdout, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
 
 var MessageLogs = &Message{
-	InfoLog: infoLog,
+	InfoLog:  infoLog,
 	ErrorLog: errorLog,
 }
 
@@ -34,7 +34,7 @@ func ReadJSON(w http.ResponseWriter, r *http.Request, data interface{}) error {
 	}
 
 	err = dec.Decode(&struct{}{})
-	if err != nil{
+	if err != nil {
 		return errors.New("body must have only a single json object")
 	}
 
@@ -43,12 +43,12 @@ func ReadJSON(w http.ResponseWriter, r *http.Request, data interface{}) error {
 
 func WriteJSON(w http.ResponseWriter, status int, data interface{}, headers ...http.Header) error {
 	out, err := json.MarshalIndent(data, "", "\t")
-	if err != nil{
+	if err != nil {
 		return err
 	}
 	if len(headers) > 0 {
-		for key, value := range headers[0]{
-			w.Header() [key] = value
+		for key, value := range headers[0] {
+			w.Header()[key] = value
 		}
 	}
 	w.Header().Set("Content-Type", "application/json")
@@ -65,7 +65,7 @@ func WriteJSON(w http.ResponseWriter, status int, data interface{}, headers ...h
 
 func ErrorJSON(w http.ResponseWriter, err error, status ...int) {
 	statusCode := http.StatusBadRequest
-	if len(status) > 0{
+	if len(status) > 0 {
 		statusCode = status[0]
 	}
 

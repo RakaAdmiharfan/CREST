@@ -1,6 +1,5 @@
 -- Add up migration script here
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
 CREATE TABLE IF NOT EXISTS properti (
     "id_properti" UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     "nama_properti" varchar NOT NULL,
@@ -97,5 +96,10 @@ VALUES (
     NOW(),                    -- Use the current timestamp for created_at
     NOW()                     -- Use the current timestamp for updated_at
 );
-
-
+CREATE TABLE IF NOT EXISTS users (
+    "id_user" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "email" VARCHAR NOT NULL,
+    "password" VARCHAR NOT NULL,
+    "created_at" TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    "updated_at" TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);

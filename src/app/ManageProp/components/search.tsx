@@ -26,15 +26,20 @@ export default function Search(props: SearchProps) {
   };
 
   return (
-    <div className="relative w-[70vw] h-[60px] flex flex-row bg-[#E0E3EB] rounded-[10px]">
+    <div className="relative w-[290px] h-[24px] lg:w-[70vw] lg:h-[60px] flex flex-row bg-white lg:bg-[#E0E3EB] rounded-[4.01px] lg:rounded-[10px]">
       <button className="w-[1.3vw] h-auto aspect-square relative mx-[1vw] z-10 ">
-        <Image alt="Search" src={search} fill={true} />
+        <Image
+          alt="Search"
+          src={search}
+          fill={true}
+          className="w-[03.11vw] lg:w-[01.45vw]"
+        />
       </button>
       <input
         type={"search"}
         name={"search"}
         placeholder={"Search..."}
-        className="bg-[#E0E3EB] flex w-full focus:outline-none text-[#2E3362] rounded-[10px]"
+        className="bg-white lg:bg-[#E0E3EB] flex w-full focus:outline-none text-[#2E3362] text-[8.02px] lg:text-[20px] rounded-[10px]"
         onChange={searchHandler}
         onKeyDown={handleKeyDown}
       />

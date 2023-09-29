@@ -5,13 +5,13 @@ import React, { useState } from "react";
 
 function PropList({ data, header }: { data: any[]; header: any[] }) {
   return (
-    <div className="mt-[30px] w-[70vw]">
+    <div className="w-[290px] mt-[23.54px] lg:mt-[30px] lg:w-[70vw]">
       <table className="w-full">
         <thead className="border-b-[1px] border-black">
           <tr>
             {header.map((item) => {
               return (
-                <th className="w-auto h-auto font-poppins text-black text-left pb-[8px]">
+                <th className="w-auto h-auto font-poppins text-black text-left pb-[8px] text-[10px] lg:text-[20px]">
                   {item}
                 </th>
               );
@@ -20,21 +20,32 @@ function PropList({ data, header }: { data: any[]; header: any[] }) {
         </thead>
 
         <tbody>
-          {data.map((item, index) => {
+          {data.map((item) => {
             return (
               <tr
-                key={index}
+                key={item.id}
                 className="border-b-[1px] border-black border-opacity-30"
               >
-                {Object.values(item).map((isi: any) => {
-                  return <td className="w-auto h-auto py-[18.5px]">{isi}</td>;
-                })}
-                <td className=" w-auto h-auto py-[18.5px]">
+                <td className="overflow-hidden w-auto h-auto py-[18.5px] text-[10px] lg:text-[20px]">
+                  <div>{item.id}</div>
+                </td>
+                <td className="overflow-hidden w-auto h-auto py-[18.5px] text-[10px] lg:text-[20px]">
+                  <div>{item.namaProperti}</div>
+                </td>
+                <td className="overflow-hidden w-auto h-auto py-[18.5px] text-[10px] lg:text-[20px]">
+                  <div>{item.Alamat}</div>
+                </td>
+                <td className="w-auto h-auto py-[18.5px]">
                   <Link
-                    href="/editProp"
-                    className="flex rounded-[15px] w-[04.94vw] px-[1px] py-[5px] justify-center border-[#6C88CD] border-[3px]"
+                    href={{
+                      pathname: "/editProp",
+                      query: { id: item.id },
+                    }}
+                    className="flex rounded-[7.145px] w-[12.77vw] px-[14.29px] py-[4.76px] lg:w-[04.94vw] lg:px-[1px] lg:py-[5px] lg:rounded-[15px] justify-center border-[#6C88CD] border-[3px]"
                   >
-                    <h6 className="text-[#6C88CD] font-poppins">Edit</h6>
+                    <h6 className="text-[#6C88CD] text-poppins text-[8.574px] lg:text-[18px]">
+                      Edit
+                    </h6>
                   </Link>
                 </td>
               </tr>

@@ -10,16 +10,16 @@ import (
 type Properti struct {
     IdProperti      string    `json:"id_properti"`
     NamaProperti    string    `json:"nama_properti"`
-    HargaDasar      int       `json:"harga_dasar"`
-    Harga2022       int       `json:"harga_2022"`
-    Harga2021       int       `json:"harga_2021"`
-    Harga2020       int       `json:"harga_2020"`
-    Harga2019       int       `json:"harga_2019"`
+    HargaDasar      int64       `json:"harga_dasar"`
+    Harga2022       int64       `json:"harga_2022"`
+    Harga2021       int64       `json:"harga_2021"`
+    Harga2020       int64       `json:"harga_2020"`
+    Harga2019       int64       `json:"harga_2019"`
     Tipe            string    `json:"tipe"`
     Area            int       `json:"area"`
     Kondisi         string    `json:"kondisi"`
     Alamat          string    `json:"alamat"`
-    BiayaSewa       int       `json:"biaya_sewa"`
+    BiayaSewa       int64       `json:"biaya_sewa"`
     Pengali         int       `json:"pengali"`
     DeskripsiBisnis string    `json:"deskripsi_bisnis"`
     DeskripsiPribadi string   `json:"deskripsi_pribadi"`

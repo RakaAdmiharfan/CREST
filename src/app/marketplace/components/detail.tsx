@@ -17,6 +17,8 @@ export default function Detail({
   deskripsiBisnis,
   deskripsiPribadi,
   harga,
+  nama_agen,
+  nomor_agen,
 }) {
   const [flow, setFlow] = useState(0);
   const [dateRange, setDateRange] = useState(0);
@@ -95,7 +97,7 @@ export default function Detail({
                 {flow === 0 ? deskripsiBisnis : deskripsiPribadi}
               </text>
               <text className="mb-[10px] sm:mb-[20px] md:mb-[40px] xl:mb-[40px] lg:mb-[25px] mt-[5px] sm:mt-[6px] md:mt-[7px] xl:mt-[10px] lg:mt-[7px] text-poppins text-[11px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[14px]">
-                {"CP: 081223456789 (Budi)"}
+                {`CP: ${nama_agen} (${nomor_agen})`}
               </text>
             </div>
           )}

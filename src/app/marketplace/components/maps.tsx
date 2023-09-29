@@ -41,8 +41,8 @@ export default function Maps(props) {
   const [deskripsiPribadi, setDeskripsiPribadi] = useState("");
   const [deskripsiBisnis, setDeskripsiBisnis] = useState("");
 
-  const handleChange = (bisnis, pribadi, harga) => {
-    props.onClick(bisnis, pribadi, harga);
+  const handleChange = (bisnis, pribadi, harga, nama_agen, nomor_agen) => {
+    props.onClick(bisnis, pribadi, harga, nama_agen, nomor_agen);
   };
 
   return (
@@ -57,12 +57,14 @@ export default function Maps(props) {
             {props.currentMap.map((data, index) => (
               <Marker
                 key={index}
-                position={{ lat: data.lat_position, lng: data.lng_position }}
+                position={{ lat: data.lat_position, lng: data.long_position }}
                 onClick={() =>
                   handleChange(
                     data.deskripsi_bisnis,
                     data.deskripsi_pribadi,
-                    data.harga_dasar
+                    data.harga_dasar,
+                    data.name_agen,
+                    data.nomor_agen
                   )
                 }
               />

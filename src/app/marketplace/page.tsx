@@ -23,26 +23,30 @@ export default function Marketplace() {
   const [bisnisDesc, setBisnisDesc] = useState("");
   const [pribadiDesc, setPribadiDesc] = useState("");
   const [harga, setHarga] = useState(0);
+  const [namaAgen, setNamaAgen] = useState("");
+  const [nomorAgen, setNomorAgen] = useState("");
   const [showFilter, setShowFilter] = useState(false);
-  const [currentMap, setCurrentMap] = useState(houseData.maps);
+  const [currentMap, setCurrentMap] = useState([]);
   const [dataProperty, setDataProperty] = useState([]);
 
   const formattedBuyDate = buyDate ? format(buyDate, "dd/MM/yyyy") : "";
   const formattedSellDate = sellDate ? format(sellDate, "dd/MM/yyyy") : "";
 
   const handleSearch = (value: string) => {
-    setCurrentMap(houseData.maps);
+    setCurrentMap(dataProperty);
     setSearchValue(value);
-    const filtered = houseData.maps.filter((item) =>
+    const filtered = dataProperty.filter((item) =>
       item.nama_properti.toLowerCase().includes(value.toLowerCase())
     );
     setCurrentMap(filtered);
   };
 
-  const handleMaps = (bisnis, pribadi, harga) => {
+  const handleMaps = (bisnis, pribadi, harga, nama_agen, nomor_agen) => {
     setBisnisDesc(bisnis);
     setPribadiDesc(pribadi);
     setHarga(harga);
+    setNamaAgen(nama_agen);
+    setNomorAgen(nomor_agen);
   };
 
   const handleFilter = () => {
@@ -65,6 +69,7 @@ export default function Marketplace() {
     try {
       const response = await axios.get("http://localhost:8080/api/v1/properti");
       setDataProperty(response.data.propertiGetAllProperti);
+      setCurrentMap(response.data.propertiGetAllProperti);
       console.log("oks");
       console.log(dataProperty);
       console.log(response.data.propertiGetAllProperti);
@@ -72,6 +77,10 @@ export default function Marketplace() {
       console.error("Terjadi kesalahan:", error);
     }
   };
+
+  useEffect(() => {
+    console.log(dataProperty);
+  }, [dataProperty]);
 
   return (
     <main className="bg-[#EFF2FA] min-h-[100vh] relative overflow-hidden pt-[70px] sm:pt-[95px] md:pt-[130px] xl:pt-[110px] lg:pt-[95px] pb-[50px] xl:pb-[50px] lg:pb-[35px]">
@@ -102,7 +111,7 @@ export default function Marketplace() {
               <Filter />
             </div>
           ) : null}
-          <Maps onClick={handleMaps} currentMap={dataProperty} />
+          <Maps onClick={handleMaps} currentMap={currentMap} />
         </div>
 
         <div data-aos="fade-up">
@@ -114,6 +123,8 @@ export default function Marketplace() {
             deskripsiBisnis={bisnisDesc}
             deskripsiPribadi={pribadiDesc}
             harga={harga}
+            nama_agen={namaAgen}
+            nomor_agen={nomorAgen}
           />
         </div>
       </div>

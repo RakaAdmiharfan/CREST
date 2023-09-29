@@ -55,7 +55,7 @@ export default function SignUp() {
         <div className="hidden w-[50vw] h-full relative lg:flex items-center justify-center">
           <div
             className="z-10 flex justify-center flex-col items-center"
-            data-aos="fade-up"
+            data-aos="fade-up "
           >
             <text className="text-[40px] xl:text-[40px] lg:text-[32px] text-white text-shadow font-semibold mb-[30px] xl:mb-[30px] lg:mb-[15px] text-poppins">
               Have an Account?

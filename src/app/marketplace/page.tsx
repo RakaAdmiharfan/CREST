@@ -11,6 +11,7 @@ import { format } from "date-fns";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
 
 import filter from "@/../public/images/filter.svg";
 import houseData from "@/data/maps.json";
@@ -24,6 +25,7 @@ export default function Marketplace() {
   const [harga, setHarga] = useState(0);
   const [showFilter, setShowFilter] = useState(false);
   const [currentMap, setCurrentMap] = useState(houseData.maps);
+  const [dataProperty, setDataProperty] = useState([]);
 
   const formattedBuyDate = buyDate ? format(buyDate, "dd/MM/yyyy") : "";
   const formattedSellDate = sellDate ? format(sellDate, "dd/MM/yyyy") : "";
@@ -55,6 +57,22 @@ export default function Marketplace() {
     AOS.init({ duration: 1000 });
   });
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/api/v1/properti");
+      setDataProperty(response.data.propertiGetAllProperti);
+      console.log("oks");
+      console.log(dataProperty);
+      console.log(response.data.propertiGetAllProperti);
+    } catch (error) {
+      console.error("Terjadi kesalahan:", error);
+    }
+  };
+
   return (
     <main className="bg-[#EFF2FA] min-h-[100vh] relative overflow-hidden pt-[70px] sm:pt-[95px] md:pt-[130px] xl:pt-[110px] lg:pt-[95px] pb-[50px] xl:pb-[50px] lg:pb-[35px]">
       <div className="px-[6.6vw] lg:px-[12.6vw]">
@@ -84,7 +102,7 @@ export default function Marketplace() {
               <Filter />
             </div>
           ) : null}
-          <Maps onClick={handleMaps} currentMap={currentMap} />
+          <Maps onClick={handleMaps} currentMap={dataProperty} />
         </div>
 
         <div data-aos="fade-up">

@@ -4,7 +4,6 @@ import (
 	"context"
 	"time"
 	// "tes-module/db"
-	"fmt"
 
 )
 
@@ -193,9 +192,6 @@ func (c *Properti) UpdateProperti(id string, body Properti) (*Properti, error){
 	ctx, cancel := context.WithTimeout(context.Background(), dbTimeout)
     defer cancel()
 
-	fmt.Println(id)
-	fmt.Println(body)
-
 	query := `
 		UPDATE properti
 		SET
@@ -252,6 +248,19 @@ func (c *Properti) UpdateProperti(id string, body Properti) (*Properti, error){
 		return nil, err
 	}
 	return &body, nil
+}
+
+func (c* Properti) DeleteProperti(id string) error{
+	ctx, cancel := context.WithTimeout(context.Background(), dbTimeout)
+    defer cancel()
+
+	query := `DELETE FROM properti WHERE id_properti = $1`
+	_, err := db.Exec(ctx, query, id)
+	if err != nil{
+		return err
+	}
+	return nil
+
 }
 
 

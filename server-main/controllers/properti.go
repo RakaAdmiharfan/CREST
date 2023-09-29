@@ -59,3 +59,12 @@ func UpdateProperti(w http.ResponseWriter, r *http.Request){
 	}
 	helpers.WriteJSON(w, http.StatusOK, propertiUpdated)
 }
+
+func DeleteProperti (w http.ResponseWriter, r *http.Request){
+	id := chi.URLParam(r, "id")
+	err := properti.DeleteProperti(id)
+	if err != nil{
+		helpers.MessageLogs.ErrorLog.Println(err) 
+    }
+    helpers.WriteJSON(w, http.StatusOK, helpers.Envelope{"message": "successfull deletion"})
+}

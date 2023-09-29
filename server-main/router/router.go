@@ -25,6 +25,7 @@ func Routes() http.Handler {
 	router.Get("/api/v1/properti/{id}", controllers.GetPropertiById)
 	router.Put("/api/v1/properti/{id}", controllers.UpdateProperti)
 	router.Post("/api/v1/properti/properti", controllers.CreateProperti)
+	router.Delete("/api/v1/properti/{id}", controllers.DeleteProperti)
 
 	return router
 }

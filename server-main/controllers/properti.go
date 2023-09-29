@@ -3,7 +3,7 @@ package controllers
 import(
 	"encoding/json"
 	// "errors"
-	// "log"
+	"log"
 	// "os"
 	"net/http"
 	"tes-module/services"
@@ -42,4 +42,20 @@ func CreateProperti(w http.ResponseWriter, r *http.Request){
 		return
 	}
 	helpers.WriteJSON(w, http.StatusOK, propertiCreated)
+}
+
+func UpdateProperti(w http.ResponseWriter, r *http.Request){
+	var propertiData services.Properti
+	id := chi.URLParam(r, "id")
+	err := json.NewDecoder(r.Body).Decode(&propertiData)
+	if err != nil{
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+	propertiUpdated, err := properti.UpdateProperti(id, propertiData)
+	log.Println(propertiUpdated)
+	if err != nil{
+		helpers.MessageLogs.ErrorLog.Println(err)
+	}
+	helpers.WriteJSON(w, http.StatusOK, propertiUpdated)
 }

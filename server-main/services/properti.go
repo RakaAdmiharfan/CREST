@@ -4,6 +4,7 @@ import (
 	"context"
 	"time"
 	// "tes-module/db"
+	"fmt"
 
 )
 
@@ -131,7 +132,6 @@ func (c *Properti) CreateProperti(properti Properti) (*Properti, error){
 
 	query := `
 		INSERT INTO properti (
-			id_properti, 
 			nama_properti, 
 			harga_dasar, 
 			harga_2022, 
@@ -153,13 +153,12 @@ func (c *Properti) CreateProperti(properti Properti) (*Properti, error){
 			link_map, 
 			created_at, 
 			updated_at
-		) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22) 
+		) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21) 
 		RETURNING *
 	`
 	_,err := db.Exec(
 		ctx,
 		query,
-		properti.IdProperti,
 		properti.NamaProperti,
 		properti.HargaDasar,
 		properti.Harga2022,
@@ -189,4 +188,71 @@ func (c *Properti) CreateProperti(properti Properti) (*Properti, error){
 	return &properti, nil
 
 }
+
+func (c *Properti) UpdateProperti(id string, body Properti) (*Properti, error){
+	ctx, cancel := context.WithTimeout(context.Background(), dbTimeout)
+    defer cancel()
+
+	fmt.Println(id)
+	fmt.Println(body)
+
+	query := `
+		UPDATE properti
+		SET
+			nama_properti = $1,
+			harga_dasar = $2,
+			harga_2022 = $3,
+			harga_2021 = $4,
+			harga_2020 = $5,
+			harga_2019 = $6,
+			tipe = $7,
+			area = $8,
+			kondisi = $9,
+			alamat = $10,
+			biaya_sewa = $11,
+			pengali = $12,
+			deskripsi_bisnis = $13,
+			deskripsi_pribadi = $14,
+			name_agen = $15,
+			nomor_agen = $16,
+			lat_position = $17,
+			long_position = $18,
+			link_map = $19,
+			updated_at = $20
+		WHERE id_properti = $21
+		returning *
+	`
+
+	_, err := db.Exec(
+		ctx,
+		query,
+		body.NamaProperti,
+		body.HargaDasar,
+		body.Harga2022,
+		body.Harga2021,
+		body.Harga2020,
+		body.Harga2019,
+		body.Tipe,
+		body.Area,
+		body.Kondisi,
+		body.Alamat,
+		body.BiayaSewa,
+		body.Pengali,
+		body.DeskripsiBisnis,
+		body.DeskripsiPribadi,
+		body.NamaAgen,
+		body.NomorAgen,
+		body.LatPosition,
+		body.LongPosition,
+		body.LinkMap,
+		time.Now(),
+		id,
+	)
+	if err != nil{
+		return nil, err
+	}
+	return &body, nil
+}
+
+
 

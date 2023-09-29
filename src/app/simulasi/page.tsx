@@ -31,8 +31,12 @@ export default function Marketplace() {
   const [showFilter, setShowFilter] = useState(false);
   const [year, setYear] = useState(2023);
   const [assetsHistory, setAssetsHistory] = useState([]);
+  const [isCantBuy, setIsCantBuy] = useState(false);
   const [currentAssetsHistory, setCurrentAssetsHistory] = useState({});
   const [tahunSimulasi, setTahunSimulasi] = useState(0);
+  const [netWorth, setNetWorth] = useState(0);
+  const [balance, setBalance] = useState(10);
+  const [earnings, setEarnings] = useState(0);
 
   const handleSearch = (value: string) => {
     setSearchValue(value);
@@ -61,9 +65,13 @@ export default function Marketplace() {
   };
 
   const handlePurchase = () => {
-    currentMarker.tahun_beli = year;
-    setAssets([...assets, currentMarker]);
-    setFlow(0);
+    if (currentMarker.harga_dasar > balance) {
+      setIsCantBuy(true);
+    } else {
+      currentMarker.tahun_beli = year;
+      setAssets([...assets, currentMarker]);
+      setFlow(0);
+    }
   };
 
   const handleSell = () => {
@@ -145,7 +153,7 @@ export default function Marketplace() {
                     Net Worth
                   </text>
                   <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
-                    $10.000
+                    {netWorth} M
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -154,7 +162,7 @@ export default function Marketplace() {
                     Balance
                   </text>
                   <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
-                    $10.000
+                    {balance} M
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -163,7 +171,7 @@ export default function Marketplace() {
                     Earnings
                   </text>
                   <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
-                    $10.000
+                    {earnings} M
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -263,7 +271,7 @@ export default function Marketplace() {
                 </text>
                 <button
                   className="w-[4.4vw] lg:w-[1.25vw] h-auto aspect-square relative z-10 hover:opacity-50"
-                  onClick={() => setFlow(0)}
+                  onClick={() => (setFlow(0), setIsCantBuy(false))}
                 >
                   <Image alt="x" src={x} fill={true} />
                 </button>
@@ -335,6 +343,11 @@ export default function Marketplace() {
                       Purchase
                     </text>
                   </button>
+                  {isCantBuy ? (
+                    <text className="text-[#EB5B5B] text-poppins text-[12px] sm:text-[15px] md:text-[18px] xl:text-[14px] lg:text-[12px] absolute bottom-[50px] sm:bottom-[70px] md:bottom-[90px] lg:bottom-[80px]">
+                      Balance tidak cukup
+                    </text>
+                  ) : null}
                 </div>
 
                 <div className="hidden lg:flex w-[1px] h-full bg-[#808080]"></div>
@@ -520,7 +533,7 @@ export default function Marketplace() {
                       Net Worth
                     </text>
                     <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
-                      $10.000
+                      {netWorth} M
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -547,7 +560,7 @@ export default function Marketplace() {
                       Earnings
                     </text>
                     <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
-                      $2000
+                      {earnings} M
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>

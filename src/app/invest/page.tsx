@@ -1,12 +1,18 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import kios from "@/../public/images/kios.svg";
 import pc from "@/../public/images/pc.svg";
 import gedung from "@/../public/images/gedungInvest.svg";
 
-export default function Home() {
+export default function Invest() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  });
   return (
     <main>
       <div className="bg-slate-100 min-h-[100vh] lg:h-[100vh] pt-[50px] xl:pt-[50px] lg:pt-[40px] pb-[30px] xl:pb-[60px] lg:pb-[50px] ">
@@ -21,10 +27,16 @@ export default function Home() {
             ></Image>
           </div>
           <div className="flex flex-col items-center">
-            <h1 className="z-10 text-shadow text-white text-[50px] sm:text-[65px] md:text-[80px] xl:text-[75px] lg:text-[60px] text-montserrat">
+            <h1
+              className="z-10 text-shadow text-white text-[50px] sm:text-[65px] md:text-[80px] xl:text-[75px] lg:text-[60px] text-montserrat"
+              data-aos="fade-right"
+            >
               Invest
             </h1>
-            <h5 className="z-10 text-shadow text-[14px] sm:text-[17px] md:text-[20px] xl:text-[18px] lg:text-[15px] text-poppins text-white text-justify">
+            <h5
+              className="z-10 text-shadow text-[14px] sm:text-[17px] md:text-[20px] xl:text-[18px] lg:text-[15px] text-poppins text-white text-justify"
+              data-aos="fade-right"
+            >
               Pick our services suited for your needs
             </h5>
           </div>
@@ -33,6 +45,7 @@ export default function Home() {
         <div className="flex bg-slate-100 flex-col-reverse lg:flex-row items-center justify-between px-[8.8vw] lg:px-[10.88vw] mt-[20px] sm:mt-[0px] md:mt-[0px] xl:mt-[45px] lg:mt-[35px] z-20">
           <Link
             href="/marketplace"
+            data-aos="fade-right"
             className="w-[82.4vw] lg:w-[33.9vw] mt-[20px] sm:mt-[20px] md:mt-[-20px] lg:mt-[0px] h-auto aspect-[289/191] lg:aspect-[651/430] flex flex-col hover:bg-gray-100 justify-center items-center text-center rounded-[20px] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] gap-[14px] sm:gap-[17px] md:gap-[20px] xl:gap-8 lg:gap-[22px] z-40"
           >
             <h3 className="text-black text-[23px] sm:text-[28px] md:text-[34px] xl:text-[38px] lg:text-[30px] font-semibold text-poppins">
@@ -49,6 +62,7 @@ export default function Home() {
           </Link>
           <Link
             href="/simulasi"
+            data-aos="fade-left"
             className="w-[82.4vw] lg:w-[33.9vw] h-auto aspect-[289/191] lg:aspect-[651/430] flex flex-col hover:bg-gray-100 justify-center items-center text-center  rounded-[20px] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] gap-[14px] sm:gap-[17px] md:gap-[20px] xl:gap-8 lg:gap-[22px] z-40"
           >
             <h3 className="text-black text-[23px] sm:text-[28px] md:text-[34px] xl:text-[38px] lg:text-[30px] font-semibold text-poppins">

@@ -1,11 +1,18 @@
+"use client";
 import Image from "next/image";
 import LoginForm from "./components/loginform";
 import Link from "next/link";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import house from "@/../public/images/rumahlogin.svg";
 import google from "@/../public/images/google.svg";
 
 export default function Login() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  });
   return (
     <div className="bg-white relative w-[100vw] min-h-[100vh] overflow-hidden pt-[0px] xl:pt-[57px] lg:pt-[54px]">
       <div className="hidden lg:flex w-[50vw] h-[100vh] aspect-[360/300] absolute bg-black z-10 opacity-60"></div>
@@ -14,7 +21,10 @@ export default function Login() {
       </div>
       <div className="flex flex-col lg:flex-row w-full">
         <div className="hidden w-[50vw] h-auto aspect-[960/1000] relative lg:flex items-center justify-center">
-          <div className="z-10 flex justify-center flex-col items-center">
+          <div
+            className="z-10 flex justify-center flex-col items-center"
+            data-aos="fade-up"
+          >
             <text className="text-shadow text-[40px] xl:text-[40px] lg:text-[32px] text-white font-semibold mb-[30px] xl:mb-[30px] lg:mb-[15px] text-poppins">
               New here?
             </text>
@@ -33,7 +43,10 @@ export default function Login() {
         </div>
 
         <div className="w-[100w] lg:w-[50vw] h-auto aspect-auto lg:aspect-[960/1000] pb-[25px] sm:pb-[30px] md:pb-[35px] lg:pb-[0px] relative flex items-center justify-center">
-          <div className="w-[82.2vw] lg:w-[39.6vw] h-auto aspect-auto lg:aspect-[760/696] flex flex-col mt-[10px] sm:mt-[15px] md:mt-[20px]">
+          <div
+            className="w-[82.2vw] lg:w-[39.6vw] h-auto aspect-auto lg:aspect-[760/696] flex flex-col mt-[10px] sm:mt-[15px] md:mt-[20px]"
+            data-aos="fade-left"
+          >
             <text className="font-medium text-[20px] sm:text-[28px] md:text-[36px] xl:text-[27px] lg:text-[22px] mb-[10px] sm:mb-[12px] md:mb-[15px] xl:mb-[25px] lg:mb-[18px] text-poppins">
               Welcome back!
             </text>

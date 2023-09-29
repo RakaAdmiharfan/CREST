@@ -17,6 +17,8 @@ import arrowdownblack from "@/../public/images/arrowdownblack.svg";
 import arrowupblack from "@/../public/images/arrowupblack.svg";
 import x from "@/../public/images/x.svg";
 import rumah from "@/../public/images/rumah2.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import houseData from "@/data/maps.json";
 
@@ -37,6 +39,10 @@ export default function Marketplace() {
   const [netWorth, setNetWorth] = useState(0);
   const [balance, setBalance] = useState(10);
   const [earnings, setEarnings] = useState(0);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  });
 
   const handleSearch = (value: string) => {
     setSearchValue(value);
@@ -121,7 +127,10 @@ export default function Marketplace() {
       {flow === 0 ? (
         <div className="relative bg-white min-h-[100vh] pt-[70px] sm:pt-[95px] md:pt-[130px] xl:pt-[75px] lg:pt-[70px] overflow-hidden text-poppins pb-[20px] sm:pb-[25px] md:pb-[30px] lg:pb-[0px]">
           <div className="px-[6.6vw] lg:px-[12.6vw]">
-            <div className="flex justify-between flex-row mb-[20px] sm:mb-[22px] md:mb-[25px] xl:mb-[30px] lg:mb-[20px]">
+            <div
+              className="flex justify-between flex-row mb-[20px] sm:mb-[22px] md:mb-[25px] xl:mb-[30px] lg:mb-[20px]"
+              data-aos="fade-down"
+            >
               <Search onSearch={handleSearch} />
               <button
                 className={`relative w-[6.66vw] lg:w-[3.646vw] text-gray-600 flex flex-row aspect-[70/60] ${
@@ -135,7 +144,10 @@ export default function Marketplace() {
               </button>
             </div>
 
-            <div className="w-full h-auto lg:aspect-[1436/796] flex flex-col-reverse lg:flex-row lg:rounded-[20px] overflow-hidden">
+            <div
+              className="w-full h-auto lg:aspect-[1436/796] flex flex-col-reverse lg:flex-row lg:rounded-[20px] overflow-hidden"
+              data-aos="fade-up"
+            >
               <div
                 className={`w-full lg:w-[20vw] h-full ${
                   showAssets ? "bg-[#464C87]" : "bg-[#30366C]"
@@ -266,7 +278,10 @@ export default function Marketplace() {
       ) : flow === 1 ? (
         <div className="relative bg-[#CED3DE] pt-[75px] sm:pt-[110px] md:pt-[140px] xl:pt-[95px] lg:pt-[85px] min-h-[100vh] pb-[20px] sm:pb-[25px] md:pb-[30px] lg:pb-[0px] overflow-hidden text-poppins">
           <div className="px-[5vw] lg:px-[8.33vw]">
-            <div className="w-full h-auto aspect-[324/670] lg:aspect-[1520/854] bg-white rounded-[5px] lg:rounded-[20px] flex flex-col overflow-hidden">
+            <div
+              className="w-full h-auto aspect-[324/670] lg:aspect-[1520/854] bg-white rounded-[5px] lg:rounded-[20px] flex flex-col overflow-hidden"
+              data-aos="fade-up"
+            >
               <div className="w-full h-auto aspect-[324/48] lg:aspect-[1520/74] bg-[#2E3362] flex items-center px-[4.4vw] lg:px-[2vw] justify-between">
                 <text className="text-white text-[17px] sm:text-[23px] md:text-[29px] xl:text-[21px] lg:text-[17px] font-medium text-poppins">
                   Property Details
@@ -346,7 +361,10 @@ export default function Marketplace() {
                     </text>
                   </button>
                   {isCantBuy ? (
-                    <text className="text-[#EB5B5B] text-poppins text-[12px] sm:text-[15px] md:text-[18px] xl:text-[14px] lg:text-[12px] absolute bottom-[50px] sm:bottom-[70px] md:bottom-[90px] lg:bottom-[80px]">
+                    <text
+                      className="text-[#EB5B5B] text-poppins text-[12px] sm:text-[15px] md:text-[18px] xl:text-[14px] lg:text-[12px] absolute bottom-[50px] sm:bottom-[70px] md:bottom-[90px] lg:bottom-[80px]"
+                      data-aos="fade-down"
+                    >
                       Balance tidak cukup
                     </text>
                   ) : null}
@@ -386,7 +404,10 @@ export default function Marketplace() {
       ) : flow === 2 ? (
         <div className="relative bg-[#CED3DE] pt-[75px] sm:pt-[110px] md:pt-[140px] xl:pt-[95px] lg:pt-[85px] min-h-[100vh] pb-[20px] sm:pb-[25px] md:pb-[30px] lg:pb-[0px] overflow-hidden text-poppins">
           <div className="px-[5vw] lg:px-[8.33vw]">
-            <div className="w-full h-auto aspect-[324/670] lg:aspect-[1520/854] bg-white rounded-[5px] lg:rounded-[20px] flex flex-col overflow-hidden">
+            <div
+              className="w-full h-auto aspect-[324/670] lg:aspect-[1520/854] bg-white rounded-[5px] lg:rounded-[20px] flex flex-col overflow-hidden"
+              data-aos="fade-up"
+            >
               <div className="w-full h-auto aspect-[324/48] lg:aspect-[1520/74] bg-[#2E3362] flex items-center px-[4.4vw] lg:px-[2vw] justify-between">
                 <text className="text-white text-[17px] sm:text-[23px] md:text-[29px] xl:text-[21px] lg:text-[17px] font-medium text-poppins">
                   Property Details
@@ -501,7 +522,10 @@ export default function Marketplace() {
       ) : flow === 3 ? (
         <div className="relative bg-[#CED3DE] pt-[75px] sm:pt-[110px] md:pt-[140px] xl:pt-[95px] lg:pt-[85px] min-h-[100vh] pb-[20px] sm:pb-[25px] md:pb-[30px] lg:pb-[0px] overflow-hidden text-poppins">
           <div className="px-[5vw] lg:px-[8.33vw]">
-            <div className="w-full h-auto aspect-[324/670] lg:aspect-[1520/854] bg-white rounded-[5px] lg:rounded-[20px] flex flex-col overflow-hidden">
+            <div
+              className="w-full h-auto aspect-[324/670] lg:aspect-[1520/854] bg-white rounded-[5px] lg:rounded-[20px] flex flex-col overflow-hidden"
+              data-aos="fade-up"
+            >
               <div className="w-full h-auto aspect-[324/48] lg:aspect-[1520/74] bg-[#2E3362] flex items-center  px-[4.4vw] lg:px-[2vw] justify-between">
                 <text className="text-white text-[17px] sm:text-[23px] xl:text-[21px] lg:text-[17px] font-medium text-poppins">
                   User Report
@@ -685,7 +709,10 @@ export default function Marketplace() {
       ) : (
         <div className="relative bg-[#CED3DE] pt-[75px] sm:pt-[110px] md:pt-[140px] xl:pt-[95px] lg:pt-[85px] min-h-[100vh] pb-[20px] sm:pb-[25px] md:pb-[30px] lg:pb-[0px] overflow-hidden text-poppins">
           <div className="px-[5vw] lg:px-[8.33vw]">
-            <div className="w-full h-auto aspect-[324/670] lg:aspect-[1520/854] bg-white rounded-[5px] lg:rounded-[20px] flex flex-col overflow-hidden">
+            <div
+              className="w-full h-auto aspect-[324/670] lg:aspect-[1520/854] bg-white rounded-[5px] lg:rounded-[20px] flex flex-col overflow-hidden"
+              data-aos="fade-up"
+            >
               <div className="w-full h-auto aspect-[324/48] lg:aspect-[1520/74] bg-[#2E3362] flex items-center  px-[4.4vw] lg:px-[2vw] justify-between">
                 <text className="text-white text-[17px] sm:text-[23px] xl:text-[21px] lg:text-[17px] font-medium text-poppins">
                   Asset Summary

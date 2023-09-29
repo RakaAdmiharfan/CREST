@@ -126,7 +126,7 @@ export default function Detail({
           <text className="mb-[2px] sm:mb-[3px] md:mb-[5px] xl:mb-[5px] lg:mb-[3px] text-poppins text-[11px] sm:text-[16px] md:text-[22px] xl:text-[16px] lg:text-[14px]">
             Sell Date
           </text>
-          <div className="mb-[12px sm:mb-[20px] md:mb-[40px] xl:mb-[30px] lg:mb-[25px]">
+          <div className="mb-[12px] sm:mb-[20px] md:mb-[40px] xl:mb-[30px] lg:mb-[25px]">
             <DatePicker
               selectedDate={selectedSellDate}
               onChange={onChangeSellDate}

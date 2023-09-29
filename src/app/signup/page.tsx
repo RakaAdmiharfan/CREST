@@ -1,16 +1,26 @@
+"use client";
 import Image from "next/image";
 import RegisterForm from "./components/registerform";
 import Link from "next/link";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import house from "@/../public/images/rumahlogin.svg";
 import google from "@/../public/images/google.svg";
 
-export default function signup() {
+export default function SignUp() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  });
   return (
     <div className="bg-white relative pt-[0px] xl:pt-[57px] lg:pt-[54px] w-[100vw] min-h-[100vh] overflow-hidden">
       <div className="flex flex-col-reverse lg:flex-row w-full h-auto aspect-auto lg:aspect-[1920/1000]">
         <div className="w-[100vw] lg:w-[50vw] h-full pb-[25px] sm:pb-[30px] md:pb-[35px] lg:pb-[0px] relative flex items-center justify-center">
-          <div className="w-[82.2vw] lg:w-[39.6vw] h-auto aspect-auto lg:aspect-[760/696] flex flex-col mt-[10px] sm:mt-[15px] md:mt-[20px]">
+          <div
+            className="w-[82.2vw] lg:w-[39.6vw] h-auto aspect-auto lg:aspect-[760/696] flex flex-col mt-[10px] sm:mt-[15px] md:mt-[20px]"
+            data-aos="fade-right"
+          >
             <text className="font-medium text-[20px] sm:text-[28px] md:text-[36px] xl:text-[27px] lg:text-[20px] mb-[10px] sm:mb-[12px] md:mb-[15px] xl:mb-[25px] lg:mb-[18px] text-poppins">
               Welcome!
             </text>
@@ -43,7 +53,10 @@ export default function signup() {
         </div>
 
         <div className="hidden w-[50vw] h-full relative lg:flex items-center justify-center">
-          <div className="z-10 flex justify-center flex-col items-center">
+          <div
+            className="z-10 flex justify-center flex-col items-center"
+            data-aos="fade-up"
+          >
             <text className="text-[40px] xl:text-[40px] lg:text-[32px] text-white text-shadow font-semibold mb-[30px] xl:mb-[30px] lg:mb-[15px] text-poppins">
               Have an Account?
             </text>

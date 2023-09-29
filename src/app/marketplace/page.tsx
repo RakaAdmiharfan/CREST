@@ -7,8 +7,10 @@ import Maps from "./components/maps";
 import Filter from "./components/filter";
 import { useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
-import React from "react";
 import { format } from "date-fns";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import filter from "@/../public/images/filter.svg";
 
@@ -42,10 +44,17 @@ export default function Marketplace() {
     }
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  });
+
   return (
     <main className="bg-[#EFF2FA] min-h-[100vh] relative overflow-hidden pt-[70px] sm:pt-[95px] md:pt-[130px] xl:pt-[110px] lg:pt-[95px] pb-[50px] xl:pb-[50px] lg:pb-[35px]">
       <div className="px-[6.6vw] lg:px-[12.6vw]">
-        <div className="flex justify-between flex-row mb-[20px] sm:mb-[22px] md:mb-[25px] xl:mb-[30px] lg:mb-[20px]">
+        <div
+          className="flex justify-between flex-row mb-[20px] sm:mb-[22px] md:mb-[25px] xl:mb-[30px] lg:mb-[20px]"
+          data-aos="fade-down"
+        >
           <Search onSearch={handleSearch} />
           <button
             className={`relative w-[6.66vw] lg:w-[3.646vw] text-gray-600 flex flex-row aspect-[24/20] lg:aspect-[70/60] ${
@@ -59,7 +68,10 @@ export default function Marketplace() {
           </button>
         </div>
 
-        <div className="w-full h-auto aspect-[312/187] lg:aspect-[1436/866] relative mb-[25px] sm:mb-[30px] md:mb-[35px] xl:mb-[75px] lg:mb-[55px]">
+        <div
+          className="w-full h-auto aspect-[312/187] lg:aspect-[1436/866] relative mb-[25px] sm:mb-[30px] md:mb-[35px] xl:mb-[75px] lg:mb-[55px]"
+          data-aos="fade-right"
+        >
           {showFilter ? (
             <div className="absolute z-30 top-0 right-0">
               <Filter />
@@ -68,15 +80,17 @@ export default function Marketplace() {
           <Maps onClick={handleMaps} />
         </div>
 
-        <Detail
-          selectedBuyDate={buyDate}
-          onChangeBuyDate={(date) => setBuyDate(date)}
-          selectedSellDate={sellDate}
-          onChangeSellDate={(date) => setSellDate(date)}
-          deskripsiBisnis={bisnisDesc}
-          deskripsiPribadi={pribadiDesc}
-          harga={harga}
-        />
+        <div data-aos="fade-up">
+          <Detail
+            selectedBuyDate={buyDate}
+            onChangeBuyDate={(date) => setBuyDate(date)}
+            selectedSellDate={sellDate}
+            onChangeSellDate={(date) => setSellDate(date)}
+            deskripsiBisnis={bisnisDesc}
+            deskripsiPribadi={pribadiDesc}
+            harga={harga}
+          />
+        </div>
       </div>
     </main>
   );

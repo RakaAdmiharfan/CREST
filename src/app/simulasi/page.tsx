@@ -4,7 +4,7 @@ import Image from "next/image";
 import Search from "./components/search";
 import Maps from "./components/maps";
 import Filter from "./components/filter";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import React from "react";
 import { format } from "date-fns";
@@ -22,6 +22,7 @@ import houseData from "@/data/maps.json";
 
 export default function Marketplace() {
   const [searchValue, setSearchValue] = useState("");
+  const [screenSize, setScreenSize] = useState("");
   const [flow, setFlow] = useState(0);
   const [showAssets, setShowAssets] = useState(false);
   const [showAssetsHistory, setShowAssetsHistory] = useState(false);
@@ -87,14 +88,24 @@ export default function Marketplace() {
         const foundAsset = assets[i];
         foundAsset.years_on_hold = year - foundAsset.tahun_beli;
         updatedAssetsHistory.push(foundAsset);
+        if (assetsHistory.length == 0) {
+          setCurrentAssetsHistory(foundAsset);
+        }
       }
       setAssetsHistory(updatedAssetsHistory);
-      console.log(assetsHistory);
     }
-    setFlow(3),
-      setShowAssets(false),
-      setCurrentAssetsHistory(assetsHistory[0]),
-      setTahunSimulasi(year - 2023);
+    if (assetsHistory.length > 0) {
+      setCurrentAssetsHistory(assetsHistory[0]);
+    }
+    setShowAssets(false), setTahunSimulasi(year - 2023), setFlow(3);
+  };
+
+  const handleAssetSummary = (data) => {
+    if (window.innerWidth >= 1200) {
+      setCurrentAssetsHistory(data);
+    } else {
+      setCurrentAssetsHistory(data), setFlow(4);
+    }
   };
 
   return (
@@ -574,9 +585,7 @@ export default function Marketplace() {
                         <div key={index} className="w-full">
                           <button
                             className="w-full h-auto aspect-[324/50] lg:aspect-[384/100] flex flex-row items-center justify-between px-[5.5vw] lg:px-[1.46vw]"
-                            onClick={() => (
-                              setCurrentAssetsHistory(data), setFlow(4)
-                            )}
+                            onClick={() => handleAssetSummary(data)}
                           >
                             <div className="flex flex-col items-start">
                               <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">

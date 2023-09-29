@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useRef } from "react";
 import Image from "next/image";
 import "react-datepicker/dist/react-datepicker.css";
 import { differenceInDays } from "date-fns";
@@ -20,6 +20,9 @@ export default function Detail({
 }) {
   const [flow, setFlow] = useState(0);
   const [dateRange, setDateRange] = useState(0);
+  const [openDatePickerBuy, setOpenDatePickerBuy] = useState(false);
+  const [openDatePickerSell, setOpenDatePickerSell] = useState(false);
+  const [closeDatePicker, setCloseDatePicker] = useState(true);
 
   const handleCalculate = () => {
     setDateRange(differenceInDays(selectedSellDate, selectedBuyDate));
@@ -100,28 +103,45 @@ export default function Detail({
           <text className="mb-[2px] sm:mb-[3px] md:mb-[5px] xl:mb-[5px] lg:mb-[3px] text-poppins text-[11px] sm:text-[16px] md:text-[22px] xl:text-[16px] lg:text-[14px]">
             Buy Date
           </text>
-          <div className="mb-[5px] sm:mb-[10px] md:mb-[15px] xl:mb-[30px] lg:mb-[20px] flex flex-row">
+          <DatePicker
+            selectedDate={selectedBuyDate}
+            onChange={onChangeBuyDate}
+            openDatePicker={openDatePickerBuy}
+          />
+          {/* <div className="mb-[5px] sm:mb-[10px] md:mb-[15px] xl:mb-[30px] lg:mb-[20px] flex flex-row">
             <DatePicker
               selectedDate={selectedBuyDate}
               onChange={onChangeBuyDate}
+              openDatePicker={openDatePickerBuy}
+              closeDatePicker={closeDatePicker}
             />
-            <div className="w-[5.5vw] lg:w-[1.67vw] h-auto aspect-square relative mx-[3.6vw] lg:mx-[1vw] z-10 ">
+            <button
+              className="w-[5.5vw] lg:w-[1.67vw] h-auto aspect-square relative mx-[3.6vw] lg:mx-[1vw]"
+              onClick={() => setOpenDatePickerBuy(!openDatePickerBuy)}
+            >
               <Image alt="Calendar" src={calendar} fill={true} />
-            </div>
-          </div>
+            </button>
+          </div> */}
 
           <text className="mb-[2px] sm:mb-[3px] md:mb-[5px] xl:mb-[5px] lg:mb-[3px] text-poppins text-[11px] sm:text-[16px] md:text-[22px] xl:text-[16px] lg:text-[14px]">
             Sell Date
           </text>
-          <div className="mb-[15px] sm:mb-[30px] md:mb-[55px] xl:mb-[60px] lg:mb-[45px] flex flex-row">
+          <div className="mb-[12px sm:mb-[20px] md:mb-[40px] xl:mb-[30px] lg:mb-[25px]">
+            <DatePicker
+              selectedDate={selectedSellDate}
+              onChange={onChangeSellDate}
+              openDatePicker={openDatePickerSell}
+            />
+          </div>
+          {/* <div className="mb-[15px] sm:mb-[30px] md:mb-[55px] xl:mb-[60px] lg:mb-[45px] flex flex-row">
             <DatePicker
               selectedDate={selectedSellDate}
               onChange={onChangeSellDate}
             />
-            <div className="w-[5.5vw] lg:w-[1.67vw] h-auto aspect-square relative mx-[3.6vw] lg:mx-[1vw] z-10 ">
+            <div className="w-[5.5vw] lg:w-[1.67vw] h-auto aspect-square relative mx-[3.6vw] lg:mx-[1vw]">
               <Image alt="Calendar" src={calendar} fill={true} />
             </div>
-          </div>
+          </div> */}
 
           <div className="flex justify-center">
             <button

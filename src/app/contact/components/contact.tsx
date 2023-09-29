@@ -59,7 +59,7 @@ export default function ContactForm() {
             <Field
               className="form-control w-[77.7vw] lg:w-[27vw] h-auto aspect-[308/30] lg:aspect-[520/50] rounded-[6px] lg:rounded-[10px] bg-white  pl-[3vw] lg:pl-[1.25vw] sm:text-[17px] md:text-[21px] top-0 text-[13px] xl:text-[13px] lg:text-[11px] text-poppins"
               id="phone"
-              type="number"
+              type="phone"
               name="phone"
               placeholder="Your Number"
             />
@@ -70,7 +70,7 @@ export default function ContactForm() {
               Message
             </text>
             <Field
-              className="form-control w-[77.7vw] lg:w-[27vw] h-auto aspect-[307/151] lg:aspect-[520/50] rounded-[6px] lg:rounded-[15px] bg-white pl-[3vw] lg:pl-[1.25vw] text-[13px] sm:text-[17px] md:text-[21px] xl:text-[13px] lg:text-[11px] pt-[0.5vw] pr-[0.5vw] text-poppins"
+              className="form-control w-[77.7vw] lg:w-[27vw] h-auto aspect-[307/151] lg:aspect-[520/120] rounded-[6px] lg:rounded-[15px] bg-white pl-[3vw] lg:pl-[1.25vw] text-[13px] sm:text-[17px] md:text-[21px] xl:text-[13px] lg:text-[11px] pt-[0.5vw] pr-[0.5vw] text-poppins"
               id="message"
               as="textarea"
               type="text"

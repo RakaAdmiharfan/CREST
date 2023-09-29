@@ -25,6 +25,7 @@ const Navbar = () => {
       <div className="bg-[#2E3362] w-[100vw] h-auto lg:aspect-[1920/80] aspect-[360/50] flex justify-between items-center lg:px-[5.2vw] px-[7.77vw] relative">
         <Link
           href="/"
+          onClick={() => setShowProfile(false)}
           className="lg:w-[9.53vw] w-[23.3vw] h-auto lg:aspect-[183/80] aspect-[84/37] relative"
         >
           <Image alt="Logo" src={logo} fill={true} />
@@ -35,6 +36,7 @@ const Navbar = () => {
             <li className="p-4">
               <Link
                 href="/invest"
+                onClick={() => setShowProfile(false)}
                 className="text-poppins hover:opacity-70 text-[18px] xl:text-[18px] lg:text-[16px] md:text-[14px] sm:text-[12px]"
               >
                 Invest
@@ -43,6 +45,7 @@ const Navbar = () => {
             <li className="p-4">
               <Link
                 href="/about"
+                onClick={() => setShowProfile(false)}
                 className="text-poppins hover:opacity-70 text-[18px] xl:text-[18px] lg:text-[16px]  md:text-[14px] sm:text-[12px]"
               >
                 About
@@ -51,6 +54,7 @@ const Navbar = () => {
             <li className="p-4">
               <Link
                 href="/faq"
+                onClick={() => setShowProfile(false)}
                 className="text-poppins hover:opacity-70 text-[18px] xl:text-[18px] lg:text-[16px]  md:text-[14px] sm:text-[12px]"
               >
                 Help
@@ -59,6 +63,7 @@ const Navbar = () => {
             <li className="p-4">
               <Link
                 href="/contact"
+                onClick={() => setShowProfile(false)}
                 className="text-poppins hover:opacity-70 text-[18px] xl:text-[18px] lg:text-[16px]  md:text-[14px] sm:text-[12px]"
               >
                 Contact
@@ -86,6 +91,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="/login"
+                  onClick={() => setShowProfile(false)}
                   className="w-[5.9vw] h-auto aspect-[114/47] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] border-[#6C88CD] border-[3px] text-[#6C88CD] font-poppins font-semibold text-[14px] xl:text-[14px] lg:text-[12px] md:text-[10px] sm-[8px] flex flex-col items-center justify-center rounded-[15px] text-poppins"
                 >
                   Log In
@@ -94,6 +100,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href="/signup"
+                  onClick={() => setShowProfile(false)}
                   className="w-[6.7vw] h-auto aspect-[130/47] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] text-[#A5CCD1] border-[#A5CCD1] border-[3px] font-poppins font-semibold text-[14px] xl:text-[14px] lg:text-[12px] md:text-[10px] sm-[8px] flex flex-col items-center justify-center  rounded-[15px] text-poppins"
                 >
                   Sign Up
@@ -137,23 +144,23 @@ const Navbar = () => {
               </Link>
             </li>
             {isLogin ? (
-              <li>
+              <ul>
                 <li onClick={handleNav} className="p-4">
-                  <Link href="/login" className="hover:opacity-70 text-poppins">
+                  <Link
+                    href="/changepassword"
+                    className="hover:opacity-70 text-poppins"
+                  >
                     Change Password
                   </Link>
                 </li>
                 <li onClick={handleNav} className="p-4">
-                  <Link
-                    href="/contact"
-                    className="hover:opacity-70 text-poppins"
-                  >
+                  <Link href="/login" className="hover:opacity-70 text-poppins">
                     Sign Out
                   </Link>
                 </li>{" "}
-              </li>
+              </ul>
             ) : (
-              <li>
+              <ul>
                 <li onClick={handleNav} className="p-4">
                   <Link href="/login" className="hover:opacity-70 text-poppins">
                     Login
@@ -167,7 +174,7 @@ const Navbar = () => {
                     Sign Up
                   </Link>
                 </li>{" "}
-              </li>
+              </ul>
             )}
           </ul>
         </div>
@@ -175,16 +182,16 @@ const Navbar = () => {
       {showProfile ? (
         <div className="w-[100vw] h-auto hidden lg:flex relative">
           <div className="w-[16.5vw] h-auto aspect-[317/164] bg-white rounded-[20px] border-[1px] border-black right-[5.2vw] absolute flex px-[2.5vw] flex-col items-start justify-center  gap-[0.5vw]">
-            <button>
+            <Link href="/changepassword" onClick={() => setShowProfile(false)}>
               <text className="text-poppins font-medium xl:text-[15px] lg:text-[12px] hover:opacity-70">
                 Change Password
               </text>
-            </button>
-            <button>
+            </Link>
+            <Link href="/login" onClick={() => setShowProfile(false)}>
               <text className="text-poppins font-medium xl:text-[15px] lg:text-[12px] text-[#EB5B5B] hover:opacity-70">
                 Sign Out
               </text>
-            </button>
+            </Link>
           </div>
         </div>
       ) : null}

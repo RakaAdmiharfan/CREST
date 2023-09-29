@@ -135,7 +135,7 @@ export default function Detail({
           </div>
         </div>
       </div>
-      <div className="w-full h-auto aspect-[312/164] lg:aspect-auto relative">
+      <div className="w-full h-auto lg:h-full aspect-[312/164] lg:aspect-auto relative">
         <Image
           alt="Rumah Detail"
           src={rumahdetail}

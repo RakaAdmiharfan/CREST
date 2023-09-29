@@ -73,6 +73,7 @@ export default function Profile({ name }: { name: string }) {
           <div className="flex w-[18vw] lg:w-[8.6vw] h-auto aspect-[65/9.5] lg:aspect-[194/64] justify-between">
             <Link
               href={link_linkedin}
+              target="_blank"
               className="w-[2.6vw] lg:w-[1.25vw] h-auto aspect-square z-10 relative"
             >
               <Image alt="Linked In" src={linkedin} fill={true} />
@@ -82,6 +83,7 @@ export default function Profile({ name }: { name: string }) {
             </button>
             <Link
               href={link_instagram}
+              target="_blank"
               className="w-[2.6vw] lg:w-[1.25vw] h-auto aspect-square z-10 relative"
             >
               <Image alt="Instagram" src={instagram} fill={true} />

@@ -3,6 +3,7 @@
 import { useState, ChangeEvent } from "react";
 import Image from "next/image";
 import "react-datepicker/dist/react-datepicker.css";
+import { differenceInDays } from "date-fns";
 
 import DatePicker from "./datepicker";
 import calendar from "@/../public/images/calendar.svg";
@@ -18,6 +19,12 @@ export default function Detail({
   harga,
 }) {
   const [flow, setFlow] = useState(0);
+  const [dateRange, setDateRange] = useState(0);
+
+  const handleCalculate = () => {
+    setDateRange(differenceInDays(selectedSellDate, selectedBuyDate));
+    setFlow(2);
+  };
 
   return (
     <div className="bg-white aspect-[312/401] lg:aspect-[1441/791] h-auto w-full rounded-[5px] lg:rounded-[15px] flex-col-reverse flex lg:flex-row overflow-hidden">
@@ -119,7 +126,7 @@ export default function Detail({
           <div className="flex justify-center">
             <button
               className="w-[14.1vw] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] lg:w-[10.2vw] h-auto aspect-[51/15] lg:aspect-[196/61] rounded-[5px] lg:rounded-[15px] border-[1px] border-black flex items-center justify-center"
-              onClick={() => setFlow(2)}
+              onClick={() => handleCalculate()}
             >
               <text className="text-[#6C88CD] font-bold text-[8px] sm:text-[13px] md:text-[16px] xl:text-[18px] lg:text-[16px] text-poppins">
                 Calculate

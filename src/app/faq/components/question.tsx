@@ -1,8 +1,10 @@
 "use client";
 
 import faqData from "@/data/faq.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import plus from "@/../public/images/plus.svg";
 import minus from "@/../public/images/minus.svg";
@@ -13,6 +15,9 @@ export default function Question() {
   const [handle3, setHandle3] = useState(0);
   const [handle4, setHandle4] = useState(0);
   const [handle5, setHandle5] = useState(0);
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  });
 
   return (
     <div>

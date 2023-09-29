@@ -36,7 +36,7 @@ export default function Detail({
           <button
             className={`w-1/2 lg:w-[15vw] h-auto aspect-[159/19] lg:aspect-[287/69] flex items-center justify-center lg:rounded-tl-[15px] py-[1vw] ${
               flow === 0 ? "bg-[#2E3362]" : "bg-[#98A8D0]"
-            }`}
+            } hover:opacity-70`}
             onClick={() => setFlow(0)}
           >
             <text className="text-[10px] sm:text-[14px] md:text-[18px] xl:text-[18px] lg:text-[16px] text-[#FFF] font-normal text-poppins">
@@ -46,7 +46,7 @@ export default function Detail({
           <button
             className={`w-1/2 lg:w-[15vw] h-auto aspect-[159/19] lg:aspect-[287/69] flex items-center justify-center ${
               flow === 1 ? "bg-[#2E3362]" : "bg-[#98A8D0]"
-            }`}
+            } hover:opacity-70`}
             onClick={() => setFlow(1)}
           >
             <text className="text-[10px] sm:text-[14px] md:text-[18px] xl:text-[18px] lg:text-[16px] text-[#FFF] font-normal text-poppins">

@@ -32,7 +32,7 @@ export default function DatePicker({ selectedDate, onChange, openDatePicker }) {
           />
         </div>
         <button
-          className="w-[5.5vw] lg:w-[1.67vw] h-auto aspect-square relative mx-[3.6vw] lg:mx-[1vw]"
+          className="w-[5.5vw] lg:w-[1.67vw] h-auto aspect-square relative mx-[3.6vw] lg:mx-[1vw] hover:opacity-60"
           onClick={() => setIsOpen(!isOpen)}
         >
           <Image alt="Calendar" src={calendar} fill={true} />

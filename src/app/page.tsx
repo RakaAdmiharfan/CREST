@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 
 import smart from "@/../public/Home/smart.svg";
 import smartF from "@/../public/Home/smartF.svg";
+import footer from "@/../public/images/footer.svg";
 
 const properties = [
   {
@@ -217,6 +218,13 @@ export default function Home() {
             future. Get Started Today and embark on a journey of informed
             decisions and endless possibilities.
           </p>
+        </div>
+      </div>
+      <div className="w-full h-auto aspect-[360/126] lg:aspect-[1920/673] bg-[#EFF2FA] relative">
+        <div className="bottom-0 w-full h-auto aspect-[360/65] lg:aspect-[1920/346] absolute">
+          <div className="w-full h-auto aspect-[360/65] lg:aspect-[1920/346] relative z-10">
+            <Image alt="Footer" src={footer} fill={true} objectFit="cover" />
+          </div>
         </div>
       </div>
     </main>

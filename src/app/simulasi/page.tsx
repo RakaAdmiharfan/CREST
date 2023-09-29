@@ -39,13 +39,19 @@ export default function Marketplace() {
   const [netWorth, setNetWorth] = useState(0);
   const [balance, setBalance] = useState(10);
   const [earnings, setEarnings] = useState(0);
+  const [currentMap, setCurrentMap] = useState(houseData.maps);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
   });
 
   const handleSearch = (value: string) => {
+    setCurrentMap(houseData.maps);
     setSearchValue(value);
+    const filtered = houseData.maps.filter((item) =>
+      item.nama_properti.toLowerCase().includes(value.toLowerCase())
+    );
+    setCurrentMap(filtered);
   };
 
   const handleFilter = () => {
@@ -77,6 +83,7 @@ export default function Marketplace() {
       currentMarker.tahun_beli = year;
       setAssets([...assets, currentMarker]);
       setFlow(0);
+      setCurrentMap(houseData.maps);
     }
   };
 
@@ -93,6 +100,7 @@ export default function Marketplace() {
     }
     setFlow(0);
     setAssets(updatedAssets);
+    setCurrentMap(houseData.maps);
   };
 
   const handleEnd = () => {
@@ -252,7 +260,7 @@ export default function Marketplace() {
                     <Filter />
                   </div>
                 ) : null}
-                <Maps onClick={handleMaps} />
+                <Maps onClick={handleMaps} currentMap={currentMap} />
                 <button
                   className="w-[19.7vw] lg:w-[10.4vw] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] aspect-[71/17] h-auto lg:aspect-[200/47] absolute bg-white z-20 bottom-[48px] sm:bottom-[55px] md:bottom-[68px] xl:bottom-[60px] lg:bottom-[55px] ml-[2.2vw] lg:ml-[1.67vw] rounded-[5px] lg:rounded-[15px] flex items-center justify-center"
                   onClick={() => {
@@ -288,7 +296,11 @@ export default function Marketplace() {
                 </text>
                 <button
                   className="w-[4.4vw] lg:w-[1.25vw] h-auto aspect-square relative z-10 hover:opacity-50"
-                  onClick={() => (setFlow(0), setIsCantBuy(false))}
+                  onClick={() => (
+                    setFlow(0),
+                    setIsCantBuy(false),
+                    setCurrentMap(houseData.maps)
+                  )}
                 >
                   <Image alt="x" src={x} fill={true} />
                 </button>
@@ -414,7 +426,7 @@ export default function Marketplace() {
                 </text>
                 <button
                   className="w-[4.4vw] lg:w-[1.25vw] h-auto aspect-square relative z-10 hover:opacity-50"
-                  onClick={() => setFlow(0)}
+                  onClick={() => (setFlow(0), setCurrentMap(houseData.maps))}
                 >
                   <Image alt="x" src={x} fill={true} />
                 </button>

@@ -13,6 +13,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import filter from "@/../public/images/filter.svg";
+import houseData from "@/data/maps.json";
 
 export default function Marketplace() {
   const [searchValue, setSearchValue] = useState("");
@@ -22,12 +23,18 @@ export default function Marketplace() {
   const [pribadiDesc, setPribadiDesc] = useState("");
   const [harga, setHarga] = useState(0);
   const [showFilter, setShowFilter] = useState(false);
+  const [currentMap, setCurrentMap] = useState(houseData.maps);
 
   const formattedBuyDate = buyDate ? format(buyDate, "dd/MM/yyyy") : "";
   const formattedSellDate = sellDate ? format(sellDate, "dd/MM/yyyy") : "";
 
   const handleSearch = (value: string) => {
+    setCurrentMap(houseData.maps);
     setSearchValue(value);
+    const filtered = houseData.maps.filter((item) =>
+      item.nama_properti.toLowerCase().includes(value.toLowerCase())
+    );
+    setCurrentMap(filtered);
   };
 
   const handleMaps = (bisnis, pribadi, harga) => {
@@ -77,7 +84,7 @@ export default function Marketplace() {
               <Filter />
             </div>
           ) : null}
-          <Maps onClick={handleMaps} />
+          <Maps onClick={handleMaps} currentMap={currentMap} />
         </div>
 
         <div data-aos="fade-up">

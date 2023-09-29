@@ -54,7 +54,7 @@ export default function Maps(props) {
             center={{ lat: -6.914744, lng: 107.60981 }}
             mapContainerStyle={containerStyle}
           >
-            {houseData.maps.map((data, index) => (
+            {props.currentMap.map((data, index) => (
               <Marker
                 key={index}
                 position={{ lat: data.lat_position, lng: data.lng_position }}

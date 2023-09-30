@@ -1,25 +1,20 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import EditFormComponent from "./components/editForm";
+import properties from "../ManageProp/page";
+import { useRouter } from "next/router";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export default function PropertyPage() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [properties, setProperties] = useState([
-    { id: 1, name: "Property 1", address: "Address 1" },
-    { id: 2, name: "Property 2", address: "Address 2" },
-    { id: 3, name: "Property 3", address: "Address 3" },
-    { id: 4, name: "Property 4", address: "Address 4" },
-    { id: 5, name: "Property 5", address: "Address 5" },
-    { id: 6, name: "Property 6", address: "Address 6" },
-    { id: 7, name: "Property 7", address: "Address 7" },
-    { id: 8, name: "Property 8", address: "Address 8" },
-    // Add more properties here
-  ]);
+  const pathname = usePathname();
+  const searchParams = useSearchParams;
 
-  const filteredProperties = properties.filter((property) =>
-    property.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  useEffect(() => {
+    const url = `${pathname}?${searchParams}`;
+    console.log(url);
+  }, [pathname, searchParams]);
 
   return (
     <div className="bg-[#EFF2FA] relative overflow-hidden w-full h-content">

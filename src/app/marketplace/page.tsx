@@ -28,17 +28,30 @@ export default function Marketplace() {
   const [showFilter, setShowFilter] = useState(false);
   const [currentMap, setCurrentMap] = useState([]);
   const [dataProperty, setDataProperty] = useState([]);
+  const [filterFlow, setFilterFlow] = useState(0);
+  const [filteredCurrentMap, setFilteredCurrentMap] = useState([]);
+  const [filteredSearchCurrentMap, setFilteredSearchCurrentMap] =
+    useState(dataProperty);
 
   const formattedBuyDate = buyDate ? format(buyDate, "dd/MM/yyyy") : "";
   const formattedSellDate = sellDate ? format(sellDate, "dd/MM/yyyy") : "";
 
   const handleSearch = (value: string) => {
-    setCurrentMap(dataProperty);
-    setSearchValue(value);
-    const filtered = dataProperty.filter((item) =>
-      item.nama_properti.toLowerCase().includes(value.toLowerCase())
-    );
-    setCurrentMap(filtered);
+    if (filterFlow == 0) {
+      setCurrentMap(dataProperty);
+      setSearchValue(value);
+      const filtered = dataProperty.filter((item) =>
+        item.nama_properti.toLowerCase().includes(value.toLowerCase())
+      );
+      setCurrentMap(filtered);
+      setFilteredSearchCurrentMap(filtered);
+    } else {
+      setSearchValue(value);
+      const filtered = filteredCurrentMap.filter((item) =>
+        item.nama_properti.toLowerCase().includes(value.toLowerCase())
+      );
+      setCurrentMap(filtered);
+    }
   };
 
   const handleMaps = (bisnis, pribadi, harga, nama_agen, nomor_agen) => {
@@ -55,6 +68,64 @@ export default function Marketplace() {
     } else {
       setShowFilter(true);
     }
+  };
+
+  const handleFilterMap = (num) => {
+    let mapNow = filteredSearchCurrentMap;
+    if (num == 0) {
+      setCurrentMap(mapNow);
+    } else if (num == 1) {
+      const filtered = mapNow.filter((item) => item.harga_dasar < 500000000);
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    } else if (num == 2) {
+      const filtered = mapNow.filter(
+        (item) =>
+          item.harga_dasar >= 500000000 && item.harga_dasar <= 1000000000
+      );
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    } else if (num == 3) {
+      const filtered = mapNow.filter(
+        (item) =>
+          item.harga_dasar >= 1500000000 && item.harga_dasar <= 2000000000
+      );
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    } else if (num == 4) {
+      const filtered = mapNow.filter(
+        (item) =>
+          item.harga_dasar >= 2000000000 && item.harga_dasar <= 2500000000
+      );
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    } else if (num == 5) {
+      const filtered = mapNow.filter(
+        (item) =>
+          item.harga_dasar >= 2500000000 && item.harga_dasar <= 3000000000
+      );
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    } else if (num == 6) {
+      const filtered = mapNow.filter(
+        (item) =>
+          item.harga_dasar >= 3000000000 && item.harga_dasar <= 3500000000
+      );
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    } else if (num == 7) {
+      const filtered = mapNow.filter(
+        (item) =>
+          item.harga_dasar >= 3500000000 && item.harga_dasar <= 4000000000
+      );
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    } else if (num == 8) {
+      const filtered = mapNow.filter((item) => item.harga_dasar > 4000000000);
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    }
+    setFilterFlow(num);
   };
 
   useEffect(() => {
@@ -108,7 +179,7 @@ export default function Marketplace() {
         >
           {showFilter ? (
             <div className="absolute z-30 top-0 right-0">
-              <Filter />
+              <Filter filterMap={handleFilterMap} numFlow={filterFlow} />
             </div>
           ) : null}
           <Maps onClick={handleMaps} currentMap={currentMap} />

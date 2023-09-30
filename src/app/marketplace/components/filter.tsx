@@ -5,15 +5,19 @@ import { useState } from "react";
 import Image from "next/image";
 import ceklis from "@/../public/images/ceklis.svg";
 
-export default function Filter() {
-  const [flow, setFlow] = useState(0);
+export default function Filter(props) {
+  const [flow, setFlow] = useState(props.numFlow);
 
   const handleFilter = (num: number) => {
+    let nums;
     if (flow === num) {
       setFlow(0);
+      nums = 0;
     } else {
       setFlow(num);
+      nums = num;
     }
+    props.filterMap(nums);
   };
 
   return (

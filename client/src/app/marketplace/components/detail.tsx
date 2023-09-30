@@ -7,6 +7,7 @@ import { differenceInDays } from "date-fns";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 import DatePicker from "./datepicker";
 import rumah from "@/../public/images/rumahss.jpeg";
@@ -31,6 +32,31 @@ export default function Detail({
   const [openDatePickerSell, setOpenDatePickerSell] = useState(false);
   const [isCantCalculate, setIsCantCalculate] = useState(false);
   const [prediction, setPrediction] = useState(0);
+  const [isLogin, setIsLogin] = useState(false);
+
+  const router = useRouter();
+  useEffect(() => {
+    (async () => {
+      const token = localStorage?.getItem("token");
+
+      try {
+        const res = await fetch("http://localhost:8080/api/v1/auth", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        const resJson = await res.json();
+
+        if (resJson.message !== "authorized") {
+          setIsLogin(false);
+        } else {
+          setIsLogin(true);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    })();
+  }, [router]);
 
   const handleCalculate = async () => {
     console.log(id_properti);
@@ -198,7 +224,13 @@ export default function Detail({
             ) : null}
             <button
               className="w-[14.1vw] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] lg:w-[10.2vw] h-auto aspect-[51/15] lg:aspect-[196/61] rounded-[5px] lg:rounded-[15px] border-[1px] border-black flex items-center justify-center"
-              onClick={() => handleCalculate()}
+              onClick={() => {
+                if (!isLogin) {
+                  router.push("/login");
+                } else {
+                  handleCalculate();
+                }
+              }}
             >
               <text className="text-[#6C88CD] font-bold text-[8px] sm:text-[13px] md:text-[16px] xl:text-[18px] lg:text-[16px] text-poppins">
                 Calculate

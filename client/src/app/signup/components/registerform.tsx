@@ -3,6 +3,7 @@
 import { Formik, Field, Form, FormikHelpers } from "formik";
 
 import PasswordInput from "./passwordinput";
+import { useRouter } from "next/navigation";
 
 interface Values {
   email: string;
@@ -11,6 +12,42 @@ interface Values {
 }
 
 export default function RegisterForm() {
+  const router = useRouter();
+
+  const handleSubmit = async (val: Values) => {
+    if (!localStorage) {
+      return;
+    }
+
+    if (val.password !== val.confirmPassword) {
+      // handle password mismatch disini
+      return;
+    }
+
+    const token = localStorage?.getItem("token");
+
+    try {
+      const res = await fetch("http://localhost:8080/api/v1/signup", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ email: val.email, password: val.password }),
+      });
+      const resJson = await res.json();
+
+      if (resJson.message === "already signed in") {
+        router.replace("/");
+      } else if (resJson.token) {
+        localStorage.setItem("token", resJson.token);
+
+        router.replace("/");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div>
       <Formik
@@ -20,7 +57,7 @@ export default function RegisterForm() {
           { setSubmitting }: FormikHelpers<Values>
         ) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+            handleSubmit(values);
             setSubmitting(false);
           });
         }}

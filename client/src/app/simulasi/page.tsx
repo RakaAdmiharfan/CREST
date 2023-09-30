@@ -22,6 +22,7 @@ import "aos/dist/aos.css";
 import axios from "axios";
 
 import houseData from "@/data/maps.json";
+import { useRouter } from "next/navigation";
 
 export default function Marketplace() {
   const [searchValue, setSearchValue] = useState("");
@@ -50,6 +51,28 @@ export default function Marketplace() {
   const [isSearchOn, setIsSearchOn] = useState(false);
   const [dataSimulasi, setDataSimulasi] = useState<any>([]);
   const [responseGPT, setResponseGPT] = useState("");
+
+  const router = useRouter();
+  useEffect(() => {
+    (async () => {
+      const token = localStorage?.getItem("token");
+
+      try {
+        const res = await fetch("http://localhost:8080/api/v1/auth", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        const resJson = await res.json();
+
+        if (resJson.message !== "authorized") {
+          router.push("/login");
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    })();
+  }, [router]);
 
   const GPT = (data: any) => {
     // Make a GET request to your API route

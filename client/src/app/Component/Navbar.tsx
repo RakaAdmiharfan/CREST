@@ -10,15 +10,44 @@ import logo from "@/../public/Home/Logo.png";
 import options from "@/../public/images/navbar.svg";
 import avatar from "@/../public/images/avatar.svg";
 import arrow from "@/../public/images/arrowdown.svg";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
 
+  const router = useRouter();
+
   const handleNav = () => {
     setNav(!nav);
   };
+
+  setInterval(async () => {
+    if (typeof window === undefined) {
+      return;
+    }
+
+    const token = localStorage?.getItem("token");
+
+    try {
+      const res = await fetch("http://localhost:8080/api/v1/auth", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const resJson = await res.json();
+
+      if (resJson.message === "authorized") {
+        setIsLogin(true);
+      } else {
+        setIsLogin(false);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }, 1000 * 5);
 
   return (
     <div className="w-full  z-50 fixed flex flex-col">
@@ -188,7 +217,13 @@ const Navbar = () => {
               </text>
             </Link>
             <Link href="/login" onClick={() => setShowProfile(false)}>
-              <text className="text-poppins font-medium xl:text-[15px] lg:text-[12px] text-[#EB5B5B] hover:opacity-70">
+              <text
+                onClick={() => {
+                  localStorage?.clear();
+                  router.replace("/login");
+                }}
+                className="text-poppins font-medium xl:text-[15px] lg:text-[12px] text-[#EB5B5B] hover:opacity-70"
+              >
                 Sign Out
               </text>
             </Link>

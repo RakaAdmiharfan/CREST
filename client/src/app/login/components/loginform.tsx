@@ -3,6 +3,9 @@
 import { Formik, Field, Form, FormikHelpers } from "formik";
 
 import PasswordInput from "./passwordinput";
+import { redirect } from "next/navigation";
+import { RedirectType } from "next/dist/client/components/redirect";
+import { useRouter } from "next/navigation";
 
 interface Values {
   email: string;
@@ -10,6 +13,37 @@ interface Values {
 }
 
 export default function LoginForm() {
+  const router = useRouter();
+
+  const handleSubmit = async (val: Values) => {
+    if (!localStorage) {
+      return;
+    }
+
+    const token = localStorage?.getItem("token");
+
+    try {
+      const res = await fetch("http://localhost:8080/api/v1/login", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(val),
+      });
+      const resJson = await res.json();
+
+      if (resJson.message === "already signed in") {
+        router.replace("/");
+      } else if (resJson.token) {
+        localStorage.setItem("token", resJson.token);
+
+        router.replace("/");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div>
       <Formik
@@ -19,7 +53,7 @@ export default function LoginForm() {
           { setSubmitting }: FormikHelpers<Values>
         ) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+            handleSubmit(values);
             setSubmitting(false);
           });
         }}

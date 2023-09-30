@@ -34,4 +34,17 @@ Simulasi bertujuan untuk memberikan pengetahuan bagi investor pemula untuk menge
 
 <br>
 
-Selain itu, CREST juga memiliki page FAQ, Contact dan Landing Page yang informatif agar user dapat dengan mudah mempelajari fitur-fitur yang ada pada website dan cara menggunakannya
+Selain itu, CREST juga memiliki page FAQ, Contact dan Landing Page yang informatif agar user dapat dengan mudah mempelajari fitur-fitur yang ada pada website dan cara menggunakannya.
+
+Tech Stacks:
+
+<ul>
+  <li>Next.js</li>
+  <li>Golang</li>
+  <li>Tailwind</li>
+  <li>Figma</li>
+  <li>PostgreSQL</li>
+  <li>Tensorflow</li>
+  <li>Python</li>
+  <li>AWS</li>
+</ul>

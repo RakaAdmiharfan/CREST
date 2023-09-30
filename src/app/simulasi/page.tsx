@@ -347,7 +347,7 @@ export default function Marketplace() {
                     Net Worth
                   </text>
                   <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
-                    {netWorth} M
+                    {Math.round(netWorth * 100) / 100} M
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -356,7 +356,7 @@ export default function Marketplace() {
                     Balance
                   </text>
                   <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
-                    {balance} M
+                    {Math.round(balance * 100) / 100} M
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -365,7 +365,7 @@ export default function Marketplace() {
                     Earnings
                   </text>
                   <text className="text-[#FFFFFF] font-medium text-[14px] sm:text-[18px] md:text-[23px] xl:text-[18px] lg:text-[15px] text-poppins">
-                    {earnings} M
+                    {Math.round(earnings * 100) / 100} M
                   </text>
                 </div>
                 <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -413,8 +413,16 @@ export default function Marketplace() {
                               </div>
                               <text className="text-[#FFFFFF] font-medium text-poppins text-[13px] sm:text-[15px] md:text-[18px] xl:text-[18px] lg:text-[15px]">
                                 {year === 2023
-                                  ? data.harga_dasar / 1000000000 + "M"
-                                  : data.harga_sekarang / 1000000000 + "M"}
+                                  ? Math.round(
+                                      (data.harga_dasar / 1000000000) * 100
+                                    ) /
+                                      100 +
+                                    " M"
+                                  : Math.round(
+                                      (data.harga_sekarang / 1000000000) * 100
+                                    ) /
+                                      100 +
+                                    " M"}
                               </text>
                             </div>
                             <div className="flex items-center justify-center">
@@ -506,8 +514,16 @@ export default function Marketplace() {
                     </text>
                     <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       {year === 2023
-                        ? currentMarker.harga_dasar / 1000000000 + "M"
-                        : currentMarker.harga_sekarang / 1000000000 + "M"}
+                        ? Math.round(
+                            (currentMarker.harga_dasar / 1000000000) * 100
+                          ) /
+                            100 +
+                          " M"
+                        : Math.round(
+                            (currentMarker.harga_sekarang / 1000000000) * 100
+                          ) /
+                            100 +
+                          " M"}
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -641,8 +657,16 @@ export default function Marketplace() {
                     </text>
                     <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
                       {year === 2023
-                        ? currentMarker.harga_dasar / 1000000000 + "M"
-                        : currentMarker.harga_sekarang / 1000000000 + "M"}
+                        ? Math.round(
+                            (currentMarker.harga_dasar / 1000000000) * 100
+                          ) /
+                            100 +
+                          " M"
+                        : Math.round(
+                            (currentMarker.harga_sekarang / 1000000000) * 100
+                          ) /
+                            100 +
+                          " M"}
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -765,7 +789,7 @@ export default function Marketplace() {
                       Net Worth
                     </text>
                     <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
-                      {netWorth} M
+                      {Math.round(netWorth * 100) / 100} M
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -774,7 +798,7 @@ export default function Marketplace() {
                       Increase
                     </text>
                     <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
-                      {netWorth / 10}x
+                      {Math.round((netWorth * 100) / 10) / 100}x
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -792,7 +816,7 @@ export default function Marketplace() {
                       Earnings
                     </text>
                     <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
-                      {earnings} M
+                      {Math.round(earnings * 100) / 100} M
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -841,7 +865,10 @@ export default function Marketplace() {
                               </text>
                             </div>
                             <text className="text-[#1E2351] font-semibold lg:font-medium text-[14px] sm:text-[17px] md:text-[21px] xl:text-[18px] lg:text-[15px] text-poppins">
-                              {data.harga_sekarang / 1000000000} M
+                              {Math.round(
+                                (data.harga_sekarang / 1000000000) * 100
+                              ) / 100}{" "}
+                              M
                             </text>
                           </button>
                           <div className="flex items-center justify-center">
@@ -870,7 +897,11 @@ export default function Marketplace() {
                           Starting price
                         </text>
                         <text className="font-medium text-[18px] xl:text-[18px] lg:text-[14px] text-poppins">
-                          {currentAssetsHistory.harga_dasar / 1000000000} M
+                          {Math.round(
+                            (currentAssetsHistory.harga_dasar / 1000000000) *
+                              100
+                          ) / 100}{" "}
+                          M
                         </text>
                       </div>
                       <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] xl:mb-[14px] lg:mb-[8px] items-center justify-between">
@@ -879,7 +910,11 @@ export default function Marketplace() {
                           Current Price
                         </text>
                         <text className="font-medium text-[18px] xl:text-[18px] lg:text-[14px] text-poppins">
-                          {currentAssetsHistory.harga_sekarang / 1000000000} M
+                          {Math.round(
+                            (currentAssetsHistory.harga_sekarang / 1000000000) *
+                              100
+                          ) / 100}{" "}
+                          M
                         </text>
                       </div>
                       <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] xl:mb-[14px] lg:mb-[8px] items-center justify-between">
@@ -957,7 +992,10 @@ export default function Marketplace() {
                       Starting Price
                     </text>
                     <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
-                      {currentAssetsHistory.harga_dasar / 1000000000} M
+                      {Math.round(
+                        (currentAssetsHistory.harga_dasar / 1000000000) * 100
+                      ) / 100}{" "}
+                      M
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -966,7 +1004,10 @@ export default function Marketplace() {
                       Current Price
                     </text>
                     <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
-                      {currentAssetsHistory.harga_sekarang / 1000000000} M
+                      {Math.round(
+                        (currentAssetsHistory.harga_sekarang / 1000000000) * 100
+                      ) / 100}{" "}
+                      M
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>

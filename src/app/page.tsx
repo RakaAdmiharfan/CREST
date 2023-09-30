@@ -7,6 +7,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
 
 import smart from "@/../public/Home/smart.svg";
 import smartF from "@/../public/Home/smartF.svg";
@@ -65,9 +66,24 @@ const properties = [
 ];
 
 export default function Home() {
+  const [dataPorperty, setDataProperty] = useState([]);
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
   });
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/api/v1/properti");
+      setDataProperty(response.data.propertiGetAllProperti);
+    } catch (error) {
+      console.error("Terjadi kesalahan:", error);
+    }
+  };
 
   return (
     <main className=" bg-white overflow-hidden">
@@ -137,31 +153,34 @@ export default function Home() {
       </div>
 
       <div className="flex flex-row px-[5.55vw] lg:px-[4.16vw] pb-[4px] sm:pb-[5px] md:pb-[6px] xl:pb-[8px] lg:pb-[6px] gap-[3vw] lg:gap-[2vw] overflow-x-auto no-scrollbar mt-[8px] sm:mt-[15px] md:mt-[18px] xl:mt-[40px] lg:mt-[25px] mb-[30px] sm:mb-[35px] md:mb-[40px] xl:mb-[60px] lg:mb-[45px]">
-        {properties.map((property, index) => (
-          <div
+        {dataPorperty.map((property, index) => (
+          <Link
+            href="marketplace"
             key={index}
             className="flex flex-col items-center rounded-[10px] lg:rounded-[30px] bg-[#FAFAFA] shadow-lg w-[28.3vw] lg:w-[18,75vw] h-auto aspect-[102/130] lg:aspect-[360/527] p-[3vw] lg:p-[2vw]"
             data-aos="zoom-in-up"
           >
-            <div className="w-[21.66vw] lg:w-[14.58vw] h-auto aspect-square relative">
-              <Image
-                alt={`Property ${index + 1}`}
-                src={property.imgurl}
-                fill={true}
-              />
+            <div className="w-[21.66vw] lg:w-[14.58vw] h-auto aspect-square relative overflow-hidden rounded-[15px]">
+              <div className="w-[21.66vw] lg:w-[14.58vw] h-auto aspect-square relative rounded-[15px]">
+                <Image
+                  alt={`Property ${index + 1}`}
+                  src={property.link_map}
+                  fill={true}
+                />
+              </div>
             </div>
             <div className="w-[21.66vw] lg:w-[14.58vw] flex flex-row mt-[8px] sm:mt-[11px] md:mt-[13px] xl:mt-[24px] lg:mt-[16px] justify-between">
-              <h5 className="text-poppins text-[8px] sm:text-[12px] md:text-[14px] xl:text-[18px] lg:text-[16px]">
-                {property.Type}
+              <h5 className="text-poppins text-[8px] sm:text-[12px] md:text-[14px] xl:text-[14px] lg:text-[12px]">
+                {property.nama_properti}
               </h5>
-              <h5 className="text-poppins text-[8px] sm:text-[12px] md:text-[14px] xl:text-[18px] lg:text-[16px]">
-                {property.Price}
+              <h5 className="text-poppins text-[8px] sm:text-[12px] md:text-[14px] xl:text-[14px] lg:text-[12 px]">
+                {property.harga_dasar / 1000000000} M
               </h5>
             </div>
-            <p className="w-[21.66vw] lg:w-[14.58vw] mt-[2px] sm:mt-[3px] md:mt-[4px] xl:mt-[10px] lg:mt-[5px] text-[#C8C8C8] font-poppins font-medium text-justify text-[6px] sm:text-[8px] md:text-[10px] xl:text-[14px] lg:text-[12px]  text-poppins">
-              {property.Addres}
+            <p className="w-[21.66vw] lg:w-[14.58vw] mt-[2px] sm:mt-[3px] md:mt-[4px] xl:mt-[10px] lg:mt-[5px] text-[#928b8b] font-poppins font-medium text-justify text-[6px] sm:text-[8px] md:text-[10px] xl:text-[14px] lg:text-[12px]  text-poppins">
+              {property.alamat}
             </p>
-          </div>
+          </Link>
         ))}
       </div>
 

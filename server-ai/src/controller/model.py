@@ -119,4 +119,3 @@ def evaluate(cursor, property_id):
 
     except Exception as e:
         return jsonify({"message": str(e)}), 500
-

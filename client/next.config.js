@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "crest-ifest.s3.ap-southeast-1.amazonaws.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  }};
 
 module.exports = nextConfig;

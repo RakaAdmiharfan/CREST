@@ -3,45 +3,48 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"net/http"
 	"os"
+	"log"
+	"fmt"
+	"net/http"
+	// "github.com/joho/godotenv"
 	"tes-module/db"
-	"tes-module/router"
 	"tes-module/services"
+	"tes-module/router"
 )
 
-type Config struct {
+type Config struct{
 	Port string
+
 }
 
-type Application struct {
+type Application struct{
 	Config Config
 	Models services.Models
 }
 
-func (app *Application) Serve() error {
+func (app *Application) Serve() error{
 	port := os.Getenv("PORT")
 
 	fmt.Println("API is listening on port", port)
 
-	srv := &http.Server{
-		Addr:    fmt.Sprintf(":%s", port),
+	srv := &http.Server {
+		Addr: fmt.Sprintf(":%s", port),
 		Handler: router.Routes(),
+
 	}
 	return srv.ListenAndServe()
 
 }
 
-func main() {
+func main(){
 	cfg := Config{
 		Port: os.Getenv("PORT"),
 	}
 
 	dsn := os.Getenv("DSN")
 	dbConn, err := db.ConnectPostgres(dsn)
-	if err != nil {
+	if err != nil{
 		log.Fatal("Cannot connect to database")
 	}
 
@@ -53,7 +56,7 @@ func main() {
 	}
 
 	err = app.Serve()
-	if err != nil {
+	if err != nil{
 		log.Fatal(err)
 	}
 }

@@ -138,7 +138,8 @@ export default function Home() {
 
       <div className="flex flex-row px-[5.55vw] lg:px-[4.16vw] pb-[4px] sm:pb-[5px] md:pb-[6px] xl:pb-[8px] lg:pb-[6px] gap-[3vw] lg:gap-[2vw] overflow-x-auto no-scrollbar mt-[8px] sm:mt-[15px] md:mt-[18px] xl:mt-[40px] lg:mt-[25px] mb-[30px] sm:mb-[35px] md:mb-[40px] xl:mb-[60px] lg:mb-[45px]">
         {properties.map((property, index) => (
-          <div
+          <Link
+            href="marketplace"
             key={index}
             className="flex flex-col items-center rounded-[10px] lg:rounded-[30px] bg-[#FAFAFA] shadow-lg w-[28.3vw] lg:w-[18,75vw] h-auto aspect-[102/130] lg:aspect-[360/527] p-[3vw] lg:p-[2vw]"
             data-aos="zoom-in-up"
@@ -161,7 +162,7 @@ export default function Home() {
             <p className="w-[21.66vw] lg:w-[14.58vw] mt-[2px] sm:mt-[3px] md:mt-[4px] xl:mt-[10px] lg:mt-[5px] text-[#C8C8C8] font-poppins font-medium text-justify text-[6px] sm:text-[8px] md:text-[10px] xl:text-[14px] lg:text-[12px]  text-poppins">
               {property.Addres}
             </p>
-          </div>
+          </Link>
         ))}
       </div>
 

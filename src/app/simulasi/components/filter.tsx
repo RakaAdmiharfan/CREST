@@ -1,19 +1,23 @@
 "use client";
 
 import React from "react";
-import ceklis from "@/../public/images/ceklis.svg";
-import Image from "next/image";
 import { useState } from "react";
+import Image from "next/image";
+import ceklis from "@/../public/images/ceklis.svg";
 
-export default function Filter() {
-  const [flow, setFlow] = useState(0);
+export default function Filter(props) {
+  const [flow, setFlow] = useState(props.numFlow);
 
   const handleFilter = (num: number) => {
+    let nums;
     if (flow === num) {
       setFlow(0);
+      nums = 0;
     } else {
       setFlow(num);
+      nums = num;
     }
+    props.filterMap(nums);
   };
 
   return (
@@ -26,7 +30,7 @@ export default function Filter() {
           <div className="flex flex-col justify-between w-[18vw] lg:w-[9.2vw] h-auto aspect-[177/204]">
             <div className="flex flex-row">
               <button
-                className={`w-[3vw] lg:w-[1.46vw] h-auto aspect-square border-[1px] rounded-[3px] sm:rounded-[4px] md:rounded-[5px] lg:rounded-[5px] border-black mr-[0.8vw]`}
+                className={`w-[3vw] lg:w-[1.46vw] h-auto aspect-square border-[1px] rounded-[3px] sm:rounded-[4px] md:rounded-[5px] lg:rounded-[5px] border-black mr-[0.8vw] `}
                 onClick={() => handleFilter(1)}
               >
                 {flow === 1 ? (

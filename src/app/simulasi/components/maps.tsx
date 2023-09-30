@@ -57,7 +57,7 @@ export default function Maps(props) {
             {props.currentMap.map((data, index) => (
               <Marker
                 key={index}
-                position={{ lat: data.lat_position, lng: data.lng_position }}
+                position={{ lat: data.lat_position, lng: data.long_position }}
                 onClick={() => handleChange(data)}
               />
             ))}

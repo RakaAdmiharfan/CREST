@@ -19,6 +19,7 @@ import x from "@/../public/images/x.svg";
 import rumah from "@/../public/images/rumah2.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
 
 import houseData from "@/data/maps.json";
 
@@ -39,19 +40,115 @@ export default function Marketplace() {
   const [netWorth, setNetWorth] = useState(0);
   const [balance, setBalance] = useState(10);
   const [earnings, setEarnings] = useState(0);
-  const [currentMap, setCurrentMap] = useState(houseData.maps);
+  const [currentMap, setCurrentMap] = useState([]);
+  const [dataProperty, setDataProperty] = useState([]);
+  const [filterFlow, setFilterFlow] = useState(0);
+  const [filteredCurrentMap, setFilteredCurrentMap] = useState([]);
+  const [filteredSearchCurrentMap, setFilteredSearchCurrentMap] =
+    useState(dataProperty);
+  const [isSearchOn, setIsSearchOn] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
   });
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/api/v1/properti");
+      setDataProperty(response.data.propertiGetAllProperti);
+      setCurrentMap(response.data.propertiGetAllProperti);
+      console.log("oks");
+      console.log(dataProperty);
+      console.log(response.data.propertiGetAllProperti);
+    } catch (error) {
+      console.error("Terjadi kesalahan:", error);
+    }
+  };
+
   const handleSearch = (value: string) => {
-    setCurrentMap(houseData.maps);
-    setSearchValue(value);
-    const filtered = houseData.maps.filter((item) =>
-      item.nama_properti.toLowerCase().includes(value.toLowerCase())
-    );
-    setCurrentMap(filtered);
+    if (filterFlow == 0) {
+      setCurrentMap(dataProperty);
+      setSearchValue(value);
+      const filtered = dataProperty.filter((item) =>
+        item.nama_properti.toLowerCase().includes(value.toLowerCase())
+      );
+      setCurrentMap(filtered);
+      setFilteredSearchCurrentMap(filtered);
+      setIsSearchOn(true);
+    } else {
+      setSearchValue(value);
+      const filtered = filteredCurrentMap.filter((item) =>
+        item.nama_properti.toLowerCase().includes(value.toLowerCase())
+      );
+      setCurrentMap(filtered);
+    }
+  };
+
+  const handleFilterMap = (num) => {
+    let mapNow;
+    if (isSearchOn) {
+      mapNow = filteredSearchCurrentMap;
+    } else {
+      mapNow = dataProperty;
+    }
+    if (num == 0) {
+      setCurrentMap(mapNow);
+    } else if (num == 1) {
+      const filtered = mapNow.filter((item) => item.harga_dasar < 500000000);
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    } else if (num == 2) {
+      const filtered = mapNow.filter(
+        (item) =>
+          item.harga_dasar >= 500000000 && item.harga_dasar <= 1000000000
+      );
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    } else if (num == 3) {
+      const filtered = mapNow.filter(
+        (item) =>
+          item.harga_dasar >= 1500000000 && item.harga_dasar <= 2000000000
+      );
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    } else if (num == 4) {
+      const filtered = mapNow.filter(
+        (item) =>
+          item.harga_dasar >= 2000000000 && item.harga_dasar <= 2500000000
+      );
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    } else if (num == 5) {
+      const filtered = mapNow.filter(
+        (item) =>
+          item.harga_dasar >= 2500000000 && item.harga_dasar <= 3000000000
+      );
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    } else if (num == 6) {
+      const filtered = mapNow.filter(
+        (item) =>
+          item.harga_dasar >= 3000000000 && item.harga_dasar <= 3500000000
+      );
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    } else if (num == 7) {
+      const filtered = mapNow.filter(
+        (item) =>
+          item.harga_dasar >= 3500000000 && item.harga_dasar <= 4000000000
+      );
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    } else if (num == 8) {
+      const filtered = mapNow.filter((item) => item.harga_dasar > 4000000000);
+      setCurrentMap(filtered);
+      setFilteredCurrentMap(filtered);
+    }
+    setFilterFlow(num);
   };
 
   const handleFilter = () => {
@@ -83,8 +180,9 @@ export default function Marketplace() {
       currentMarker.tahun_beli = year;
       setAssets([...assets, currentMarker]);
       setFlow(0);
-      setCurrentMap(houseData.maps);
+      setCurrentMap(dataProperty);
     }
+    setFilterFlow(0);
   };
 
   const handleSell = () => {
@@ -100,7 +198,8 @@ export default function Marketplace() {
     }
     setFlow(0);
     setAssets(updatedAssets);
-    setCurrentMap(houseData.maps);
+    setCurrentMap(dataProperty);
+    setFilterFlow(0);
   };
 
   const handleEnd = () => {
@@ -257,7 +356,7 @@ export default function Marketplace() {
               <div className="flex h-auto w-full lg:w-[54.8vw] lg:aspect-[1052/796] rounded-[5px] lg:rounded-none mb-[25px] sm:mb-[30px] md:mb-[35px] lg:mb-[0px] flex-col relative overflow-hidden">
                 {showFilter ? (
                   <div className="absolute z-30 top-0 right-0">
-                    <Filter />
+                    <Filter filterMap={handleFilterMap} numFlow={filterFlow} />
                   </div>
                 ) : null}
                 <Maps onClick={handleMaps} currentMap={currentMap} />
@@ -299,7 +398,8 @@ export default function Marketplace() {
                   onClick={() => (
                     setFlow(0),
                     setIsCantBuy(false),
-                    setCurrentMap(houseData.maps)
+                    setCurrentMap(dataProperty),
+                    setFilterFlow(0)
                   )}
                 >
                   <Image alt="x" src={x} fill={true} />
@@ -426,7 +526,9 @@ export default function Marketplace() {
                 </text>
                 <button
                   className="w-[4.4vw] lg:w-[1.25vw] h-auto aspect-square relative z-10 hover:opacity-50"
-                  onClick={() => (setFlow(0), setCurrentMap(houseData.maps))}
+                  onClick={() => (
+                    setFlow(0), setCurrentMap(dataProperty), setFilterFlow(0)
+                  )}
                 >
                   <Image alt="x" src={x} fill={true} />
                 </button>

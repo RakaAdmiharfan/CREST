@@ -32,6 +32,7 @@ export default function Marketplace() {
   const [filteredCurrentMap, setFilteredCurrentMap] = useState([]);
   const [filteredSearchCurrentMap, setFilteredSearchCurrentMap] =
     useState(dataProperty);
+  const [isSearchOn, setIsSearchOn] = useState(false);
 
   const formattedBuyDate = buyDate ? format(buyDate, "dd/MM/yyyy") : "";
   const formattedSellDate = sellDate ? format(sellDate, "dd/MM/yyyy") : "";
@@ -45,6 +46,7 @@ export default function Marketplace() {
       );
       setCurrentMap(filtered);
       setFilteredSearchCurrentMap(filtered);
+      setIsSearchOn(true);
     } else {
       setSearchValue(value);
       const filtered = filteredCurrentMap.filter((item) =>
@@ -71,7 +73,12 @@ export default function Marketplace() {
   };
 
   const handleFilterMap = (num) => {
-    let mapNow = filteredSearchCurrentMap;
+    let mapNow;
+    if (isSearchOn) {
+      mapNow = filteredSearchCurrentMap;
+    } else {
+      mapNow = dataProperty;
+    }
     if (num == 0) {
       setCurrentMap(mapNow);
     } else if (num == 1) {
@@ -148,10 +155,6 @@ export default function Marketplace() {
       console.error("Terjadi kesalahan:", error);
     }
   };
-
-  useEffect(() => {
-    console.log(dataProperty);
-  }, [dataProperty]);
 
   return (
     <main className="bg-[#EFF2FA] min-h-[100vh] relative overflow-hidden pt-[70px] sm:pt-[95px] md:pt-[130px] xl:pt-[110px] lg:pt-[95px] pb-[50px] xl:pb-[50px] lg:pb-[35px]">

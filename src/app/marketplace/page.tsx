@@ -15,6 +15,7 @@ import axios from "axios";
 
 import filter from "@/../public/images/filter.svg";
 import houseData from "@/data/maps.json";
+import { link } from "fs";
 
 export default function Marketplace() {
   const [searchValue, setSearchValue] = useState("");
@@ -25,6 +26,7 @@ export default function Marketplace() {
   const [harga, setHarga] = useState(0);
   const [namaAgen, setNamaAgen] = useState("");
   const [nomorAgen, setNomorAgen] = useState("");
+  const [link_map, setLink_Map] = useState("");
   const [showFilter, setShowFilter] = useState(false);
   const [currentMap, setCurrentMap] = useState([]);
   const [dataProperty, setDataProperty] = useState([]);
@@ -33,6 +35,7 @@ export default function Marketplace() {
   const [filteredSearchCurrentMap, setFilteredSearchCurrentMap] =
     useState(dataProperty);
   const [isSearchOn, setIsSearchOn] = useState(false);
+  const [isClick, setIsClick] = useState(false);
 
   const formattedBuyDate = buyDate ? format(buyDate, "dd/MM/yyyy") : "";
   const formattedSellDate = sellDate ? format(sellDate, "dd/MM/yyyy") : "";
@@ -56,12 +59,22 @@ export default function Marketplace() {
     }
   };
 
-  const handleMaps = (bisnis, pribadi, harga, nama_agen, nomor_agen) => {
+  const handleMaps = (
+    bisnis,
+    pribadi,
+    harga,
+    nama_agen,
+    nomor_agen,
+    link_map,
+    isClick
+  ) => {
     setBisnisDesc(bisnis);
     setPribadiDesc(pribadi);
     setHarga(harga);
     setNamaAgen(nama_agen);
     setNomorAgen(nomor_agen);
+    setLink_Map(link_map);
+    setIsClick(isClick);
   };
 
   const handleFilter = () => {
@@ -148,9 +161,6 @@ export default function Marketplace() {
       const response = await axios.get("http://localhost:8080/api/v1/properti");
       setDataProperty(response.data.propertiGetAllProperti);
       setCurrentMap(response.data.propertiGetAllProperti);
-      console.log("oks");
-      console.log(dataProperty);
-      console.log(response.data.propertiGetAllProperti);
     } catch (error) {
       console.error("Terjadi kesalahan:", error);
     }
@@ -199,6 +209,8 @@ export default function Marketplace() {
             harga={harga}
             nama_agen={namaAgen}
             nomor_agen={nomorAgen}
+            link_map={link_map}
+            isClick={isClick}
           />
         </div>
       </div>

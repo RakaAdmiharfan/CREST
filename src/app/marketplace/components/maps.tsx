@@ -41,8 +41,24 @@ export default function Maps(props) {
   const [deskripsiPribadi, setDeskripsiPribadi] = useState("");
   const [deskripsiBisnis, setDeskripsiBisnis] = useState("");
 
-  const handleChange = (bisnis, pribadi, harga, nama_agen, nomor_agen) => {
-    props.onClick(bisnis, pribadi, harga, nama_agen, nomor_agen);
+  const handleChange = (
+    bisnis,
+    pribadi,
+    harga,
+    nama_agen,
+    nomor_agen,
+    link_map,
+    isClick
+  ) => {
+    props.onClick(
+      bisnis,
+      pribadi,
+      harga,
+      nama_agen,
+      nomor_agen,
+      link_map,
+      isClick
+    );
   };
 
   return (
@@ -64,7 +80,9 @@ export default function Maps(props) {
                     data.deskripsi_pribadi,
                     data.harga_dasar,
                     data.name_agen,
-                    data.nomor_agen
+                    data.nomor_agen,
+                    data.link_map,
+                    true
                   )
                 }
               />

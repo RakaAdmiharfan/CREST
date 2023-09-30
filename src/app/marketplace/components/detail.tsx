@@ -1,13 +1,14 @@
 "use client";
 
-import { useState, ChangeEvent, useRef } from "react";
+import { useState, ChangeEvent, useRef, useEffect } from "react";
 import Image from "next/image";
 import "react-datepicker/dist/react-datepicker.css";
 import { differenceInDays } from "date-fns";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import DatePicker from "./datepicker";
-import calendar from "@/../public/images/calendar.svg";
-import rumahdetail from "@/../public/images/rumahdetail.svg";
+import rumah from "@/../public/images/rumahss.jpeg";
 
 export default function Detail({
   selectedBuyDate,
@@ -19,17 +20,29 @@ export default function Detail({
   harga,
   nama_agen,
   nomor_agen,
+  link_map,
+  isClick,
 }) {
   const [flow, setFlow] = useState(0);
   const [dateRange, setDateRange] = useState(0);
   const [openDatePickerBuy, setOpenDatePickerBuy] = useState(false);
   const [openDatePickerSell, setOpenDatePickerSell] = useState(false);
   const [closeDatePicker, setCloseDatePicker] = useState(true);
+  const [isCantCalculate, setIsCantCalculate] = useState(false);
 
   const handleCalculate = () => {
-    setDateRange(differenceInDays(selectedSellDate, selectedBuyDate));
-    setFlow(2);
+    if (differenceInDays(selectedSellDate, selectedBuyDate) > 0) {
+      setIsCantCalculate(false);
+      setDateRange(differenceInDays(selectedSellDate, selectedBuyDate));
+      setFlow(2);
+    } else {
+      setIsCantCalculate(true);
+    }
   };
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  });
 
   return (
     <div className="bg-white aspect-[312/401] lg:aspect-[1441/791] h-auto w-full rounded-[5px] lg:rounded-[15px] flex-col-reverse flex lg:flex-row overflow-hidden">
@@ -90,15 +103,19 @@ export default function Detail({
             </div>
           ) : (
             <div className="flex flex-col">
-              <text className="text-poppins text-[12px] sm:text-[17px] md:text-[23px] xl:text-[16px] lg:text-[14px]">
-                DESCRIPTION
-              </text>
-              <text className="mt-[5px] sm:mt-[6px] md:mt-[7px] xl:mt-[10px] lg:mt-[7px] text-[11px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[14px] text-poppins">
-                {flow === 0 ? deskripsiBisnis : deskripsiPribadi}
-              </text>
-              <text className="mb-[10px] sm:mb-[20px] md:mb-[40px] xl:mb-[40px] lg:mb-[25px] mt-[5px] sm:mt-[6px] md:mt-[7px] xl:mt-[10px] lg:mt-[7px] text-poppins text-[11px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[14px]">
-                {`CP: ${nama_agen} (${nomor_agen})`}
-              </text>
+              {isClick ? (
+                <div className="flex flex-col">
+                  <text className="text-poppins text-[12px] sm:text-[17px] md:text-[23px] xl:text-[16px] lg:text-[14px]">
+                    DESCRIPTION
+                  </text>
+                  <text className="mt-[5px] sm:mt-[6px] md:mt-[7px] xl:mt-[10px] lg:mt-[7px] text-[11px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[14px] text-poppins">
+                    {flow === 0 ? deskripsiBisnis : deskripsiPribadi}
+                  </text>
+                  <text className="mb-[10px] sm:mb-[20px] md:mb-[40px] xl:mb-[40px] lg:mb-[25px] mt-[5px] sm:mt-[6px] md:mt-[7px] xl:mt-[10px] lg:mt-[7px] text-poppins text-[11px] sm:text-[16px] md:text-[20px] xl:text-[16px] lg:text-[14px]">
+                    {`CP: ${nama_agen} (${nomor_agen})`}
+                  </text>
+                </div>
+              ) : null}
             </div>
           )}
 
@@ -128,7 +145,7 @@ export default function Detail({
           <text className="mb-[2px] sm:mb-[3px] md:mb-[5px] xl:mb-[5px] lg:mb-[3px] text-poppins text-[11px] sm:text-[16px] md:text-[22px] xl:text-[16px] lg:text-[14px]">
             Sell Date
           </text>
-          <div className="mb-[12px] sm:mb-[20px] md:mb-[40px] xl:mb-[30px] lg:mb-[25px]">
+          <div className="mb-[9px] sm:mb-[15px] md:mb-[40px] xl:mb-[30px] lg:mb-[25px]">
             <DatePicker
               selectedDate={selectedSellDate}
               onChange={onChangeSellDate}
@@ -145,7 +162,15 @@ export default function Detail({
             </div>
           </div> */}
 
-          <div className="flex justify-center">
+          <div className="flex flex-col justify-center items-center">
+            {isCantCalculate ? (
+              <text
+                className="text-poppins font-medium text-[#EB5B5B] text-[6px] sm:text-[10px] md:text-[13px] xl:text-[15px] lg:text-[14px]"
+                data-aos="fade-down"
+              >
+                Input ulang tanggal
+              </text>
+            ) : null}
             <button
               className="w-[14.1vw] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] lg:w-[10.2vw] h-auto aspect-[51/15] lg:aspect-[196/61] rounded-[5px] lg:rounded-[15px] border-[1px] border-black flex items-center justify-center"
               onClick={() => handleCalculate()}
@@ -160,7 +185,7 @@ export default function Detail({
       <div className="w-full h-auto lg:h-full aspect-[312/164] lg:aspect-auto relative">
         <Image
           alt="Rumah Detail"
-          src={rumahdetail}
+          src={isClick ? link_map : rumah}
           fill={true}
           objectFit="cover"
         />

@@ -480,7 +480,12 @@ export default function Marketplace() {
               </div>
 
               <div className="w-full lg:hidden h-auto aspect-[324/248] relative z-10">
-                <Image alt="Rumah" src={rumah} fill={true} objectFit="cover" />
+                <Image
+                  alt="Rumah"
+                  src={currentMarker.link_map}
+                  fill={true}
+                  objectFit="cover"
+                />
               </div>
 
               <div className="w-full lg:hidden h-auto aspect-[324/55] flex-col flex pl-[5.5vw] justify-center">
@@ -578,7 +583,7 @@ export default function Marketplace() {
                   <div className="w-[26vw] h-auto aspect-[500/500] relative z-10">
                     <Image
                       alt="Rumah"
-                      src={rumah}
+                      src={currentMarker.link_map}
                       fill={true}
                       objectFit="cover"
                     />
@@ -610,7 +615,12 @@ export default function Marketplace() {
               </div>
 
               <div className="w-full lg:hidden h-auto aspect-[324/248] relative z-10">
-                <Image alt="Rumah" src={rumah} fill={true} objectFit="cover" />
+                <Image
+                  alt="Rumah"
+                  src={currentMarker.link_map}
+                  fill={true}
+                  objectFit="cover"
+                />
               </div>
 
               <div className="w-full lg:hidden h-auto aspect-[324/55] flex-col flex pl-[5.5vw] justify-center">
@@ -700,7 +710,7 @@ export default function Marketplace() {
                   <div className="w-[26vw] h-auto aspect-[500/500] relative z-10">
                     <Image
                       alt="Rumah"
-                      src={rumah}
+                      src={currentMarker.link_map}
                       fill={true}
                       objectFit="cover"
                     />
@@ -730,7 +740,12 @@ export default function Marketplace() {
               </div>
 
               <div className="w-full lg:hidden h-auto aspect-[324/248] relative z-10">
-                <Image alt="Rumah" src={rumah} fill={true} objectFit="cover" />
+                <Image
+                  alt="Rumah"
+                  src={currentAssetsHistory.link_map}
+                  fill={true}
+                  objectFit="cover"
+                />
               </div>
 
               <div className="w-full lg:hidden h-auto aspect-[324/55] flex-col flex pl-[5.5vw] justify-center">
@@ -886,7 +901,7 @@ export default function Marketplace() {
                     <div className="w-[26vw] h-auto aspect-[500/500] relative z-10">
                       <Image
                         alt="Rumah"
-                        src={rumah}
+                        src={currentAssetsHistory.link_map}
                         fill={true}
                         objectFit="cover"
                       />
@@ -917,7 +932,12 @@ export default function Marketplace() {
               </div>
 
               <div className="w-full lg:hidden h-auto aspect-[324/248] relative z-10">
-                <Image alt="Rumah" src={rumah} fill={true} objectFit="cover" />
+                <Image
+                  alt="Rumah"
+                  src={currentAssetsHistory.link_map}
+                  fill={true}
+                  objectFit="cover"
+                />
               </div>
 
               <div className="w-full lg:hidden h-auto aspect-[324/55] flex-col flex pl-[5.5vw] justify-center">

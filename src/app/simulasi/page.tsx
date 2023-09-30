@@ -37,16 +37,16 @@ export default function Marketplace() {
   const [isCantBuy, setIsCantBuy] = useState(false);
   const [currentAssetsHistory, setCurrentAssetsHistory] = useState({});
   const [tahunSimulasi, setTahunSimulasi] = useState(0);
-  const [netWorth, setNetWorth] = useState(0);
+  const [netWorth, setNetWorth] = useState(10);
   const [balance, setBalance] = useState(10);
   const [earnings, setEarnings] = useState(0);
   const [currentMap, setCurrentMap] = useState([]);
   const [dataProperty, setDataProperty] = useState([]);
   const [filterFlow, setFilterFlow] = useState(0);
   const [filteredCurrentMap, setFilteredCurrentMap] = useState([]);
-  const [filteredSearchCurrentMap, setFilteredSearchCurrentMap] =
-    useState(dataProperty);
+  const [filteredSearchCurrentMap, setFilteredSearchCurrentMap] = useState([]);
   const [isSearchOn, setIsSearchOn] = useState(false);
+  const [dataSimulasi, setDataSimulasi] = useState([]);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -61,6 +61,7 @@ export default function Marketplace() {
       const response = await axios.get("http://localhost:8080/api/v1/properti");
       setDataProperty(response.data.propertiGetAllProperti);
       setCurrentMap(response.data.propertiGetAllProperti);
+      setDataSimulasi(response.data.propertiGetAllProperti);
       console.log("oks");
       console.log(dataProperty);
       console.log(response.data.propertiGetAllProperti);
@@ -71,9 +72,9 @@ export default function Marketplace() {
 
   const handleSearch = (value: string) => {
     if (filterFlow == 0) {
-      setCurrentMap(dataProperty);
+      setCurrentMap(dataSimulasi);
       setSearchValue(value);
-      const filtered = dataProperty.filter((item) =>
+      const filtered = dataSimulasi.filter((item) =>
         item.nama_properti.toLowerCase().includes(value.toLowerCase())
       );
       setCurrentMap(filtered);
@@ -93,7 +94,7 @@ export default function Marketplace() {
     if (isSearchOn) {
       mapNow = filteredSearchCurrentMap;
     } else {
-      mapNow = dataProperty;
+      mapNow = dataSimulasi;
     }
     if (num == 0) {
       setCurrentMap(mapNow);
@@ -160,9 +161,12 @@ export default function Marketplace() {
   };
 
   const handleMaps = (current) => {
+    console.log(assets);
     setCurrentMarket(current);
-    if (assets.find((obj) => obj.id_property === current.id_property)) {
+    console.log(current);
+    if (assets.find((obj) => obj.id_properti === current.id_properti)) {
       setFlow(2);
+      console.log("halo");
     } else {
       setFlow(1);
     }
@@ -173,24 +177,54 @@ export default function Marketplace() {
     setFlow(2);
   };
 
+  useEffect(() => {
+    let uang = balance - currentMarker.harga_dasar / 1000000000;
+    console.log("oy", netWorth + currentMarker.harga_dasar / 1000000000 + uang);
+  }, [netWorth, balance, currentMarker.harga_dasar]);
+
+  useEffect(() => {
+    console.log("okss", netWorth);
+  }, [netWorth]);
+
   const handlePurchase = () => {
-    if (currentMarker.harga_dasar > balance) {
+    let harga;
+    if (year === 2023) {
+      harga = currentMarker.harga_dasar;
+    } else {
+      harga = currentMarker.harga_sekarang;
+    }
+
+    if (harga / 1000000000 > balance) {
       setIsCantBuy(true);
     } else {
-      currentMarker.tahun_beli = year;
-      setAssets([...assets, currentMarker]);
-      setFlow(0);
-      setCurrentMap(dataProperty);
+      if (year === 2023) {
+        let uang = balance - currentMarker.harga_dasar / 1000000000;
+        currentMarker.tahun_beli = year;
+        currentMarker.harga_sekarang = currentMarker.harga_dasar;
+        setAssets([...assets, currentMarker]);
+        setBalance(uang);
+        setEarnings(earnings + currentMarker.biaya_sewa / 1000000000);
+        setFlow(0);
+        setCurrentMap(dataSimulasi);
+      } else {
+        let uang = balance - currentMarker.harga_sekarang / 1000000000;
+        currentMarker.tahun_beli = year;
+        setAssets([...assets, currentMarker]);
+        setBalance(uang);
+        setEarnings(earnings + currentMarker.biaya_sewa / 1000000000);
+        setFlow(0);
+        setCurrentMap(dataSimulasi);
+      }
     }
     setFilterFlow(0);
   };
 
   const handleSell = () => {
     const updatedAssets = assets.filter(
-      (obj) => obj.id_property !== currentMarker.id_property
+      (obj) => obj.id_properti !== currentMarker.id_properti
     );
     const foundAsset = assets.find(
-      (obj) => obj.id_property === currentMarker.id_property
+      (obj) => obj.id_properti === currentMarker.id_properti
     );
     if (foundAsset) {
       foundAsset.years_on_hold = year - foundAsset.tahun_beli;
@@ -198,7 +232,16 @@ export default function Marketplace() {
     }
     setFlow(0);
     setAssets(updatedAssets);
-    setCurrentMap(dataProperty);
+    setCurrentMap(dataSimulasi);
+    if (year === 2023) {
+      let uang = balance + currentMarker.harga_dasar / 1000000000;
+      setEarnings(earnings - currentMarker.biaya_sewa / 1000000000);
+      setBalance(uang);
+    } else {
+      let uang = balance + currentMarker.harga_sekarang / 1000000000;
+      setEarnings(earnings - currentMarker.biaya_sewa / 1000000000);
+      setBalance(uang);
+    }
     setFilterFlow(0);
   };
 
@@ -227,6 +270,36 @@ export default function Marketplace() {
     } else {
       setCurrentAssetsHistory(data), setFlow(4);
     }
+  };
+
+  const handleNextYear = () => {
+    let balanceNow = balance + earnings;
+    setYear(year + 1);
+    setBalance(balanceNow);
+    if (year === 2023) {
+      for (let i = 0; i < dataSimulasi.length; i++) {
+        dataSimulasi[i].harga_sekarang = dataSimulasi[i].harga_dasar;
+      }
+    } else {
+      for (let i = 0; i < dataSimulasi.length; i++) {
+        dataSimulasi[i].harga_sekarang =
+          dataSimulasi[i].harga_sekarang * dataSimulasi[i].pengali;
+      }
+    }
+
+    let variabel = 0;
+    if (year === 2023) {
+      for (let i = 0; i < assets.length; i++) {
+        assets[i].harga_sekarang = assets[i].harga_dasar;
+        variabel = variabel + assets[i].harga_dasar / 1000000000;
+      }
+    } else {
+      for (let i = 0; i < assets.length; i++) {
+        assets[i].harga_sekarang = assets[i].harga_sekarang * assets[i].pengali;
+        variabel = variabel + assets[i].harga_sekarang / 1000000000;
+      }
+    }
+    setNetWorth(variabel + balanceNow);
   };
 
   return (
@@ -339,7 +412,9 @@ export default function Marketplace() {
                                 </text>
                               </div>
                               <text className="text-[#FFFFFF] font-medium text-poppins text-[13px] sm:text-[15px] md:text-[18px] xl:text-[18px] lg:text-[15px]">
-                                {data.harga_dasar}
+                                {year === 2023
+                                  ? data.harga_dasar / 1000000000 + "M"
+                                  : data.harga_sekarang / 1000000000 + "M"}
                               </text>
                             </div>
                             <div className="flex items-center justify-center">
@@ -362,9 +437,7 @@ export default function Marketplace() {
                 <Maps onClick={handleMaps} currentMap={currentMap} />
                 <button
                   className="w-[19.7vw] lg:w-[10.4vw] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] aspect-[71/17] h-auto lg:aspect-[200/47] absolute bg-white z-20 bottom-[48px] sm:bottom-[55px] md:bottom-[68px] xl:bottom-[60px] lg:bottom-[55px] ml-[2.2vw] lg:ml-[1.67vw] rounded-[5px] lg:rounded-[15px] flex items-center justify-center"
-                  onClick={() => {
-                    setYear(year + 1);
-                  }}
+                  onClick={handleNextYear}
                 >
                   <text className="text-[8px] sm:text-[11px] md:text-[14px] xl:text-[12px] lg:text-[10px] text-black font-bold text-poppins">
                     Next A Year
@@ -398,7 +471,7 @@ export default function Marketplace() {
                   onClick={() => (
                     setFlow(0),
                     setIsCantBuy(false),
-                    setCurrentMap(dataProperty),
+                    setCurrentMap(dataSimulasi),
                     setFilterFlow(0)
                   )}
                 >
@@ -427,7 +500,9 @@ export default function Marketplace() {
                       Price
                     </text>
                     <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
-                      {currentMarker.harga_dasar}
+                      {year === 2023
+                        ? currentMarker.harga_dasar / 1000000000 + "M"
+                        : currentMarker.harga_sekarang / 1000000000 + "M"}
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -527,7 +602,7 @@ export default function Marketplace() {
                 <button
                   className="w-[4.4vw] lg:w-[1.25vw] h-auto aspect-square relative z-10 hover:opacity-50"
                   onClick={() => (
-                    setFlow(0), setCurrentMap(dataProperty), setFilterFlow(0)
+                    setFlow(0), setCurrentMap(dataSimulasi), setFilterFlow(0)
                   )}
                 >
                   <Image alt="x" src={x} fill={true} />
@@ -555,7 +630,9 @@ export default function Marketplace() {
                       Price
                     </text>
                     <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
-                      {currentMarker.harga_dasar}
+                      {year === 2023
+                        ? currentMarker.harga_dasar / 1000000000 + "M"
+                        : currentMarker.harga_sekarang / 1000000000 + "M"}
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -682,7 +759,7 @@ export default function Marketplace() {
                       Increase
                     </text>
                     <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
-                      10x
+                      {netWorth / 10}x
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -741,15 +818,15 @@ export default function Marketplace() {
                             onClick={() => handleAssetSummary(data)}
                           >
                             <div className="flex flex-col items-start">
-                              <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
+                              <text className="text-[#1E2351] font-semibold lg:font-medium text-[11px] sm:text-[13px] md:text-[17px] xl:text-[13px] lg:text-[11px] text-poppins">
                                 {data.nama_properti}
                               </text>
-                              <text className="text-[#CFF1EF] font-semibold text-[10px] sm:text-[13px] md:text-[16px] xl:text-[12px] lg:text-[10px] lg:font-medium text-poppins">
+                              <text className="text-black font-semibold text-[10px] sm:text-[13px] md:text-[16px] xl:text-[12px] lg:text-[10px] lg:font-medium text-poppins">
                                 {data.tipe}
                               </text>
                             </div>
                             <text className="text-[#1E2351] font-semibold lg:font-medium text-[14px] sm:text-[17px] md:text-[21px] xl:text-[18px] lg:text-[15px] text-poppins">
-                              {data.harga_dasar}
+                              {data.harga_sekarang / 1000000000} M
                             </text>
                           </button>
                           <div className="flex items-center justify-center">
@@ -778,7 +855,7 @@ export default function Marketplace() {
                           Starting price
                         </text>
                         <text className="font-medium text-[18px] xl:text-[18px] lg:text-[14px] text-poppins">
-                          {currentAssetsHistory.harga_dasar}
+                          {currentAssetsHistory.harga_dasar / 1000000000} M
                         </text>
                       </div>
                       <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] xl:mb-[14px] lg:mb-[8px] items-center justify-between">
@@ -787,7 +864,7 @@ export default function Marketplace() {
                           Current Price
                         </text>
                         <text className="font-medium text-[18px] xl:text-[18px] lg:text-[14px] text-poppins">
-                          $10.000
+                          {currentAssetsHistory.harga_sekarang / 1000000000} M
                         </text>
                       </div>
                       <div className="w-[26.875vw] h-auto aspect-[516/36] flex flex-row mb-[14px] xl:mb-[14px] lg:mb-[8px] items-center justify-between">
@@ -860,7 +937,7 @@ export default function Marketplace() {
                       Starting Price
                     </text>
                     <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
-                      {currentAssetsHistory.harga_dasar}
+                      {currentAssetsHistory.harga_dasar / 1000000000} M
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>
@@ -869,7 +946,7 @@ export default function Marketplace() {
                       Current Price
                     </text>
                     <text className="text-[#1E2351] font-semibold lg:font-medium text-[12px] sm:text-[15px] md:text-[19px] xl:text-[18px] lg:text-[15px] text-poppins">
-                      $10.000
+                      {currentAssetsHistory.harga_sekarang / 1000000000} M
                     </text>
                   </div>
                   <div className="w-full h-[1px] bg-[#808080]"></div>

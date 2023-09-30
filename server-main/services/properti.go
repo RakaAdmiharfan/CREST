@@ -20,7 +20,7 @@ type Properti struct {
     Kondisi         string    `json:"kondisi"`
     Alamat          string    `json:"alamat"`
     BiayaSewa       int64       `json:"biaya_sewa"`
-    Pengali         int       `json:"pengali"`
+    Pengali         float32       `json:"pengali"`
     DeskripsiBisnis string    `json:"deskripsi_bisnis"`
     DeskripsiPribadi string   `json:"deskripsi_pribadi"`
     NamaAgen        string    `json:"name_agen"`

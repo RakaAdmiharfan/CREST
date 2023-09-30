@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS properti (
     "kondisi" varchar NOT NULL,
     "alamat" varchar NOT NULL,
     "biaya_sewa" BIGINT NOT NULL,
-    "pengali" INT NOT NULL,
+    "pengali" FLOAT NOT NULL,
     "deskripsi_bisnis" varchar NOT NULL,
     "deskripsi_pribadi" varchar NOT NULL,
     "name_agen" varchar NOT NULL,

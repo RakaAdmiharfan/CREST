@@ -9,9 +9,6 @@ import { useRouter } from "next/router";
 import { id } from "date-fns/locale";
 
 const EditFormComponent = () => {
-  const router = useRouter();
-  const { id } = router.query;
-
   const [PropertyData, setPropertyData] = useState(properties);
 
   // Function to fetch data from the database (you need to implement this)

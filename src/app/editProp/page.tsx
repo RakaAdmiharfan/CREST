@@ -1,16 +1,20 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import EditFormComponent from "./components/editForm";
 import properties from "../ManageProp/page";
 import { useRouter } from "next/router";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export default function PropertyPage() {
   const [searchTerm, setSearchTerm] = useState("");
+  const pathname = usePathname();
+  const searchParams = useSearchParams;
 
-  interface paramId {
-    params: { id: number };
-  }
+  useEffect(() => {
+    const url = `${pathname}?${searchParams}`;
+    console.log(url);
+  }, [pathname, searchParams]);
 
   return (
     <div className="bg-[#EFF2FA] relative overflow-hidden w-full h-content">

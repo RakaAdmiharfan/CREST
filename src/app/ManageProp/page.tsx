@@ -1,16 +1,18 @@
 "use client";
 import Link from "next/link";
 // Your client-side code here
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./components/search";
 import PropList from "./components/propList";
 import Pagination from "./components/pagination";
 import { properties } from "./components/properties";
+import axios from "axios";
 
 export default function PropertyPage() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [dataProperties, setDataProperties] = useState([]);
 
-  const filteredProperties = properties.filter((property) =>
+  const filteredProperties = dataProperties.filter((property) =>
     property.nama_properti.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -30,8 +32,21 @@ export default function PropertyPage() {
     setCurrentPage(page);
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/api/v1/properti");
+      setDataProperties(response.data.propertiGetAllProperti);
+    } catch (error) {
+      console.error("Terjadi kesalahan:", error);
+    }
+  };
+
   return (
-    <div className="bg-[#EFF2FA] relative overflow-hidden w-full h-full">
+    <div className="bg-[#EFF2FA] relative overflow-hidden w-full h-full min-h-[100vh]">
       <div className="Search">
         <h2 className="text-[#000] text-center text-poppins text-[28px] mt-[70px] lg:text-[60px] lg:mt-[140px] lg:mb-4">
           Manage Properties

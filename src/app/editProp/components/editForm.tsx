@@ -45,7 +45,7 @@ const EditFormComponent = () => {
             <InputField
               name="namaProperti"
               label="Nama Properti"
-              placeholder={PropertyData[0].nama_properti}
+              placeholder="Nama Properti"
             />
           </div>
         </div>

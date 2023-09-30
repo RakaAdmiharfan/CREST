@@ -23,7 +23,7 @@ const InputBox: React.FC<InputBoxProps> = ({
         as={as}
         name={name}
         placeholder={placeholder}
-        className="bg-[#fff] flex w-full h-full focus:outline-none text-[#ADADAD] text-[10px] lg:text-[20px] rounded-[5px] px-[10px] py-[6px] lg:rounded-[10px] lg:py-[10px] lg:px-[20px]"
+        className="bg-[#fff] flex w-full h-full focus:outline-none text-black text-[10px] lg:text-[20px] rounded-[5px] px-[10px] py-[6px] lg:rounded-[10px] lg:py-[10px] lg:px-[20px]"
       />
       <ErrorMessage
         name={name}

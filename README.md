@@ -6,7 +6,10 @@
 </h1>
 
 ## CREST
-![logo](https://github.com/RakaAdmiharfan/CREST/blob/main/public/Home/Logo.png)
+<p align= "center">
+  <img width="1080" src="https://github.com/RakaAdmiharfan/CREST/blob/main/public/Home/Logo.png">
+</p>
+
 <br>
 Dipersembahkan oleh: Tim Indonesia Bagian Web
 sebagai realisasi project untuk IFEST UNPAD 2023.

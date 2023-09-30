@@ -14,7 +14,7 @@ export default function Login() {
     AOS.init({ duration: 1000 });
   });
   return (
-    <div className="bg-white relative w-[100vw] min-h-[100vh] overflow-hidden pt-[0px] xl:pt-[57px] lg:pt-[54px]">
+    <div className="bg-white relative w-[100vw] h-[100vh] overflow-hidden pt-[0px] xl:pt-[57px] lg:pt-[54px]">
       <div className="hidden lg:flex w-[50vw] h-[100vh] aspect-[360/300] absolute bg-black z-10 opacity-60"></div>
       <div className="flex w-full lg:w-[50vw] h-auto lg:h-[100vh] aspect-[360/300] lg:aspect-auto relative lg:absolute">
         <Image alt="House" src={house} fill={true} objectFit="cover" />
@@ -44,10 +44,10 @@ export default function Login() {
 
         <div className="w-[100w] lg:w-[50vw] h-auto aspect-auto lg:aspect-[960/1000] pb-[25px] sm:pb-[30px] md:pb-[35px] lg:pb-[0px] relative flex items-center justify-center">
           <div
-            className="w-[82.2vw] lg:w-[39.6vw] h-auto aspect-auto lg:aspect-[760/696] flex flex-col mt-[10px] sm:mt-[15px] md:mt-[20px]"
+            className="w-[82.2vw] lg:w-[39.6vw] h-auto aspect-auto lg:aspect-[760/696] flex flex-col mt-[24px] sm:mt-[15px] md:mt-[20px]"
             data-aos="fade-left"
           >
-            <text className="font-medium text-[20px] sm:text-[28px] md:text-[36px] xl:text-[27px] lg:text-[22px] mb-[10px] sm:mb-[12px] md:mb-[15px] xl:mb-[25px] lg:mb-[18px] text-poppins">
+            <text className="font-extrabold text-[20px] sm:text-[28px] md:text-[36px] xl:text-[27px] lg:text-[22px] mb-[10px] sm:mb-[12px] md:mb-[15px] xl:mb-[25px] lg:mb-[18px] text-poppins">
               Welcome back!
             </text>
             <text className="font-medium text-[12px] sm:text-[16px] md:text-[20px] xl:text-[14px] lg:text-[12px] mb-[10px] sm:mb-[15px] md:mb-[20px] xl:mb-[60px] lg:mb-[45px] text-poppins">

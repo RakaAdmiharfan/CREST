@@ -3,38 +3,13 @@
 import { Formik, Form, Field } from "formik";
 import React, { useEffect, useState } from "react";
 import InputField from "./inputBox";
+import { properties } from "../../ManageProp/components/properties";
 import { useParams } from "next/navigation";
 import { useRouter } from "next/router";
+import { id } from "date-fns/locale";
 
-const EditFormComponent: React.FC = () => {
-  // Objek properties yang ingin diedit
-  const propertyToEdit = {
-    namaProperti: "",
-    Alamat: "",
-    Latitude: "",
-    Longitude: "",
-    BasePrice: "",
-    Multiplier: "",
-    Tipe: "",
-    DeskripsiBisnis: "",
-    DeskripsiPribadi: "",
-  };
-
-  // Inisialisasi nilai awal untuk EditForm
-  const [initialData, setInitialData] = useState({
-    namaProperti: propertyToEdit.namaProperti,
-    Alamat: propertyToEdit.Alamat,
-    Latitude: propertyToEdit.Latitude,
-    Longitude: propertyToEdit.Longitude,
-    BasePrice: propertyToEdit.BasePrice,
-    Multiplier: propertyToEdit.Multiplier,
-    Tipe: propertyToEdit.Tipe,
-    DeskripsiBisnis: propertyToEdit.DeskripsiBisnis,
-    DeskripsiPribadi: propertyToEdit.DeskripsiPribadi,
-  });
-
-  const router = useRouter();
-  const { id } = router.query;
+const EditFormComponent = () => {
+  const [PropertyData, setPropertyData] = useState(properties);
 
   // Function to fetch data from the database (you need to implement this)
   const fetchDataFromDatabase = async () => {
@@ -42,7 +17,7 @@ const EditFormComponent: React.FC = () => {
       // Replace with actual fetch logic to get data from your database
       const response = await fetch("your-database-api-endpoint");
       const data = await response.json();
-      setInitialData(data); // Update the state with the fetched data
+      setPropertyData(data); // Update the state with the fetched data
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -53,14 +28,14 @@ const EditFormComponent: React.FC = () => {
     fetchDataFromDatabase();
   }, []);
 
-  const handleSubmit = (values: typeof initialData) => {
+  const handleSubmit = (values: typeof PropertyData) => {
     console.log("Form submitted with values:", values);
     // Here, you can send the updated values back to your database
     // using an API call or any other method.
   };
 
   return (
-    <Formik initialValues={initialData} onSubmit={handleSubmit}>
+    <Formik initialValues={PropertyData} onSubmit={handleSubmit}>
       <Form>
         <div className="Nama Properti mb-[20px]">
           <h5 className="text-poppins text-[11px] lg:text-[24px] mb-[8px] lg:mb-[20px] font-extrabold">
@@ -70,7 +45,7 @@ const EditFormComponent: React.FC = () => {
             <InputField
               name="namaProperti"
               label="Nama Properti"
-              placeholder="Nama Properti"
+              placeholder={PropertyData[0].nama_properti}
             />
           </div>
         </div>
@@ -208,7 +183,7 @@ const EditFormComponent: React.FC = () => {
         <div className="mx-[33.2vw] lg:mx-[29vw] lg:mt-[64px] lg:mb-[84px]">
           <button
             type="submit"
-            className="bg-[#2E3362] text-white text-[8.264px] lg:text-[18px] rounded-[6.887px] lg:rounded-[15px] items-center justify-center py-[4.591px] px-[13.773px] lg:px-[30px] lg:py-[10px]"
+            className="bg-[#2E3362] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] text-white text-[8.264px] lg:text-[18px] rounded-[6.887px] lg:rounded-[15px] items-center justify-center py-[4.591px] px-[13.773px] lg:px-[30px] lg:py-[10px]"
           >
             Save
           </button>

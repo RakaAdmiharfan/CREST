@@ -1,50 +1,34 @@
-<h1 align="center">
-  <br>
-  CREST: Real Estate for Everyone!
-  <br>
-  <br>
-</h1>
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## CREST
-<p align= "center">
-  <img width="280" src="https://github.com/RakaAdmiharfan/CREST/blob/main/public/Home/Logo.png">
-</p>
+## Getting Started
 
-<br>
-<h4>Dipersembahkan oleh: Tim Indonesia Bagian Web</h4>
-<h5>sebagai realisasi project untuk IFEST UNPAD 2023.</h5>
+First, run the development server:
 
-<br>
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-## Website Overview
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-CREST adalah aplikasi berbasis web yang berfunsgi untuk melakukan prediksi harga real estate berdasarkan data-data yang diolah menggunakan Intelegensi Buatan. CREST bertujuan untuk memberikan insight market real estate pada investor berpengalaman maupun pemula untuk menjalankan perjalanan investasi mereka
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-<br>
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-CREST dibekali dengan data-data real estate yang diupdate secara real time untuk melakukan prediksi harga ke depannya berdasarkan berbagai faktor untuk menjalankan dua fitur utama yaitu marketplace dan Simulasi.
+## Learn More
 
-<br>
+To learn more about Next.js, take a look at the following resources:
 
-Marketplace ditujukan untuk investor berpengalaman untuk melakukan pembelian untuk investasi mereka dan berbekali fitur prediksi harga yang dapat mempermudah proses investasi secara signifikan dan menghilangkan rasa kecemasan dan kebingungan saat melakukan investasi real estate.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-<br>
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-Simulasi bertujuan untuk memberikan pengetahuan bagi investor pemula untuk mengetahui apa yang terjadi behind the scenes dalam fluktuasi harga real estate. Mereka dapat melakukan simulasi investasi real estate yang menyerupai game dan mendapatkan report dan portofolio di akhir yang memberitahu apa yang terjadi dan bagaimana mereka dapat meningkatkan kemampuan dan strategi mereka dalam berinvestasi real estate
+## Deploy on Vercel
 
-<br>
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Selain itu, CREST juga memiliki page FAQ, Contact dan Landing Page yang informatif agar user dapat dengan mudah mempelajari fitur-fitur yang ada pada website dan cara menggunakannya.
-
-Tech Stacks:
-
-<ul>
-  <li>Next.js</li>
-  <li>Golang</li>
-  <li>Tailwind</li>
-  <li>Figma</li>
-  <li>PostgreSQL</li>
-  <li>Tensorflow</li>
-  <li>Python</li>
-  <li>AWS</li>
-</ul>
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

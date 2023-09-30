@@ -3,57 +3,45 @@
 package main
 
 import (
-	"os"
-	"log"
 	"fmt"
+	"log"
 	"net/http"
-	"github.com/joho/godotenv"
+	"os"
 	"tes-module/db"
-	"tes-module/services"
 	"tes-module/router"
+	"tes-module/services"
 )
 
-type Config struct{
+type Config struct {
 	Port string
-
 }
 
-type Application struct{
+type Application struct {
 	Config Config
 	Models services.Models
 }
 
-func (app *Application) Serve() error{
-	err := godotenv.Load()
-	if err != nil{
-		log.Fatal("error loading .env file")
-	}
+func (app *Application) Serve() error {
 	port := os.Getenv("PORT")
 
 	fmt.Println("API is listening on port", port)
 
-	srv := &http.Server {
-		Addr: fmt.Sprintf(":%s", port),
+	srv := &http.Server{
+		Addr:    fmt.Sprintf(":%s", port),
 		Handler: router.Routes(),
-
 	}
 	return srv.ListenAndServe()
 
 }
 
-func main(){
-	err := godotenv.Load()
-	if err != nil{
-		log.Fatal("error loading .env file")
-	}
-
+func main() {
 	cfg := Config{
 		Port: os.Getenv("PORT"),
 	}
 
 	dsn := os.Getenv("DSN")
 	dbConn, err := db.ConnectPostgres(dsn)
-	if err != nil{
+	if err != nil {
 		log.Fatal("Cannot connect to database")
 	}
 
@@ -65,7 +53,7 @@ func main(){
 	}
 
 	err = app.Serve()
-	if err != nil{
+	if err != nil {
 		log.Fatal(err)
 	}
 }

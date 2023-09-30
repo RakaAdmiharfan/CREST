@@ -1,0 +1,24 @@
+{
+    "faq": [
+        {
+            "question": "How does AI-driven prediction technology work for real estate investment?",
+            "answer": "AI-driven prediction technology processes large amounts of data, including property values, location data, economic indicators, and more. It identifies patterns and trends, allowing it to forecast future property values, rental incomes, and market conditions. These predictions empower strategic choices and investments to be made."
+        },
+        {
+            "question": "What benefits does AI-driven prediction technology offer to real estate investors?",
+            "answer": "AI predictions provide investors with data-driven insights, reducing reliance on intuition, can assess risks and potential returns more accurately. It also helps investors identify the right time to buy, sell, or hold properties and aid in diversifying investment portfolios effectively."
+        },
+        {
+            "question": "Which of the two investment features should I use?",
+            "answer": "Marketplace is suited for more seasoned investors as it dives deeper into the real world and real time data and may need experience to navigate. Simulation is better suited for beginners to learn more about the qualitative data that is needed to know how the prices fluctuate in the real estate market."
+        },
+        {
+            "question": "Is AI prediction suitable for both residential and commercial real estate investments?",
+            "answer": "Yes, AI-driven prediction technology is applicable to both residential and commercial real estate investments. It can help investors in various segments, including single-family homes, apartments, office spaces, retail properties, and more."
+        },
+        {
+            "question": "Can AI predict market crashes or major disruptions?",
+            "answer": "AI technology can detect potential market shifts and trends based on quantitative data, but predicting unforeseen events, such as financial crises or natural disasters, remains challenging. While AI can provide early warnings, investors should always consider various factors in their decision-making process."
+        }
+    ]
+}

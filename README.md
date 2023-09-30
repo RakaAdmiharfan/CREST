@@ -4,10 +4,13 @@
   <br>
   <br>
 </h1>
+
 ## CREST
+
 <p align= "center">
-  <img width="280" src="https://github.com/RakaAdmiharfan/CREST/blob/main/public/Home/Logo.png">
+  <img width="280" src="https://github.com/RakaAdmiharfan/CREST/blob/main/client/public/Home/Logo.png">
 </p>
+
 <br>
 <h4>Dipersembahkan oleh: Tim Indonesia Bagian Web</h4>
 <h4>sebagai realisasi project untuk IFEST UNPAD 2023.</h4>

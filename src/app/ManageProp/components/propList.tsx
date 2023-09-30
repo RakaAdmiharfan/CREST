@@ -41,7 +41,7 @@ function PropList({ data, header }: { data: any[]; header: any[] }) {
                       pathname: "/editProp",
                       query: { id: item.id },
                     }}
-                    className="flex rounded-[7.145px] w-[12.77vw] px-[14.29px] py-[4.76px] lg:w-[04.94vw] lg:px-[1px] lg:py-[5px] lg:rounded-[15px] justify-center border-[#6C88CD] border-[3px]"
+                    className="hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] flex rounded-[7.145px] w-[12.77vw] px-[14.29px] py-[4.76px] lg:w-[04.94vw] lg:px-[1px] lg:py-[5px] lg:rounded-[15px] justify-center border-[#6C88CD] border-[3px]"
                   >
                     <h6 className="text-[#6C88CD] text-poppins text-[8.574px] lg:text-[18px]">
                       Edit

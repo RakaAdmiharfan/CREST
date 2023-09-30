@@ -33,8 +33,8 @@ const EditFormComponent: React.FC = () => {
     DeskripsiPribadi: propertyToEdit.DeskripsiPribadi,
   });
 
-  const router = useRouter();
-  const { id } = router.query;
+  // const router = useRouter();
+  // const { id } = router.query;
 
   // Function to fetch data from the database (you need to implement this)
   const fetchDataFromDatabase = async () => {
@@ -208,7 +208,7 @@ const EditFormComponent: React.FC = () => {
         <div className="mx-[33.2vw] lg:mx-[29vw] lg:mt-[64px] lg:mb-[84px]">
           <button
             type="submit"
-            className="bg-[#2E3362] text-white text-[8.264px] lg:text-[18px] rounded-[6.887px] lg:rounded-[15px] items-center justify-center py-[4.591px] px-[13.773px] lg:px-[30px] lg:py-[10px]"
+            className="bg-[#2E3362] hover:shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)] text-white text-[8.264px] lg:text-[18px] rounded-[6.887px] lg:rounded-[15px] items-center justify-center py-[4.591px] px-[13.773px] lg:px-[30px] lg:py-[10px]"
           >
             Save
           </button>

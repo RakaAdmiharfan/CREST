@@ -108,6 +108,7 @@ Marketplace ditujukan untuk investor berpengalaman untuk melakukan pembelian unt
 Simulasi bertujuan untuk memberikan pengetahuan bagi investor pemula untuk mengetahui apa yang terjadi behind the scenes dalam fluktuasi harga real estate. Mereka dapat melakukan simulasi investasi real estate yang menyerupai game dan mendapatkan report dan portofolio di akhir yang memberitahu apa yang terjadi dan bagaimana mereka dapat meningkatkan kemampuan dan strategi mereka dalam berinvestasi real estate
 <br>
 Selain itu, CREST juga memiliki page FAQ, Contact dan Landing Page yang informatif agar user dapat dengan mudah mempelajari fitur-fitur yang ada pada website dan cara menggunakannya.
+<br>
 Tech Stacks:
 <ul>
   <li>Next.js</li>

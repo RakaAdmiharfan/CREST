@@ -197,7 +197,7 @@ const Navbar = () => {
                 </li>
                 <li onClick={handleNav} className="p-4">
                   <Link
-                    href="/contact"
+                    href="/signup"
                     className="hover:opacity-70  text-poppins"
                   >
                     Sign Up

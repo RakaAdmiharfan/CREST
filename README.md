@@ -14,6 +14,15 @@
 <br>
 <h4>Dipersembahkan oleh: Tim Indonesia Bagian Web</h4>
 <h4>sebagai realisasi project untuk IFEST UNPAD 2023.</h4>
+
+Anggota:
+<ul>
+  <li>Amjad Adhie Prasetyo</li>
+  <li>Iskandar Muda Parlambang</li>
+  <li>Johan Hariara Sijabat</li>
+  <li>Nicholas</li>
+  <li>Raka Admiharfan Fatihah</li>
+</ul>
 <br>
 
 ## Cara pengoperasian

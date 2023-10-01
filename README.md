@@ -27,21 +27,75 @@ Anggota:
 
 ## Cara pengoperasian
 
-<h4>1. Cloning repository ini ke dalam satu folder lokal</h4>
-<h4>2. Navigasi ke folder lokal tersebut melalui cmd dan masuki folder client</h4>
+<h4>1.	Clone github crest
+  <br>
+  <br>
+2.	Pastikan anda di branch main
+  <br>
+  <br>
+3.	Buatlah file .env pada folder client dengan isi (untuk menjalankan api openAI):
+NEXT_PUBLIC_OPENAI_KEY=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
+  <br>
+  <br>
+4.	Install Docker Desktop dan jalankan Docker Desktop
+  <br>
+  <br>
+5.	Bukalah 2 terminal seperti berikut 1 pada path root project dan path client</h4>
+<br>
+<br>
 
-![image](https://github.com/RakaAdmiharfan/CREST/assets/69570302/610101e2-8bf7-4a45-b28a-e9eaf2d30766)
-![image](https://github.com/RakaAdmiharfan/CREST/assets/69570302/58e6e56b-ee00-4039-bedd-b0ac0b0bebdb)
+![image](https://github.com/RakaAdmiharfan/CREST/assets/69570302/f06c5146-d562-4f05-b67f-04788aae32a9)
+<br>
+<br>
+<h4>
+6.	Pada path client ketik code ini, untuk memastikan bahwa akan membuat build baru:
+  <br>
+docker compose down
+  <br>
+docker volume rm crest-postgres-db
+  <br>
+  </h4>
+  
+ ![image](https://github.com/RakaAdmiharfan/CREST/assets/69570302/91ca4a65-771c-4516-bda4-5b413d7bca65)
+![image](https://github.com/RakaAdmiharfan/CREST/assets/69570302/e444a010-f919-473d-8b99-c40eafddf3b8)
 
-<br>
-<br>
-<h4>3. Lakukan `npm i` dan `npm run dev` di cmd</h4>
+<h4>
+7.	Lalu, pada path yang sama ketik code:
+   <br>
+docker compose up –build
+</h4>
 <br>
 
-![image](https://github.com/RakaAdmiharfan/CREST/assets/69570302/516d82d6-618f-4926-a84b-571817451cf5)
+![image](https://github.com/RakaAdmiharfan/CREST/assets/69570302/bc548c69-0ea4-48a4-9abd-f71847bc82d7)
+
+ <h4>
+8.	Setelah selesai, hit endpoint http://localhost:5000/api/v1/train dengan method post tanpa body dan parameter untuk train ai dengan machine learning
+   <br>
+ </h4>
+   
+   ![image](https://github.com/RakaAdmiharfan/CREST/assets/69570302/b41b2e74-3445-4659-b18f-dea5eb000aae)
+
+ <br>
+ <h4>
+9.	Setelah selesai, ketiklah npm i pada path client
 <br>
-<h4>4. Lalu masuki web melalui localhost yang disediakan</h4>
-<br>
+   
+ ![image](https://github.com/RakaAdmiharfan/CREST/assets/69570302/2bfceccf-4984-4dc2-997d-052f69b79bcd)
+ </h4>
+
+ <h4>
+10.	Lalu, pada path yang sama ketiklah npm run dev
+   <br>
+   
+ ![image](https://github.com/RakaAdmiharfan/CREST/assets/69570302/cb3925aa-0d35-41f8-a704-b755975c6e56)
+ 
+ </h4>
+
+ <h4>
+11.	Downloadlah extension CORS Unblock pada platform yang digunakan untuk membuka website untuk unblock CORS
+<br><br>
+   12.	Bukalah http://localhost:3000 untuk menjalankan websitenya
+ </h4>
 
 ![image](https://github.com/RakaAdmiharfan/CREST/assets/69570302/89d2acc3-65b8-46ba-a15b-158ab74c4d84)
 ## Website Overview

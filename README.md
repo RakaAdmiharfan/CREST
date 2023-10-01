@@ -103,9 +103,9 @@ CREST adalah aplikasi berbasis web yang berfunsgi untuk melakukan prediksi harga
 <br>
 CREST dibekali dengan data-data real estate yang diupdate secara real time untuk melakukan prediksi harga ke depannya berdasarkan berbagai faktor untuk menjalankan dua fitur utama yaitu marketplace dan Simulasi.
 <br>
-Marketplace ditujukan untuk investor berpengalaman untuk melakukan pembelian untuk investasi mereka dan berbekali fitur prediksi harga yang dapat mempermudah proses investasi secara signifikan dan menghilangkan rasa kecemasan dan kebingungan saat melakukan investasi real estate.
+Marketplace ditujukan untuk investor berpengalaman untuk melakukan pembelian untuk investasi mereka dan berbekali fitur prediksi harga yang dapat mempermudah proses investasi secara signifikan dan menghilangkan rasa kecemasan dan kebingungan saat melakukan investasi real estate dan dibekali dengan prediksi value properti yang berbasis AI.
 <br>
-Simulasi bertujuan untuk memberikan pengetahuan bagi investor pemula untuk mengetahui apa yang terjadi behind the scenes dalam fluktuasi harga real estate. Mereka dapat melakukan simulasi investasi real estate yang menyerupai game dan mendapatkan report dan portofolio di akhir yang memberitahu apa yang terjadi dan bagaimana mereka dapat meningkatkan kemampuan dan strategi mereka dalam berinvestasi real estate
+Simulasi bertujuan untuk memberikan pengetahuan bagi investor pemula untuk mengetahui apa yang terjadi behind the scenes dalam fluktuasi harga real estate. Mereka dapat melakukan simulasi investasi real estate yang menyerupai game dan mendapatkan report dan portofolio di akhir yang memberitahu apa yang terjadi dan bagaimana mereka dapat meningkatkan kemampuan dan strategi mereka dalam berinvestasi real estate. Fitur ini dibantu dengan menggunakan fitur API OPENAI untuk memunculkan deskripsi report dari setiap properti.
 <br>
 Selain itu, CREST juga memiliki page FAQ, Contact dan Landing Page yang informatif agar user dapat dengan mudah mempelajari fitur-fitur yang ada pada website dan cara menggunakannya.
 <br>
